@@ -1,22 +1,26 @@
 [
   {
-    "name": "iPhone 15 Pro Max",
-    "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-max-finish-select-202309-6-7inch?wid=940&hei=1112&fmt=png-alpha&.v=1692923776874",
-    "description": "Apple's flagship with A17 Pro chip, triple camera, and Dynamic Island."
+    "name": "iPhone 16 Pro Max",
+    "image": "data/mobiles/pngs/apple16pro.png",
+    "description": "A18 Pro chip, triple camera, Dynamic Island, ProMotion display flagship.",
+    "productLink": "https://www.apple.com/in/iphone-16-pro/?afid=p240%7Cgo~cmp-21689409814~adg-162425265810~ad-714391919717_kwd-845053439244~dev-c~ext-~prd-~mca-~nt-search&cid=wwa-in-kwgo-iphone-Core--Avail-iPhone-Core-Exact-iPhone16Pro-Exact-iphone+16+pro"
   },
   {
     "name": "Samsung Galaxy S24 Ultra",
-    "image": "https://images.samsung.com/is/image/samsung/p6pim/in/sm-s928bzkdins/gallery/in-galaxy-s24-ultra-sm-s928-492982-sm-s928bzkdins-537982982?wid=720&hei=720",
-    "description": "Top Android phone with 200MP camera, S Pen, and powerful performance."
+    "image": "data/mobiles/pngs/samsungs24ultra.png",
+    "description": "Snapdragon 8 Gen 3, 200MP camera, Galaxy AI, titanium body.",
+    "productLink": "https://www.samsung.com/in/smartphones/galaxy-s24-ultra/buy/?srsltid=AfmBOoqV57Y9pw-_TcYfzF3UymalZN_OriktCP_9ev02Hf8Qh69gfdIj"
   },
   {
-    "name": "Google Pixel 8 Pro",
-    "image": "https://store.google.com/product/images/phone_pixel_8_pro_hero.png",
-    "description": "Google's best with Tensor G3, AI features, and excellent camera."
+    "name": "Asus ROG Phone 9",
+    "image": "data/mobiles/pngs/asusrog9.png",
+    "description": "Snapdragon 8 Elite, 185Hz display, cooling system, LED gaming features.",
+    "productLink": "https://rog.asus.com/phones/rog-phone-9/"
   },
   {
-    "name": "OnePlus 12",
-    "image": "https://image01.oneplus.net/ebp/202401/09/1-m00-1c-7a-rb8bwlwzj6eabqgkaadwqgkqv7g563_840_840.png",
-    "description": "Flagship killer with Snapdragon 8 Gen 3 and fast charging."
+    "name": "Google Pixel 9 Pro Fold",
+    "image": "data/mobiles/pngs/pixel9pro.png",
+    "description": "Tensor G4, foldable screen, Android 16, premium Pixel experience.",
+    "productLink": "https://store.google.com/in/product/pixel_9_pro_fold?hl=en-IN&pli=1"
   }
 ]

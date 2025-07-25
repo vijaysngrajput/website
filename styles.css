@@ -1,3 +1,14 @@
+/* Glassmorphism box for crystal-title */
+.crystal-title-box {
+  display: inline-block;
+  position: relative;
+  border-radius: 1rem;
+  background: rgba(30,41,59,0.45);
+  box-shadow: 0 4px 24px 0 rgba(59,130,246,0.10);
+  backdrop-filter: blur(6px);
+  padding: 0.5rem 0.5rem;
+  z-index: 0;
+}
 body {
   font-family: 'Poppins', sans-serif;
   min-height: 100vh;
@@ -45,10 +56,12 @@ body {
   -webkit-background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent;
+  position: relative;
   border-radius: 1rem;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.4);
+  box-shadow: none;
   padding: 1rem 2rem;
   display: inline-block;
+  z-index: 1;
 }
 
 .crystal-title-slogan {

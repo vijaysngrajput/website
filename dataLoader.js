@@ -9,12 +9,13 @@ document.addEventListener('DOMContentLoaded', function() {
       const container = document.getElementById('categories-container');
       container.innerHTML = '';
       mobiles.forEach(mobile => {
-        let html = `<div class="bg-white rounded-lg shadow-lg p-6 text-center transform hover:-translate-y-2 transition duration-300 cursor-pointer card-animate">
-          <img alt="${mobile.name}" class="h-24 mx-auto mb-4" src="${mobile.image}"/>
-          <h3 class="text-xl font-semibold mb-2">${mobile.name}</h3>
-          <p class="text-gray-600 mb-2">${mobile.description}</p>
-          <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Top 10</span>
-        </div>`;
+        let html = `<a href="${mobile.productLink}" target="_blank" rel="noopener" style="text-decoration:none;">
+          <div class="rounded-lg p-3 text-center flex flex-col justify-between transform hover:-translate-y-2 transition duration-300 cursor-pointer card-animate" style="width:260px; height:320px; margin:0 auto; background:rgba(255,255,255,0.82); backdrop-filter:blur(8px); border:8px solid #e0e7ff; box-shadow:0 8px 32px 0 rgba(59,130,246,0.18), 0 0 0 6px rgba(59,130,246,0.10);">
+            <img alt="${mobile.name}" class="h-24 mx-auto mb-3" src="${mobile.image}" style="object-fit:contain;"/>
+            <h3 class="text-lg font-semibold mb-1">${mobile.name}</h3>
+            <p class="mb-1" style="font-size:0.95rem; color:#111;">${mobile.description}</p>
+          </div>
+        </a>`;
         container.innerHTML += html;
       });
     });
@@ -26,12 +27,13 @@ document.addEventListener('DOMContentLoaded', function() {
       const container = document.getElementById('laptops-container');
       container.innerHTML = '';
       laptops.forEach(laptop => {
-        let html = `<div class="bg-white rounded-lg shadow-lg p-6 text-center transform hover:-translate-y-2 transition duration-300 cursor-pointer card-animate">
-          <img alt="${laptop.name}" class="h-24 mx-auto mb-4" src="${laptop.image}"/>
-          <h3 class="text-xl font-semibold mb-2">${laptop.name}</h3>
-          <p class="text-gray-600 mb-2">${laptop.description}</p>
-          <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Top 10</span>
-        </div>`;
+        let html = `<a href="${laptop.productLink}" target="_blank" rel="noopener" style="text-decoration:none;">
+          <div class="rounded-lg p-3 text-center flex flex-col justify-between transform hover:-translate-y-2 transition duration-300 cursor-pointer card-animate" style="width:260px; height:320px; margin:0 auto; background:rgba(255,255,255,0.82); backdrop-filter:blur(8px); border:8px solid #e0e7ff; box-shadow:0 8px 32px 0 rgba(59,130,246,0.18), 0 0 0 6px rgba(59,130,246,0.10);">
+            <img alt="${laptop.name}" class="h-24 mx-auto mb-3" src="${laptop.image}" style="object-fit:contain;"/>
+            <h3 class="text-lg font-semibold mb-1">${laptop.name}</h3>
+            <p class="mb-1" style="font-size:0.95rem; color:#111;">${laptop.description}</p>
+          </div>
+        </a>`;
         container.innerHTML += html;
       });
     });
@@ -43,12 +45,13 @@ document.addEventListener('DOMContentLoaded', function() {
       const container = document.getElementById('protein-container');
       container.innerHTML = '';
       proteins.forEach(protein => {
-        let html = `<div class="bg-white rounded-lg shadow-lg p-6 text-center transform hover:-translate-y-2 transition duration-300 cursor-pointer card-animate">
-          <img alt="${protein.name}" class="h-24 mx-auto mb-4" src="${protein.image}"/>
-          <h3 class="text-xl font-semibold mb-2">${protein.name}</h3>
-          <p class="text-gray-600 mb-2">${protein.description}</p>
-          <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Top 10</span>
-        </div>`;
+        let html = `<a href="${protein.productLink}" target="_blank" rel="noopener" style="text-decoration:none;">
+          <div class="rounded-lg p-3 text-center flex flex-col justify-between transform hover:-translate-y-2 transition duration-300 cursor-pointer card-animate" style="width:260px; height:320px; margin:0 auto; background:rgba(255,255,255,0.82); backdrop-filter:blur(8px); border:8px solid #e0e7ff; box-shadow:0 8px 32px 0 rgba(59,130,246,0.18), 0 0 0 6px rgba(59,130,246,0.10);">
+            <img alt="${protein.name}" class="h-24 mx-auto mb-3" src="${protein.image}" style="object-fit:contain;"/>
+            <h3 class="text-lg font-semibold mb-1">${protein.name}</h3>
+            <p class="mb-1" style="font-size:0.95rem; color:#111;">${protein.description}</p>
+          </div>
+        </a>`;
         container.innerHTML += html;
       });
     });

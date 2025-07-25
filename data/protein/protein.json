@@ -1,22 +1,26 @@
 [
   {
-    "name": "Optimum Nutrition Gold Standard Whey",
-    "image": "https://www.optimumnutrition.com/sites/g/files/auxxlc381/files/2023-03/ON_GSW_5lb_Chocolate_2023.png",
-    "description": "Best-selling whey protein for muscle recovery and growth."
+    "name": "Optimum Nutrition Gold Standard 100% Whey",
+    "image": "data/protein/pngs/on.png",
+    "description": "Trusted whey with 24g protein, BCAAs, fast absorption, great taste.",
+    "productLink": "https://www.optimumnutrition.co.in/products/gold-standard-100-whey-protein-powder-double-rich-chocolate-1118949"
   },
   {
-    "name": "Dymatize Nutrition ISO100",
-    "image": "https://dymatize.com/cdn/shop/products/ISO100-5lb-Gourmet-Chocolate-Front_800x.png",
-    "description": "Hydrolyzed whey isolate for fast absorption and lean muscle."
+    "name": "MyProtein Impact Whey Isolate",
+    "image": "data/protein/pngs/mypr.png",
+    "description": "High-purity whey isolate with 90% protein content, low sugar, gluten-free.",
+    "productLink": "https://www.myprotein.co.in/p/sports-nutrition/impact-whey-protein/11654605/?thg_ppc_campaign=20963608740&gclid=CjwKCAjw1ozEBhAdEiwAn9qbzQBiyvkLs_qAouQ7T4opq02nA1MZiwn5eVHDWm9wdWXfTWVC15YcOxoCSHIQAvD_BwE&gclsrc=aw.ds&gad_campaignid=20963608740&kwds=13569431859&affil=thgppc&adtype=&product_id=&gad_source=1"
   },
   {
-    "name": "MuscleBlaze Whey Gold",
-    "image": "https://www.muscleblaze.com/media/catalog/product/cache/1/image/800x800/9df78eab33525d08d6e5fb8d27136e95/m/b/mb-whey-gold-2kg-rich-milk-chocolate.png",
-    "description": "High-quality protein for Indian athletes and fitness enthusiasts."
+    "name": "Dymatize ISO100 Hydrolyzed",
+    "image": "data/protein/pngs/dymatize.png",
+    "description": "Hydrolyzed isolate for rapid absorption, 25g protein, zero fat or sugar.",
+    "productLink": "https://nutrabay.com/product/dymatize-elite-100-whey-protein?pId=7333254&vId=4587259"
   },
   {
-    "name": "MuscleBlaze Whey Raw",
-    "image": "https://www.muscleblaze.com/media/catalog/product/cache/1/image/800x800/9df78eab33525d08d6e5fb8d27136e95/m/b/mb-whey-gold-2kg-rich-milk-chocolate.png",
-    "description": "High-quality protein for Indian athletes and fitness enthusiasts."
+    "name": "MuscleBlaze Biozyme Whey Protein",
+    "image": "data/protein/pngs/muscle.png",
+    "description": "Indian-made with enhanced absorption, lab-certified, 25g protein per scoop.",
+    "productLink": "https://www.muscleblaze.com/sv/muscleblaze-biozyme-whey-protein/SP-69673?srsltid=AfmBOop_0_jGxypdaxkL_30BsduGF8_OajZiTqNI7FgEi-XTNnRfMDWg"
   }
 ]
