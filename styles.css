@@ -1,4 +1,194 @@
 body {
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(120deg, #e0e7ff 0%, #f0f9ff 100%);
+  animation: bodyFadeIn 1.2s ease;
+}
+@keyframes bodyFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.blur-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url('bgm4.jpg') center center fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: blur(0px);
+  z-index: -1;
+}
+
+.crystal-brand {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  letter-spacing: 1px;
+  background: linear-gradient(to right, #02aff3, #05beec, #5cf503, #f99b04);
+  background-size: auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  border-radius: 1rem;
+  display: inline-block;
+}
+
+.crystal-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  letter-spacing: 1px;
+  background: linear-gradient(to right, #67a602, #38bdf8, #f472b6, #fbbf24);
+  background-size: auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  border-radius: 1rem;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.4);
+  padding: 1rem 2rem;
+  display: inline-block;
+}
+
+.crystal-title-slogan {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  letter-spacing: 1px;
+  background: linear-gradient(to right, #67a602, #38bdf8, #f472b6, #fbbf24);
+  background-size: auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+  display: inline-block;
+}
+.crystal-title, h2, h3 {
+  animation: fadeInUp 1.2s cubic-bezier(.77,0,.18,1);
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.crystal-text {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #2563eb;
+  background: rgba(255,255,255,0.7);
+  border-radius: 1rem;
+  box-shadow: 0 2px 16px rgba(59,130,246,0.08);
+  padding: 0.5rem 1.5rem;
+  display: inline-block;
+  animation: pulseText 2.5s infinite alternate;
+}
+@keyframes pulseText {
+  from { box-shadow: 0 2px 16px rgba(59,130,246,0.08); }
+  to { box-shadow: 0 8px 32px rgba(59,130,246,0.18); }
+}
+.nav-link {
+  position: relative;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #08142c !important;
+  transition: color 0.3s, transform 0.3s;
+  animation: fadeInUp 1.2s cubic-bezier(.77,0,.18,1);
+}
+.nav-link:hover {
+  color: #f472b6 !important;
+  transform: scale(1.12) rotate(-2deg);
+  text-shadow: 0 2px 12px #38bdf8;
+}
+.nav-link::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #081739, #f472b6);
+  transition: width 0.3s;
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+.card-animate h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: 1px;
+  color: #0a2359;
+  background: none;
+  -webkit-background-clip: initial;
+  background-clip: initial;
+  -webkit-text-fill-color: initial;
+  transition: color 0.3s, background 0.3s;
+  animation: fadeInUp 1.2s cubic-bezier(.77,0,.18,1);
+}
+.card-animate:hover h3 {
+  color: #f472b6;
+  background: none;
+  -webkit-background-clip: initial;
+  background-clip: initial;
+  -webkit-text-fill-color: initial;
+}
+.crystal-section h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 2.2rem;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, #081737, #fbbf24);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 3s ease-in-out infinite alternate, fadeInUp 1.2s cubic-bezier(.77,0,.18,1);
+}
+.logo-animate {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
+  font-size: 1.25rem;
+  letter-spacing: 3px;
+  animation: logoGradientMove 8s ease-in-out infinite alternate;
+  text-shadow: 0 4px 24px rgba(59,130,246,0.18), 0 1px 0 #30026d;
+  transition: transform 0.3s;
+}
+@keyframes logoGradientMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+.hero-section {
+  background: rgba(255,255,255,0.18);
+  box-shadow: 0 12px 48px 0 rgba(59,130,246,0.18), 0 2px 8px 0 rgba(0,0,0,0.08);
+  backdrop-filter: blur(24px) brightness(1.08);
+  border: 1.5px solid rgba(59,130,246,0.10);
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+  padding: 2.5rem 0;
+  transition: box-shadow 0.3s, background 0.3s;
+}
+.group:hover .bg-cover {
+  transform: scale(1.05);
+  transition: transform 0.3s;
+}
+.brand-ten, .brand-z, .brand-vault {
+  font-weight: 900;
+  display: inline-block;
+  color: #2563eb !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+  -webkit-text-fill-color: initial !important;
+  animation: none !important;
+}
+@keyframes brandPulse {
+  from { filter: brightness(1); }
+  to { filter: brightness(1.18); }
+}
+body {
     font-family: 'Poppins', sans-serif;
     background-color: #f8fafc;
 }
