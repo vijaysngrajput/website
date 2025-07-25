@@ -1,0 +1,22 @@
+[
+  {
+    "name": "MacBook Pro 16" ,
+    "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp16-spacegray-select-202311?wid=904&hei=840&fmt=jpeg&qlt=80&.v=1698765891327",
+    "description": "Apple's flagship laptop with M3 Max chip, Liquid Retina XDR display."
+  },
+  {
+    "name": "Dell XPS 15",
+    "image": "https://i.dell.com/sites/imagecontent/products/PublishingImages/xps-15-9530-laptop/spi/ng/xps-15-9530-laptop-campaign-hero-504x350-ng.psd",
+    "description": "Premium Windows laptop with OLED display and powerful performance."
+  },
+  {
+    "name": "HP Spectre x360",
+    "image": "https://ssl-product-images.www8-hp.com/digmedialib/prodimg/lowres/c08032441.png",
+    "description": "Convertible laptop with touch screen and long battery life."
+  },
+  {
+    "name": "HP Raw",
+    "image": "https://ssl-product-images.www8-hp.com/digmedialib/prodimg/lowres/c08032441.png",
+    "description": "Convertible laptop with touch screen and long battery life."
+  }
+]

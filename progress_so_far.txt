@@ -1,0 +1,14 @@
+
+
+DAY 1:
+=======
+1. Bought laptop macbook-m4 [12 GB Core 12 GB CPU]
+2. Bought new domain: tenzvault.com
+3. Created a Dummy Local Website
+4. Installed VS-Code, Intelli-J, Ollama, DockerHub, Pycharm, Replit
+5. Setup: Git, JDK, HomeBrew
+
+
+
+DAY 2:
+=======
