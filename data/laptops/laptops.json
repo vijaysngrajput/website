@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "name": "iPhone 15 Pro Max",
+    "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-max-finish-select-202309-6-7inch?wid=940&hei=1112&fmt=png-alpha&.v=1692923776874",
+    "description": "Apple's flagship with A17 Pro chip, triple camera, and Dynamic Island."
+  },
+  {
+    "name": "Samsung Galaxy S24 Ultra",
+    "image": "https://images.samsung.com/is/image/samsung/p6pim/in/sm-s928bzkdins/gallery/in-galaxy-s24-ultra-sm-s928-492982-sm-s928bzkdins-537982982?wid=720&hei=720",
+    "description": "Top Android phone with 200MP camera, S Pen, and powerful performance."
+  },
+  {
+    "name": "Google Pixel 8 Pro",
+    "image": "https://store.google.com/product/images/phone_pixel_8_pro_hero.png",
+    "description": "Google's best with Tensor G3, AI features, and excellent camera."
+  },
+  {
+    "name": "OnePlus 12",
+    "image": "https://image01.oneplus.net/ebp/202401/09/1-m00-1c-7a-rb8bwlwzj6eabqgkaadwqgkqv7g563_840_840.png",
+    "description": "Flagship killer with Snapdragon 8 Gen 3 and fast charging."
+  }
+]
