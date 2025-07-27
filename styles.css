@@ -208,3 +208,39 @@ body {
 .hero-section {
     background-color: #8284ff;
 }
+
+/* Crystal glass card style for smartphones */
+.crystal-card {
+  background: rgba(255,255,255,0.12);
+  box-shadow: 0 4px 32px 0 rgba(59,130,246,0.10), 0 1.5px 8px 0 rgba(13,148,136,0.08);
+  border: none !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 1.25rem;
+  transition: box-shadow 0.3s;
+}
+.crystal-card:hover {
+  box-shadow: 0 8px 40px 0 rgba(59,130,246,0.18), 0 2px 12px 0 rgba(13,148,136,0.12);
+}
+
+/* White description text for smartphone cards */
+.crystal-card-desc {
+  color: #fff !important;
+}
+
+/* Hide scrollbar for slider */
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Snap scrolling for slider */
+#categories-slider {
+  scroll-snap-type: x mandatory;
+}
+#categories-slider > * {
+  scroll-snap-align: start;
+}
