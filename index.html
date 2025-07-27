@@ -48,7 +48,7 @@
 <section class="hero-section text-gray-800"
   style="background: rgba(30,41,59,0.35); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); margin-top:0;">
   <div class="container mx-auto px-6 py-4 text-center" style="margin-bottom: 0;">
-<h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4 crystal-title-slogan">
+<h1 class="text-5xl md:text-6xl font-bold leading-tight mb-4 crystal-title-slogan">
   <span class="bg-gradient-to-r from-yellow-400 via-pink-300 to-purple-600 bg-clip-text text-transparent font-extrabold">Find the</span> <span class="relative inline-block px-2 rounded-xl" style="background:rgba(255,255,255,0.05);box-shadow:0 2px 16px 0 rgba(13,148,136,0.06);">
     <span class="bg-gradient-to-r from-teal-400 via-teal-200 to-teal-600 bg-clip-text text-transparent font-extrabold drop-shadow-lg" style="padding:0.2em 0.5em;">Best 10</span>
   </span> in Every Category
@@ -59,32 +59,98 @@
     </div>
   </div>
 </section>
+<!-- Significant gap between hero and smartphones section -->
+<div style="height:96px;"></div>
 
-</section>
-<section class="pt-4 pb-8" style="background: transparent;">
-<div class="container mx-auto px-6">
-  <div class="crystal-title-box" style="text-align:center; margin-bottom:1em;">
-    <span class="text-3xl font-bold crystal-title">Latest Smartphones</span>
-  </div>
-  <!-- Slider controls -->
-  <div class="relative">
-    <button id="smartphones-slider-left" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white bg-opacity-40 hover:bg-opacity-70 text-blue-600 rounded-full p-2 shadow-lg" style="backdrop-filter: blur(8px);">
-      <i class="material-icons">chevron_left</i>
-    </button>
-    <button id="smartphones-slider-right" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white bg-opacity-40 hover:bg-opacity-70 text-blue-600 rounded-full p-2 shadow-lg" style="backdrop-filter: blur(8px);">
-      <i class="material-icons">chevron_right</i>
-    </button>
-    <!-- Horizontal slider container -->
-    <div id="categories-slider" class="flex overflow-x-auto space-x-8 scrollbar-hide px-8 py-2 snap-x snap-mandatory">
-      <!-- Cards will be injected here -->
-    </div>
+<!-- New CATEGORIES Heading (full-width, styled like "Latest Smartphones") -->
+<div class="w-full py-8 flex justify-center items-center">
+  <div class="crystal-title-box" style="text-align:center; margin-bottom:0;">
+    <span class="text-4xl font-bold crystal-title" style="color:#222; letter-spacing:0.04em;">
+      CATEGORIES
+    </span>
   </div>
 </div>
+
+<!-- Categories Section -->
+<section class="py-12" style="background: rgba(30,41,59,0.18); backdrop-filter: blur(8px);">
+  <div class="container mx-auto px-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+      <!-- Row 1 -->
+      <div class="flex items-center space-x-4 bg-white bg-opacity-10 rounded-xl p-6 shadow-md">
+        <span class="material-icons text-4xl text-blue-400">smartphone</span>
+        <span class="text-lg font-semibold text-white">Smart Phones</span>
+      </div>
+      <div class="flex items-center space-x-4 bg-white bg-opacity-10 rounded-xl p-6 shadow-md">
+        <span class="material-icons text-4xl text-green-400">laptop_mac</span>
+        <span class="text-lg font-semibold text-white">Laptops</span>
+      </div>
+      <div class="flex items-center space-x-4 bg-white bg-opacity-10 rounded-xl p-6 shadow-md">
+        <span class="material-icons text-4xl text-yellow-400">fitness_center</span>
+        <span class="text-lg font-semibold text-white">Proteins</span>
+      </div>
+      <!-- Row 2 -->
+      <div class="flex items-center space-x-4 bg-white bg-opacity-10 rounded-xl p-6 shadow-md">
+        <span class="material-icons text-4xl text-purple-400">tv</span>
+        <span class="text-lg font-semibold text-white">Smart TV</span>
+      </div>
+      <div class="flex items-center space-x-4 bg-white bg-opacity-10 rounded-xl p-6 shadow-md">
+        <span class="material-icons text-4xl text-pink-400">sports_esports</span>
+        <span class="text-lg font-semibold text-white">Android Games</span>
+      </div>
+      <div class="flex items-center space-x-4 bg-white bg-opacity-10 rounded-xl p-6 shadow-md">
+        <span class="material-icons text-4xl text-indigo-400">local_laundry_service</span>
+        <span class="text-lg font-semibold text-white">Washing Machine</span>
+      </div>
+      <!-- Row 3 -->
+      <div class="flex items-center space-x-4 bg-white bg-opacity-10 rounded-xl p-6 shadow-md">
+        <span class="material-icons text-4xl text-red-400">memory</span>
+        <span class="text-lg font-semibold text-white">Graphic Cards</span>
+      </div>
+      <div class="flex items-center space-x-4 bg-white bg-opacity-10 rounded-xl p-6 shadow-md">
+        <span class="material-icons text-4xl text-orange-400">two_wheeler</span>
+        <span class="text-lg font-semibold text-white">Bikes</span>
+      </div>
+      <div class="flex items-center space-x-4 bg-white bg-opacity-10 rounded-xl p-6 shadow-md">
+        <span class="material-icons text-4xl text-blue-300">directions_car</span>
+        <span class="text-lg font-semibold text-white">Cars</span>
+      </div>
+      <!-- Add more categories here if needed -->
+    </div>
+  </div>
+</section>
+
+<section class="pt-4 pb-8" style="background: transparent;">
+  <div class="container mx-auto px-6">
+    <div class="w-full flex justify-center items-center mb-8">
+      <div class="crystal-title-box" style="text-align:center; margin-bottom:0;">
+        <span class="text-3xl font-bold crystal-title" style="color:#222; letter-spacing:0.04em;">
+          Latest Smartphones
+        </span>
+      </div>
+    </div>
+    <!-- Slider controls -->
+    <div class="relative">
+      <button id="smartphones-slider-left" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white bg-opacity-40 hover:bg-opacity-70 text-blue-600 rounded-full p-2 shadow-lg" style="backdrop-filter: blur(8px);">
+        <i class="material-icons">chevron_left</i>
+      </button>
+      <button id="smartphones-slider-right" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white bg-opacity-40 hover:bg-opacity-70 text-blue-600 rounded-full p-2 shadow-lg" style="backdrop-filter: blur(8px);">
+        <i class="material-icons">chevron_right</i>
+      </button>
+      <!-- Horizontal slider container -->
+      <div id="categories-slider" class="flex overflow-x-auto space-x-8 scrollbar-hide px-8 py-2 snap-x snap-mandatory">
+        <!-- Cards will be injected here -->
+      </div>
+    </div>
+  </div>
 </section>
 <section class="py-20" style="background: transparent;">
   <div class="container mx-auto px-6">
-    <div class="crystal-title-box" style="text-align:center; margin-bottom:2em;">
-      <span class="text-3xl font-bold crystal-title">High Performance Laptops</span>
+    <div class="w-full flex justify-center items-center mb-8">
+      <div class="crystal-title-box" style="text-align:center; margin-bottom:0;">
+        <span class="text-3xl font-bold crystal-title" style="color:#222; letter-spacing:0.04em;">
+          High Performance Laptops
+        </span>
+      </div>
     </div>
     <div id="laptops-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
       <!-- Cards will be injected here -->
@@ -93,8 +159,12 @@
 </section>
 <section class="py-20" style="background: transparent;">
   <div class="container mx-auto px-6">
-    <div class="crystal-title-box" style="text-align:center; margin-bottom:2em;">
-      <span class="text-3xl font-bold crystal-title">Best Quality Proteins</span>
+    <div class="w-full flex justify-center items-center mb-8">
+      <div class="crystal-title-box" style="text-align:center; margin-bottom:0;">
+        <span class="text-3xl font-bold crystal-title" style="color:#222; letter-spacing:0.04em;">
+          Best Quality Proteins
+        </span>
+      </div>
     </div>
     <div id="protein-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
       <!-- Cards will be injected here -->
@@ -102,64 +172,38 @@
   </div>
 </section>
 <section class="py-20">
-<div class="container mx-auto px-6">
-<div class="crystal-title-box" style="text-align:center; margin-bottom:2em;">
-  <span id="how-it-works" class="text-3xl font-bold crystal-title">How It Works</span>
-</div>
-   <div class="grid md:grid-cols-3 gap-12 text-center">
-     <div class="flex flex-col items-center">
-       <div class="bg-blue-100 rounded-full p-6 mb-4">
-         <i class="material-icons text-4xl text-blue-600">search</i>
-       </div>
-       <h3 class="text-xl font-semibold mb-2 crystal-text">We research thousands of products.</h3>
-       <p class="crystal-text">Our team scours the market to identify top contenders in every category.</p>
-     </div>
-     <div class="flex flex-col items-center">
-       <div class="bg-blue-100 rounded-full p-6 mb-4">
-         <i class="material-icons text-4xl text-blue-600">star_rate</i>
-       </div>
-       <h3 class="text-xl font-semibold mb-2 crystal-text">We rank the top 10 based on reviews, features, and price.</h3>
-       <p class="crystal-text">A comprehensive analysis ensures only the best make our lists.</p>
-     </div>
-     <div class="flex flex-col items-center">
-       <div class="bg-blue-100 rounded-full p-6 mb-4">
-         <i class="material-icons text-4xl text-blue-600">verified</i>
-       </div>
-       <h3 class="text-xl font-semibold mb-2 crystal-text">You get the best picks—instantly.</h3>
-       <p class="crystal-text">Save time and choose confidently with our curated selections.</p>
-     </div>
-   </div>
-</div>
-</div>
-</section>
-<section class="py-20 bg-gray-50">
-<div class="container mx-auto px-6 crystal-section">
-<div class="crystal-title-box" style="text-align:center; margin-bottom:2em;">
-  <span class="text-3xl font-bold crystal-title">Editor's Picks</span>
-</div>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-<div class="bg-white rounded-lg overflow-hidden shadow-lg group">
-<div class="h-48 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC66bXJjlFXMjIrgvsSWBZen1MVhW8IuFADVOgM_-o-iHF3wTZpY9zaboYoemj3rQA7mnt4wUF6J9gnyXq6MDoHM0pmZZyOF9CmgqFv5WchepxRbIDV-oKiWmWXfzBs-A93YQfmoadhZ5cseQDq_Jnh5JQozlYXWmTEDfUDeRRQXBBaFpe-TlEwouvL6RZ7despB4hT0pL8ZaUINWOQszJ7qLrNHTiPG3qZ8VvRIQLBsu4vZTogicYdCULOFoVla17PK8atrL7tkSw');"></div>
-<div class="p-6">
-<h3 class="text-xl font-semibold mb-2 group-hover:text-blue-600 transition duration-300">Top 10 DSLR Cameras</h3>
-<p class="text-gray-600">Capture life's moments with the best cameras of the year.</p>
-</div>
-</div>
-<div class="bg-white rounded-lg overflow-hidden shadow-lg group">
-<div class="h-48 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC66bXJjlFXMjIrgvsSWBZen1MVhW8IuFADVOgM_-o-iHF3wTZpY9zaboYoemj3rQA7mnt4wUF6J9gnyXq6MDoHM0pmZZyOF9CmgqFv5WchepxRbIDV-oKiWmWXfzBs-A93YQfmoadhZ5cseQDq_Jnh5JQozlYXWmTEDfUDeRRQXBBaFpe-TlEwouvL6RZ7despB4hT0pL8ZaUINWOQszJ7qLrNHTiPG3qZ8VvRIQLBsu4vZTogicYdCULOFoVla17PK8atrL7tkSw');"></div>
-<div class="p-6">
-<h3 class="text-xl font-semibold mb-2 group-hover:text-blue-600 transition duration-300">Top 10 Running Shoes</h3>
-<p class="text-gray-600">Find the perfect pair for your daily run or marathon.</p>
-</div>
-</div>
-<div class="bg-white rounded-lg overflow-hidden shadow-lg group">
-<div class="h-48 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC66bXJjlFXMjIrgvsSWBZen1MVhW8IuFADVOgM_-o-iHF3wTZpY9zaboYoemj3rQA7mnt4wUF6J9gnyXq6MDoHM0pmZZyOF9CmgqFv5WchepxRbIDV-oKiWmWXfzBs-A93YQfmoadhZ5cseQDq_Jnh5JQozlYXWmTEDfUDeRRQXBBaFpe-TlEwouvL6RZ7despB4hT0pL8ZaUINWOQszJ7qLrNHTiPG3qZ8VvRIQLBsu4vZTogicYdCULOFoVla17PK8atrL7tkSw');"></div>
-<div class="p-6">
-<h3 class="text-xl font-semibold mb-2 group-hover:text-blue-600 transition duration-300">Top 10 Coffee Makers</h3>
-<p class="text-gray-600">Brew the perfect cup every morning with our top picks.</p>
-</div>
-</div>
-</div>
+  <div class="container mx-auto px-6">
+    <div class="w-full flex justify-center items-center mb-8">
+      <div class="crystal-title-box" style="text-align:center; margin-bottom:0;">
+        <span id="how-it-works" class="text-3xl font-bold crystal-title" style="color:#222; letter-spacing:0.04em;">
+          How It Works
+        </span>
+      </div>
+    </div>
+    <div class="grid md:grid-cols-3 gap-12 text-center">
+      <div class="flex flex-col items-center">
+        <div class="bg-blue-100 rounded-full p-6 mb-4">
+          <i class="material-icons text-4xl text-blue-600">search</i>
+        </div>
+        <h3 class="text-xl font-semibold mb-2 crystal-text">We research thousands of products.</h3>
+        <p class="crystal-text">Our team scours the market to identify top contenders in every category.</p>
+      </div>
+      <div class="flex flex-col items-center">
+        <div class="bg-blue-100 rounded-full p-6 mb-4">
+          <i class="material-icons text-4xl text-blue-600">star_rate</i>
+        </div>
+        <h3 class="text-xl font-semibold mb-2 crystal-text">We rank the top 10 based on reviews, features, and price.</h3>
+        <p class="crystal-text">A comprehensive analysis ensures only the best make our lists.</p>
+      </div>
+      <div class="flex flex-col items-center">
+        <div class="bg-blue-100 rounded-full p-6 mb-4">
+          <i class="material-icons text-4xl text-blue-600">verified</i>
+        </div>
+        <h3 class="text-xl font-semibold mb-2 crystal-text">You get the best picks—instantly.</h3>
+        <p class="crystal-text">Save time and choose confidently with our curated selections.</p>
+      </div>
+    </div>
+  </div>
 </div>
 </section>
 <section class="bg-blue-600 text-white">
