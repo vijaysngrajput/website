@@ -1,3 +1,37 @@
+/* Transparent glassmorphism box for header logo */
+.logo-glass-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.3rem 1.9rem;
+  border-radius: 0.5rem; /* less rounded, more edgy */
+  background: rgba(255,255,255,0.22);
+  box-shadow: 0 4px 24px 0 rgba(59,130,246,0.10);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1.5px solid rgba(35, 3, 101, 0.13);
+  min-width: 4.5rem;
+  min-height: 2.5rem;
+  box-sizing: border-box;
+}
+
+/* Ensure logo text is visible and styled */
+.stack-logo-transparent .line1, .stack-logo-transparent .line2 {
+  font-family: 'Orbitron', 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.54rem;
+  color: #222;
+  letter-spacing: 0.12em;
+  line-height: 1.1;
+  text-align: left;
+  background: none;
+  -webkit-background-clip: initial;
+  -webkit-text-fill-color: initial;
+}
+.stack-logo-transparent .line1 {
+  margin-bottom: 0.1em;
+}
 /* Glassmorphism box for crystal-title */
 .crystal-title-box {
   display: inline-block;
@@ -237,6 +271,51 @@ body {
   display: none;
 }
 
+
+.stack-logo-transparent {
+  font-family: 'Orbitron', sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.1;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.stack-logo-transparent .line1,
+.stack-logo-transparent .line2 {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.stack-logo-transparent .line1 {
+  font-size: 0.84rem;
+  color: #00eaff;
+  letter-spacing: 0.2rem;
+  text-shadow: 0 0 1px #00eaff;
+}
+
+.stack-logo-transparent .line2 {
+  font-size: 0.77rem;
+  color: #00ffb3;
+  letter-spacing: 0.2rem;
+  text-shadow: 0 0 1px #00ffb3;
+}
+
+@keyframes flicker {
+  0%, 100% {
+    opacity: 1;
+    text-shadow: 0 0 2px #00ffcc, 0 0 5px #00ffcc;
+  }
+  50% {
+    opacity: 0.95;
+    text-shadow: 0 0 1px #00ffcc, 0 0 3px #00ffcc;
+  }
+}
 /* Snap scrolling for slider */
 #categories-slider {
   scroll-snap-type: x mandatory;
@@ -244,3 +323,4 @@ body {
 #categories-slider > * {
   scroll-snap-align: start;
 }
+
