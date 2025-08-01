@@ -1,3 +1,44 @@
+/* Smartphones page custom styles */
+body.smartphones-bg {
+  background: url('/vault/smartphones/background_pic/mobilesbg.jpg') center center/cover no-repeat, #18181b;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+.soft-overlay {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  z-index: 0;
+  background: rgba(24,24,27,0.65);
+  pointer-events: none;
+}
+.glass-card {
+  background: rgba(255,255,255,0.08);
+  border-radius: 1.25rem;
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.12);
+  border: 1px solid rgba(200,200,200,0.10);
+  backdrop-filter: blur(12px);
+}
+.futuristic-bg {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  z-index: -1;
+  background: linear-gradient(120deg, rgba(139,92,246,0.18) 0%, rgba(236,72,153,0.12) 100%);
+}
+.futuristic-lines {
+  position: absolute;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+}
+.futuristic-lines svg {
+  width: 100vw; height: 100vh;
+  display: block;
+}
+
+
+/* smartphone END */
+
 /* Transparent glassmorphism box for header logo */
 .logo-glass-box {
   display: flex;
