@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smartphone Details | Ten Z Vault</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+  <link rel="stylesheet" href="../../styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <script src="./details.js" defer></script>
+</head>
+<body class="text-gray-100" style="background: linear-gradient(120deg, rgba(168,85,247,0.22) 0%, rgba(236,72,153,0.22) 50%, rgba(59,130,246,0.22) 100%); min-height: 100vh;">
+  <header class="sticky top-0 z-50 shadow-md frosted-header" style="background: linear-gradient(90deg, rgba(168,85,247,0.32) 0%, rgba(236,72,153,0.32) 50%, rgba(59,130,246,0.32) 100%); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(139,92,246,0.10);">
+  <nav class="container mx-auto px-6 py-2 flex justify-between items-center">
+    <!-- <a class="crystal-brand inline-flex ml-2" href="#">
+      TEN- Z -VAULT
+    </a> -->
+<div class="logo-glass-box stack-logo-transparent">
+  <span class="logo-gradient-text" style="font-size:1.26rem; letter-spacing:0.12em; font-family: 'Orbitron', 'Poppins', sans-serif; background: linear-gradient(90deg, #e83e99 0%, #4d33d0 50%, #a464e5 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0 2px 16px rgba(139,92,246,0.18), 0 1px 8px rgba(236,72,153,0.12); font-weight: 700;">TEN-Z-VAULT</span>
+</div>
+    <div class="hidden md:flex items-center space-x-8">
+      <!-- Updated header menu text style -->
+      <a class="nav-link font-normal text-gray-500" style="font-family: 'Poppins', sans-serif; font-size:1rem; font-weight:400; letter-spacing:0.08em; text-transform:none;" href="#">Home</a>
+      <a class="nav-link font-normal text-gray-500" style="font-family: 'Poppins', sans-serif; font-size:1rem; font-weight:400; letter-spacing:0.08em; text-transform:none;" href="#">Categories</a>
+      <a class="nav-link font-normal text-gray-500" style="font-family: 'Poppins', sans-serif; font-size:1rem; font-weight:400; letter-spacing:0.08em; text-transform:none;" href="#">Hot Top 10's</a>
+      <a class="nav-link font-normal text-gray-500" style="font-family: 'Poppins', sans-serif; font-size:1rem; font-weight:400; letter-spacing:0.08em; text-transform:none;" href="#">About Us</a>
+      <a class="nav-link font-normal text-gray-500" style="font-family: 'Poppins', sans-serif; font-size:1rem; font-weight:400; letter-spacing:0.08em; text-transform:none;" href="#">
+        <i class="material-icons align-middle">search</i>
+      </a>
+    </div>
+    <button class="md:hidden flex items-center" id="mobile-menu-button">
+      <i class="material-icons text-gray-800">menu</i>
+    </button>
+  </nav>
+  <div class="hidden md:hidden" id="mobile-menu">
+    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+      <a class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-white hover:bg-blue-500" href="#">Home</a>
+      <a class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-white hover:bg-blue-500" href="#">Categories</a>
+      <a class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-white hover:bg-blue-500" href="#">Hot Top 10's</a>
+      <a class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-white hover:bg-blue-500" href="#">About Us</a>
+      <a class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-white hover:bg-blue-500" href="#"><i class="material-icons align-middle">search</i> Search</a>
+    </div>
+  </div>
+</header>
+  <main class="container mx-auto px-6 py-8">
+    <!-- Name at top -->
+    <div id="phone-name" class="text-4xl font-bold mb-6 text-black text-center"></div>
+    <!-- Image & Illustration Row -->
+    <div class="flex flex-col md:flex-row justify-center items-stretch mb-8 gap-8">
+      <!-- Image carousel on left -->
+      <div class="md:w-1/2 flex justify-center">
+        <div id="image-carousel" class="relative w-full max-w-xl h-72 bg-gray-900 rounded-2xl flex items-center justify-center overflow-hidden shadow-xl">
+          <button id="carousel-prev" class="absolute left-2 top-1/2 -translate-y-1/2 bg-gray-800 text-white rounded-full p-2 z-10"><i class="material-icons">chevron_left</i></button>
+          <img id="carousel-img" src="" alt="Phone Image" class="object-contain h-60 w-auto mx-auto transition-all duration-300"/>
+          <button id="carousel-next" class="absolute right-2 top-1/2 -translate-y-1/2 bg-gray-800 text-white rounded-full p-2 z-10"><i class="material-icons">chevron_right</i></button>
+        </div>
+      </div>
+      <!-- Illustration paragraph on right -->
+      <div class="md:w-1/2 flex items-center">
+        <div id="phone-illustration" class="rounded-2xl p-6 shadow-xl text-lg text-black italic">
+          The new Zenith X1 Pro redefines smartphone excellence with its stunning display, lightning-fast processor, and all-day battery life. Capture every moment in vivid detail with its advanced camera system. Sleek, durable, and packed with smart features, it’s designed for those who demand performance, style, and innovation in every interaction.
+        </div>
+      </div>
+    </div>
+    <!-- Key Specs -->
+    <section id="key-specs" class="mb-8">
+      <h2 class="text-2xl font-bold mb-4 text-black">KEY SPECIFICATIONS</h2>
+      <div id="specs-list" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4"></div>
+    </section>
+    <!-- Pros/Cons -->
+    <section id="pros-cons" class="mb-8">
+      <h2 class="text-2xl font-bold mb-4 text-black">PROS & CONS</h2>
+      <div class="flex flex-col md:flex-row gap-8">
+        <div class="flex-1 rounded-2xl p-6 shadow-xl text-black">
+          <h3 class="font-semibold text-green-900 mb-2">PROS</h3>
+          <ul id="pros-list" class="list-disc ml-6 text-black"></ul>
+        </div>
+        <div class="flex-1 rounded-2xl p-6 shadow-xl text-black">
+          <h3 class="font-semibold text-red-400 mb-2">CONS</h3>
+          <ul id="cons-list" class="list-disc ml-6 text-black"></ul>
+        </div>
+      </div>
+    </section>
+    <!-- Ratings -->
+    <section id="ratings" class="mb-8">
+      <h2 class="text-2xl font-bold mb-4 text-black">RATINGS</h2>
+      <div class="flex flex-col md:flex-row gap-8">
+        <div class="flex-1 rounded-2xl p-6 shadow-xl text-white">
+          <h3 class="font-semibold text-black mb-2">Overall Rating</h3>
+          <div id="my-rating" class="text-3xl font-bold text-purple-900"></div>
+        </div>
+        <div class="flex-1 rounded-2xl p-6 shadow-xl text-white">
+          <h3 class="font-semibold text-black mb-2">Other Websites</h3>
+          <ul id="external-ratings" class="text-black"></ul>
+        </div>
+      </div>
+    </section>
+    <!-- Comments -->
+    <section id="phone-comments" class="mb-8">
+      <h2 class="text-2xl font-bold mb-4 text-black">COMMENTS</h2>
+      <div id="comments-list" class="space-y-2"></div>
+      <form id="comment-form" class="mt-4 bg-gray-800 rounded-xl p-4">
+        <label class="block mb-2 font-semibold">Add a Comment:</label>
+        <input type="text" class="w-full p-2 rounded-lg bg-gray-900 text-gray-100 mb-2" id="comment-name" placeholder="Your name"/>
+        <textarea class="w-full p-2 rounded-lg bg-gray-900 text-gray-100 mb-2" rows="2" id="comment-text" placeholder="Your comment..."></textarea>
+        <button type="submit" class="bg-blue-500 text-white font-bold shadow-lg rounded-lg px-6 py-2">Submit Comment</button>
+      </form>
+    </section>
+  </main>
+  <footer class="bg-black bg-opacity-80 text-gray-300 mt-16">
+    <div class="container mx-auto px-6 py-12">
+      <div class="md:flex md:justify-between">
+        <div class="mb-8 md:mb-0">
+          <a class="crystal-brand text-2xl font-bold uppercase inline-flex" href="../../index.html" style="font-family: 'Orbitron', 'Poppins', sans-serif; background: linear-gradient(90deg, #8b5cf6 0%, #ec4899 50%, #38bdf8 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0 2px 16px rgba(139,92,246,0.18), 0 1px 8px rgba(236,72,153,0.12); font-weight: 700; letter-spacing:0.12em; font-size:2.1rem;">TEN Z VAULT</a>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-8">
+          <div>
+            <h3 class="font-semibold text-white uppercase mb-4">Quick Links</h3>
+            <ul>
+              <li class="mb-2"><a class="hover:text-white transition duration-300" href="../../index.html">Home</a></li>
+              <li class="mb-2"><a class="hover:text-white transition duration-300" href="#">Categories</a></li>
+              <li class="mb-2"><a class="hover:text-white transition duration-300" href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-semibold text-white uppercase mb-4">Legal</h3>
+            <ul>
+              <li class="mb-2"><a class="hover:text-white transition duration-300" href="#">Privacy Policy</a></li>
+              <li class="mb-2"><a class="hover:text-white transition duration-300" href="#">Terms of Service</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-semibold text-white uppercase mb-4">Follow Us</h3>
+            <div class="flex space-x-4">
+              <a class="hover:text-white transition duration-300" href="#"><i class="material-icons">facebook</i></a>
+              <a class="hover:text-white transition duration-300" href="#"><i class="material-icons">twitter</i></a>
+              <a class="hover:text-white transition duration-300" href="#"><i class="material-icons">instagram</i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-500">
+        © 2025 Ten Z Vault. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
