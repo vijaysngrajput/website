@@ -68,7 +68,7 @@ const dummyPhones = [
     ],
     comments: [
       { name: 'Varsha', text: 'Is this available in India?' },
-      { name: 'Amit', text: 'Does it support 5G?' }
+      { name: 'Vijay', text: 'Does it support 5G?' }
     ]
   },
   {

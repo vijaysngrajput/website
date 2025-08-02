@@ -55,19 +55,19 @@ function renderSmartphones(phones) {
     // Use phone.id or fallback to name
     const phoneId = phone.id || (phone.name ? phone.name.replace(/\s+/g, '').toLowerCase() : 'unknown');
     const card = document.createElement('a');
-    card.className = 'glass-card p-8 flex flex-col items-center justify-center border border-blue-400/30 min-h-[320px] hover:scale-105 transition-transform duration-300 cursor-pointer';
+    card.className = 'glass-card p-8 flex flex-col items-center justify-center border border-black min-h-[320px] hover:scale-105 transition-transform duration-300 cursor-pointer';
     card.href = `details.html?id=${encodeURIComponent(phoneId)}`;
     card.setAttribute('title', `View details for ${phone.name}`);
     card.innerHTML = `
       <img src="${phone.image || 'https://cdn.pixabay.com/photo/2017/01/06/19/15/smartphone-1957740_1280.png'}" alt="${phone.name}" class="w-32 h-32 object-contain mb-4 rounded-xl shadow-lg"/>
-      <h3 class="text-2xl font-bold mb-2 text-blue-300">${phone.name}</h3>
-      <ul class="text-base text-gray-200 mb-2">
+      <h3 class="text-2xl font-bold mb-2 text-black">${phone.name}</h3>
+      <ul class="text-base text-black mb-2">
         <li>RAM: ${phone.ram}</li>
         <li>Chipset: ${phone.processor}</li>
         <li>Camera: ${phone.camera}MP</li>
         <li>Battery: ${phone.battery}mAh</li>
       </ul>
-      <span class="font-bold text-xl text-blue-300">${phone.price}</span>
+      <span class="font-bold text-xl text-black">${phone.price}</span>
       <span class="mt-4 py-2 px-6 rounded-lg bg-blue-500 text-white font-bold shadow-lg">View Details</span>
     `;
     grid.appendChild(card);

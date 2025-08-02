@@ -8,3 +8,6 @@ https://mobbin.com/apps/discord-web-63b553b8-8f26-4929-b83f-a04a9bfcc72b/ff9ff65
 "VAULT" in a purple-pink gradient
 Each word pulses gently for a modern effect
 
+
+
+linear-gradient(90deg, #e83e99 0%, #4d33d0 50%, #a464e5 100%);
