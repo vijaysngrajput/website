@@ -8,6 +8,25 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
   <link rel="stylesheet" href="../../styles.css"/>
+  <style>
+    @keyframes cardFadeInUp {
+      0% { opacity: 0; transform: translateY(40px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .animate-card {
+      /* No longer used for opacity, handled inline */
+      animation: cardFadeInUp 0.8s cubic-bezier(0.33,1,0.68,1) both;
+    }
+  </style>
+  <style>
+    @keyframes heroFadeIn {
+      0% { opacity: 0; transform: translateY(40px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .animate-hero-fadein {
+      animation: heroFadeIn 1.1s cubic-bezier(0.33,1,0.68,1) 0.1s both;
+    }
+  </style>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
   <!-- Custom styles moved to styles.css -->
 <script src="./script.js"></script>
@@ -47,7 +66,7 @@
 </header>
 <!-- Hero Section -->
 <div class="container mx-auto px-6 py-8 text-center">
-  <div class="mx-auto w-full max-w-4xl rounded-xl shadow-2xl bg-white bg-opacity-15 backdrop-blur-lg px-4 py-4 mb-6 flex items-center justify-center" style="box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.12); border-radius: 1.25rem;">
+  <div class="mx-auto w-full max-w-4xl rounded-xl shadow-2xl bg-white bg-opacity-15 backdrop-blur-lg px-4 py-4 mb-6 flex items-center justify-center animate-hero-fadein" style="box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.12); border-radius: 1.25rem;">
     <h1 class="text-4xl md:text-4xl font-bold leading-tight mb-0 crystal-title-slogan bg-gradient-to-r from-[#1e293b] via-[#4b206b] to-[#0f172a] bg-clip-text text-transparent mt-0 md:mt-0" style="background: linear-gradient(90deg, #1e293b 0%, #4b206b 50%, #0f172a 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800; letter-spacing:0.01em;">
       World's Best 10 Smartphones
     </h1>
@@ -57,55 +76,87 @@
 
 <section class="w-screen py-4 px-4 flex flex-row items-start justify-between" style="margin-left:0;margin-right:0;">
   <div class="flex-1"></div>
-  <div class="flex flex-col items-end" style="min-width:340px;">
+  <div class="flex flex-col items-end w-full md:w-auto" style="min-width:340px;">
     <button id="filters-toggle-btn" class="bg-purple-700 hover:bg-purple-800 text-white font-bold py-2 px-6 rounded-2xl shadow-lg mb-4 flex items-center gap-2" style="min-width:120px;">
       <span class="material-icons">tune</span> Filters
     </button>
-    <aside id="filters-panel" class="bg-transparent rounded-2xl shadow-2xl flex flex-row flex-wrap justify-end items-center" style="width:100%; max-width:100vw; box-shadow:0 8px 32px 0 rgba(0,0,0,0.18); display:none; position:relative; z-index:10;">
-      <form class="w-full flex flex-row flex-wrap justify-end items-stretch gap-x-4 gap-y-4 p-2">
-        <div class="w-[160px] bg-gray-900/80 rounded-3xl p-4 flex flex-col justify-center items-center border-2" style="border-color: #a21caf;">
-          <label class="block text-sm font-semibold mb-2 text-black">RAM</label>
-          <select class="w-full rounded-lg p-2 bg-gray-800 text-gray-100 border border-blue-400"><option>Any</option><option>4GB</option><option>6GB</option><option>8GB</option><option>12GB+</option></select>
+    <aside id="filters-panel" class="bg-white bg-opacity-30 backdrop-blur-lg rounded-2xl shadow-2xl flex flex-row flex-wrap justify-end items-center border border-purple-300/30 overflow-x-auto" style="width:100%; max-width:100vw; box-shadow:0 8px 32px 0 rgba(59,130,246,0.10); display:none; position:relative; z-index:10;">
+      <form class="w-full flex flex-col md:flex-row flex-nowrap gap-y-4 md:gap-x-4 md:gap-y-4 p-4" style="scrollbar-width: thin;">
+        <div class="flex flex-col md:flex-row flex-wrap md:flex-nowrap gap-3 w-full">
+          <!-- RAM Filter -->
+          <div class="w-full md:min-w-[130px] px-3 py-2 rounded-lg border border-black shadow hover:shadow-lg transition-all duration-200 flex flex-col items-center backdrop-blur-md"
+            style="background: linear-gradient(120deg, rgba(236, 72, 153, 0.18) 0%, rgba(168, 85, 247, 0.18) 100%);">
+            <label class="text-xs font-semibold text-black mb-1">RAM</label>
+            <select class="w-full rounded-full px-2 py-1 bg-white bg-opacity-80 text-black border border-black focus:ring-2 focus:ring-purple-400 transition-all duration-200 text-xs">
+              <option>Any</option><option>4GB</option><option>6GB</option><option>8GB</option><option>12GB+</option>
+            </select>
+          </div>
+          <!-- Price Filter -->
+          <div class="w-full md:min-w-[130px] px-3 py-2 rounded-lg border border-black shadow hover:shadow-lg transition-all duration-200 flex flex-col items-center backdrop-blur-md"
+            style="background: linear-gradient(120deg, rgba(59, 130, 246, 0.14) 0%, rgba(236, 72, 153, 0.13) 100%);">
+            <label class="text-xs font-semibold text-black mb-1">Price</label>
+            <select class="w-full rounded-full px-2 py-1 bg-white bg-opacity-80 text-black border border-black focus:ring-2 focus:ring-purple-400 transition-all duration-200 text-xs">
+              <option>Any</option>
+              <option>5k-10k</option>
+              <option>10k-15k</option>
+              <option>15k-20k</option>
+              <option>20k-30k</option>
+              <option>30k-40k</option>
+              <option>40k-50k</option>
+              <option>50k-1L</option>
+              <option>1L+</option>
+            </select>
+          </div>
+          <!-- Processor Filter -->
+          <div class="w-full md:min-w-[130px] px-3 py-2 rounded-lg border border-black shadow hover:shadow-lg transition-all duration-200 flex flex-col items-center backdrop-blur-md"
+            style="background: linear-gradient(120deg, rgba(168, 85, 247, 0.13) 0%, rgba(248, 98, 188, 0.13) 100%);">
+            <label class="text-xs font-semibold text-black mb-1">Processor</label>
+            <select class="w-full rounded-full px-2 py-1 bg-white bg-opacity-80 text-black border border-black focus:ring-2 focus:ring-purple-400 transition-all duration-200 text-xs">
+              <option>Any</option><option>Snapdragon</option><option>Apple</option><option>MediaTek</option>
+            </select>
+          </div>
+          <!-- Color Filter -->
+          <div class="w-full md:min-w-[130px] px-3 py-2 rounded-lg border border-black shadow hover:shadow-lg transition-all duration-200 flex flex-col items-center backdrop-blur-md"
+            style="background: linear-gradient(120deg, rgba(242, 152, 242, 0.16) 0%, rgba(236, 72, 153, 0.13) 100%);">
+            <label class="text-xs font-semibold text-black mb-1">Color</label>
+            <select class="w-full rounded-full px-2 py-1 bg-white bg-opacity-80 text-black border border-black focus:ring-2 focus:ring-purple-400 transition-all duration-200 text-xs">
+              <option>Any</option><option>Black</option><option>White</option><option>Blue</option><option>Pink</option>
+            </select>
+          </div>
+          <!-- Brand Filter -->
+          <div class="w-full md:min-w-[130px] px-3 py-2 rounded-lg border border-black shadow hover:shadow-lg transition-all duration-200 flex flex-col items-center backdrop-blur-md"
+            style="background: linear-gradient(120deg, rgba(168, 85, 247, 0.13) 0%, rgba(59, 130, 246, 0.13) 100%);">
+            <label class="text-xs font-semibold text-black mb-1">Brand</label>
+            <select class="w-full rounded-full px-2 py-1 bg-white bg-opacity-80 text-black border border-black focus:ring-2 focus:ring-purple-400 transition-all duration-200 text-xs">
+              <option>Any</option><option>Apple</option><option>Samsung</option><option>Google</option><option>Xiaomi</option>
+            </select>
+          </div>
+          <!-- Camera Filter -->
+          <div class="w-full md:min-w-[130px] px-3 py-2 rounded-lg border border-black shadow hover:shadow-lg transition-all duration-200 flex flex-col items-center backdrop-blur-md"
+            style="background: linear-gradient(120deg, rgba(248, 98, 188, 0.13) 0%, rgba(59, 130, 246, 0.13) 100%);">
+            <label class="text-xs font-semibold text-black mb-1">Camera</label>
+            <select class="w-full rounded-full px-2 py-1 bg-white bg-opacity-80 text-black border border-black focus:ring-2 focus:ring-purple-400 transition-all duration-200 text-xs">
+              <option>Any</option><option>12MP+</option><option>50MP+</option><option>108MP+</option>
+            </select>
+          </div>
+          <!-- Battery Filter -->
+          <div class="w-full md:min-w-[130px] px-3 py-2 rounded-lg border border-black shadow hover:shadow-lg transition-all duration-200 flex flex-col items-center backdrop-blur-md"
+            style="background: linear-gradient(120deg, rgba(236, 72, 153, 0.13) 0%, rgba(168, 85, 247, 0.13) 100%);">
+            <label class="text-xs font-semibold text-black mb-1">Battery</label>
+            <select class="w-full rounded-full px-2 py-1 bg-white bg-opacity-80 text-black border border-black focus:ring-2 focus:ring-purple-400 transition-all duration-200 text-xs">
+              <option>Any</option><option>4000mAh+</option><option>5000mAh+</option>
+            </select>
+          </div>
+          <!-- Display Size Filter -->
+          <div class="w-full md:min-w-[130px] px-3 py-2 rounded-lg border border-black shadow hover:shadow-lg transition-all duration-200 flex flex-col items-center backdrop-blur-md"
+            style="background: linear-gradient(120deg, rgba(59, 130, 246, 0.13) 0%, rgba(242, 152, 242, 0.13) 100%);">
+            <label class="text-xs font-semibold text-black mb-1">Display Size</label>
+            <select class="w-full rounded-full px-2 py-1 bg-white bg-opacity-80 text-black border border-black focus:ring-2 focus:ring-purple-400 transition-all duration-200 text-xs">
+              <option>Any</option><option>6"+</option><option>6.5"+</option><option>7"+</option>
+            </select>
+          </div>
         </div>
-<div class="w-[160px] bg-gray-900/80 rounded-3xl p-4 flex flex-col justify-center items-center border-2" style="border-color: black !important;">
-          <label class="block text-sm font-semibold mb-2 text-black">Price</label>
-          <select class="w-full rounded-lg p-2 bg-gray-800 text-gray-100 border border-blue-400">
-            <option>Any</option>
-            <option>5k-10k</option>
-            <option>10k-15k</option>
-            <option>15k-20k</option>
-            <option>20k-30k</option>
-            <option>30k-40k</option>
-            <option>40k-50k</option>
-            <option>50k-1L</option>
-            <option>1L+</option>
-          </select>
-        </div>
-<div class="w-[160px] bg-gray-900/80 rounded-3xl p-4 flex flex-col justify-center items-center border-2" style="border-color: black !important;">
-          <label class="block text-sm font-semibold mb-2 text-black">Processor</label>
-          <select class="w-full rounded-lg p-2 bg-gray-800 text-gray-100 border border-blue-400"><option>Any</option><option>Snapdragon</option><option>Apple</option><option>MediaTek</option></select>
-        </div>
-        <div class="w-[160px] bg-gray-900/80 rounded-3xl p-4 flex flex-col justify-center items-center border-2" style="border-color: #a21caf;">
-          <label class="block text-sm font-semibold mb-2 text-black">Color</label>
-          <select class="w-full rounded-lg p-2 bg-gray-800 text-gray-100 border border-blue-400"><option>Any</option><option>Black</option><option>White</option><option>Blue</option><option>Pink</option></select>
-        </div>
-        <div class="w-[160px] bg-gray-900/80 rounded-3xl p-4 flex flex-col justify-center items-center border-2" style="border-color: #a21caf;">
-          <label class="block text-sm font-semibold mb-2 text-black">Brand</label>
-          <select class="w-full rounded-lg p-2 bg-gray-800 text-gray-100 border border-blue-400"><option>Any</option><option>Apple</option><option>Samsung</option><option>Google</option><option>Xiaomi</option></select>
-        </div>
-        <div class="w-[160px] bg-gray-900/80 rounded-3xl p-4 flex flex-col justify-center items-center border-2" style="border-color: #a21caf;">
-          <label class="block text-sm font-semibold mb-2 text-black">Camera</label>
-          <select class="w-full rounded-lg p-2 bg-gray-800 text-gray-100 border border-blue-400"><option>Any</option><option>12MP+</option><option>50MP+</option><option>108MP+</option></select>
-        </div>
-        <div class="w-[160px] bg-gray-900/80 rounded-3xl p-4 flex flex-col justify-center items-center border-2" style="border-color: #a21caf;">
-          <label class="block text-sm font-semibold mb-2 text-black">Battery</label>
-          <select class="w-full rounded-lg p-2 bg-gray-800 text-gray-100 border border-blue-400"><option>Any</option><option>4000mAh+</option><option>5000mAh+</option></select>
-        </div>
-        <div class="w-[160px] bg-gray-900/80 rounded-3xl p-4 flex flex-col justify-center items-center border-2" style="border-color: #a21caf;">
-          <label class="block text-sm font-semibold mb-2 text-black">Display Size</label>
-          <select class="w-full rounded-lg p-2 bg-gray-800 text-gray-100 border border-blue-400"><option>Any</option><option>6"+</option><option>6.5"+</option><option>7"+</option></select>
-        </div>
-        <button type="submit" class="bg-blue-500 text-white font-bold shadow-lg rounded-3xl p-4 mt-0 border-2 border-white min-w-[120px]">Apply Filters</button>
+        <button type="submit" class="bg-black text-white font-bold shadow-lg rounded-full px-6 py-2 ml-2 min-w-[120px] hover:bg-gray-800 transition-all duration-200">Apply Filters</button>
       </form>
     </aside>
   </div>

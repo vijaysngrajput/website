@@ -51,7 +51,7 @@ async function fetchSmartphones() {
 function renderSmartphones(phones) {
   const grid = document.getElementById('smartphone-grid');
   grid.innerHTML = '';
-  phones.forEach(phone => {
+  phones.forEach((phone, i) => {
     // Use phone.id or fallback to name
     const phoneId = phone.id || (phone.name ? phone.name.replace(/\s+/g, '').toLowerCase() : 'unknown');
     const card = document.createElement('a');
@@ -70,6 +70,11 @@ function renderSmartphones(phones) {
       <span class="font-bold text-xl text-black">${phone.price}</span>
       <span class="mt-4 py-2 px-6 rounded-lg bg-blue-500 text-white font-bold shadow-lg">View Details</span>
     `;
+    // Animation
+    card.style.opacity = '0';
+    card.style.animation = `cardFadeInUp 0.8s cubic-bezier(0.33,1,0.68,1) both`;
+    card.style.animationDelay = (i * 0.12) + 's';
+    card.addEventListener('animationend', () => { card.style.opacity = '1'; });
     grid.appendChild(card);
   });
 }
