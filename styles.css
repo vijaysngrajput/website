@@ -1,3 +1,11 @@
+/* Utility for hero heading to force black text */
+.hero-title-black {
+  background: none !important;
+  color: #000 !important;
+  background-clip: initial !important;
+  -webkit-background-clip: initial !important;
+  -webkit-text-fill-color: #000 !important;
+}
 /* Smartphones page custom styles */
 body.smartphones-bg {
   background: url('/vault/smartphones/background_pic/mobilesbg.jpg') center center/cover no-repeat, #18181b;
@@ -68,6 +76,7 @@ body.smartphones-bg {
   text-align: left;
   background: none;
   -webkit-background-clip: initial;
+  background-clip: initial;
   -webkit-text-fill-color: initial;
 }
 .stack-logo-transparent .line1 {
@@ -87,7 +96,7 @@ body.smartphones-bg {
 body {
   font-family: 'Poppins', sans-serif;
   min-height: 100vh;
-  background: linear-gradient(120deg, #e0e7ff 0%, #f0f9ff 100%);
+    background: linear-gradient(120deg, rgba(120, 135, 222, 0.225) 20%, rgba(220, 95, 103, 0.22) 100%, rgba(206, 32, 90, 0.22) 20%);
   animation: bodyFadeIn 1.2s ease;
 }
 @keyframes bodyFadeIn {
@@ -143,12 +152,8 @@ body {
   font-family: 'Poppins', sans-serif;
   font-weight: 800;
   letter-spacing: 1px;
-  background: linear-gradient(to right, #67a602, #38bdf8, #f472b6, #fbbf24);
-  background-size: auto;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
+  color: #000 !important;
+  background: none !important;
   border-radius: 1rem;
   padding: 1rem 2rem;
   display: inline-block;
@@ -276,13 +281,7 @@ body {
   from { filter: brightness(1); }
   to { filter: brightness(1.18); }
 }
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f8fafc;
-}
-.hero-section {
-    background-color: #8284ff;
-}
+
 
 /* Crystal glass card style for smartphones */
 .crystal-card {
