@@ -1,66 +1,67 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Ten Z Vault</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-<link rel="stylesheet" href="styles.css"/>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
-<!-- All styles moved to styles.css for modularity -->
-</head>
-<!-- Favicon: Single Z in Orbitron font, white background, purple Z -->
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='white'/%3E%3Ctext x='50%' y='60%' text-anchor='middle' font-family='Orbitron,Arial,sans-serif' font-size='38' font-weight='bold' fill='%238b5cf6' style='letter-spacing:2px;dominant-baseline:middle;'%3EZ%3C/text%3E%3C/svg%3E"/>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Ten Z Vault</title>
+  <meta name="description" content="Discover the best top 10 products in every category. We rank the best so you don’t have to guess!"/>
+  <meta name="keywords" content="top 10, rankings, best products, reviews, smartphones, laptops, proteins, games, electronics"/>
+  <meta name="author" content="Ten Z Vault"/>
+  <script src="https://cdn.tailwindcss.com" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+  <!-- All styles moved to styles.css for modularity -->
+  <!-- Favicon: Single Z in Orbitron font, white background, purple Z -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='white'/%3E%3Ctext x='50%' y='60%' text-anchor='middle' font-family='Montserrat,Arial,sans-serif' font-size='38' font-weight='bold' fill='%238b5cf6' style='letter-spacing:2px;dominant-baseline:middle;'%3EZ%3C/text%3E%3C/svg%3E"/>
 </head>
 <body class="text-gray-800" style="background: linear-gradient(120deg, #f7def0 0%, #b4a2dd 100%); min-height: 100vh;">
 <!-- Unified background and text color, no background image -->
 <header class="sticky top-0 z-50 shadow-md frosted-header" style="background: rgba(255,255,255,0.32); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(59,130,246,0.10);">
-  <nav class="container mx-auto px-6 py-2 flex justify-between items-center">
-    <!-- <a class="crystal-brand inline-flex ml-2" href="#">
-      TEN- Z -VAULT
-    </a> -->
-<span class="logo-gradient-text" style="font-size:1.26rem; letter-spacing:0.12em; font-family: 'Orbitron', 'Poppins', sans-serif; background: linear-gradient(90deg, #e83e99 0%, #46d37a 50%, #a464e5 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0 2px 16px rgba(139,92,246,0.18), 0 1px 8px rgba(236,72,153,0.12); font-weight: 700;">TEN-Z-VAULT</span>
+  <nav class="container mx-auto px-6 py-2 flex justify-between items-center" aria-label="Main Navigation">
+    <span class="logo-gradient-text" style="font-size:1.26rem; letter-spacing:0.12em; font-family: 'Montserrat', 'Poppins', sans-serif; background: linear-gradient(90deg, #e83e99 0%, #46d37a 50%, #a464e5 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0 2px 16px rgba(139,92,246,0.18), 0 1px 8px rgba(236,72,153,0.12); font-weight: 700;">TEN-Z-VAULT</span>
     <div class="hidden md:flex items-center space-x-8">
-      <!-- Updated header menu text style -->
-      <a class="nav-link font-normal text-gray-500" style="font-family: 'Poppins', sans-serif; font-size:1rem; font-weight:400; letter-spacing:0.08em; text-transform:none;" href="#">Home</a>
-      <a class="nav-link font-normal text-gray-500" style="font-family: 'Poppins', sans-serif; font-size:1rem; font-weight:400; letter-spacing:0.08em; text-transform:none;" href="#">Categories</a>
-      <a class="nav-link font-normal text-gray-500" style="font-family: 'Poppins', sans-serif; font-size:1rem; font-weight:400; letter-spacing:0.08em; text-transform:none;" href="#">Hot Top 10's</a>
-      <a class="nav-link font-normal text-gray-500" style="font-family: 'Poppins', sans-serif; font-size:1rem; font-weight:400; letter-spacing:0.08em; text-transform:none;" href="#">About Us</a>
-      <a class="nav-link font-normal text-gray-500" style="font-family: 'Poppins', sans-serif; font-size:1rem; font-weight:400; letter-spacing:0.08em; text-transform:none;" href="#">
-        <i class="material-icons align-middle">search</i>
+      <a class="nav-link font-normal text-gray-500 focus:outline-none focus:text-blue-600" style="font-family: 'Poppins', sans-serif; font-size:1rem; font-weight:400; letter-spacing:0.08em; text-transform:none;" href="#" aria-label="Home">Home</a>
+      <a class="nav-link font-normal text-gray-500 focus:outline-none focus:text-blue-600" style="font-family: 'Poppins', sans-serif; font-size:1rem; font-weight:400; letter-spacing:0.08em; text-transform:none;" href="#" aria-label="Categories">Categories</a>
+      <a class="nav-link font-normal text-gray-500 focus:outline-none focus:text-blue-600" style="font-family: 'Poppins', sans-serif; font-size:1rem; font-weight:400; letter-spacing:0.08em; text-transform:none;" href="#" aria-label="Hot Top 10's">Hot Top 10's</a>
+      <a class="nav-link font-normal text-gray-500 focus:outline-none focus:text-blue-600" style="font-family: 'Poppins', sans-serif; font-size:1rem; font-weight:400; letter-spacing:0.08em; text-transform:none;" href="#" aria-label="About Us">About Us</a>
+      <a class="nav-link font-normal text-gray-500 focus:outline-none focus:text-blue-600" style="font-family: 'Poppins', sans-serif; font-size:1rem; font-weight:400; letter-spacing:0.08em; text-transform:none;" href="#" aria-label="Search">
+        <i class="material-icons align-middle" aria-hidden="true">search</i>
       </a>
     </div>
-    <button class="md:hidden flex items-center" id="mobile-menu-button">
-      <i class="material-icons text-gray-800">menu</i>
+    <button class="md:hidden flex items-center" id="mobile-menu-button" aria-label="Open mobile menu">
+      <i class="material-icons text-gray-800" aria-hidden="true">menu</i>
     </button>
   </nav>
-  <div class="hidden md:hidden" id="mobile-menu">
+  <div class="hidden md:hidden" id="mobile-menu" aria-label="Mobile Navigation">
     <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-      <a class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-white hover:bg-blue-500" href="#">Home</a>
-      <a class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-white hover:bg-blue-500" href="#">Categories</a>
-      <a class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-white hover:bg-blue-500" href="#">Hot Top 10's</a>
-      <a class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-white hover:bg-blue-500" href="#">About Us</a>
-      <a class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-white hover:bg-blue-500" href="#"><i class="material-icons align-middle">search</i> Search</a>
+      <a class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-white hover:bg-blue-500 focus:outline-none focus:bg-blue-700" href="#" aria-label="Home">Home</a>
+      <a class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-white hover:bg-blue-500 focus:outline-none focus:bg-blue-700" href="#" aria-label="Categories">Categories</a>
+      <a class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-white hover:bg-blue-500 focus:outline-none focus:bg-blue-700" href="#" aria-label="Hot Top 10's">Hot Top 10's</a>
+      <a class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-white hover:bg-blue-500 focus:outline-none focus:bg-blue-700" href="#" aria-label="About Us">About Us</a>
+      <a class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-white hover:bg-blue-500 focus:outline-none focus:bg-blue-700" href="#" aria-label="Search"><i class="material-icons align-middle" aria-hidden="true">search</i> Search</a>
     </div>
   </div>
 </header>
 <!-- Remove gap and fill with blur between header and hero -->
 <div style="height:0; background:rgba(30,41,59,0.7); backdrop-filter:blur(8px);"></div>
+<main>
 <section class="hero-section text-gray-800"
   style="background: linear-gradient(90deg, #f8fafc 0%, #9d6dd1 100%); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); margin-top:0;">
   <div class="container mx-auto px-6 py-4 text-center" style="margin-bottom: 0;">
-<h1 class="text-5xl md:text-6xl font-bold leading-tight mb-4 crystal-title-slogan">
-  <span class="hero-title-black font-extrabold text-black" style="color:#111;">Find the</span>
-  <span class="relative inline-block px-2 rounded-xl" style="background:rgba(255,255,255,0.05);box-shadow:0 2px 16px 0 rgba(13,148,136,0.06);">
-    <span class="bg-gradient-to-r from-purple-800 via-purple-600 to-pink-700 bg-clip-text text-transparent font-extrabold drop-shadow-lg" style="padding:0.2em 0.5em; background: linear-gradient(90deg, #5b21b6 0%, #ce87d4 60%, #5b21b6 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Best 10</span>
-  </span>
-  <span class="hero-title-black font-extrabold text-black" style="color:#111;"> in Every Category</span>
-</h1>
-        <p class="text-base md:text-lg font-normal tracking-wide mb-8 rounded-xl shadow-lg inline-block" style="background: linear-gradient(90deg, rgba(30,41,59,0.7) 0%, rgba(67,56,202,0.7) 100%); backdrop-filter: blur(8px); color: #FDE68A; font-family: 'Poppins', 'Montserrat', 'Segoe UI', sans-serif; letter-spacing: 0.04em; font-size: 1rem; padding: 0.5em 1em; margin: 0 auto 2.5em auto;">We rank the <span style="color:#5EEAD4; font-weight:500; font-family: 'Poppins', sans-serif; font-size: 1rem;">BEST ! </span>  So you don’t have to <span style="color:#F472B6; font-weight:500; font-family: 'Poppins', sans-serif; font-size: 1rem;">GUESS !!</span></p>
+    <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-4 crystal-title-slogan" aria-label="Find the Best 10 in Every Category">
+      <span class="hero-title-black font-extrabold text-black" style="color:#111;">Find the</span>
+      <span class="relative inline-block px-2 rounded-xl" style="background:rgba(255,255,255,0.05);box-shadow:0 2px 16px 0 rgba(13,148,136,0.06);">
+        <span class="bg-gradient-to-r from-purple-800 via-purple-600 to-pink-700 bg-clip-text text-transparent font-extrabold drop-shadow-lg" style="padding:0.2em 0.5em; background: linear-gradient(90deg, #5b21b6 0%, #ce87d4 60%, #5b21b6 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Best 10</span>
+      </span>
+      <span class="hero-title-black font-extrabold text-black" style="color:#111;"> in Every Category</span>
+    </h1>
+    <p class="text-base md:text-lg font-normal tracking-wide mb-8 rounded-xl shadow-lg inline-block" style="background: linear-gradient(90deg, rgba(30,41,59,0.7) 0%, rgba(67,56,202,0.7) 100%); backdrop-filter: blur(8px); color: #FDE68A; font-family: 'Poppins', 'Montserrat', 'Segoe UI', sans-serif; letter-spacing: 0.04em; font-size: 1rem; padding: 0.5em 1em; margin: 0 auto 2.5em auto;">We rank the <span style="color:#5EEAD4; font-weight:500; font-family: 'Poppins', sans-serif; font-size: 1rem;">BEST ! </span>  So you don’t have to <span style="color:#F472B6; font-weight:500; font-family: 'Poppins', sans-serif; font-size: 1rem;">GUESS !!</span></p>
     <div class="flex justify-center space-x-4">
-      <a id="how-it-works-link" class="bg-blue-600 border-2 border-blue-600 text-white font-semibold py-3 px-8 rounded-full transition duration-300 crystal-text cursor-pointer" href="#">How It Works</a>
+      <a id="how-it-works-link" class="bg-blue-600 border-2 border-blue-600 text-white font-semibold py-3 px-8 rounded-full transition duration-300 crystal-text cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-400" href="#how-it-works" aria-label="How It Works">How It Works</a>
     </div>
+    <p class="mt-6 text-gray-700 text-lg" style="font-family: 'Poppins', sans-serif;">Your trusted source for unbiased top 10 rankings. Explore, compare, and choose with confidence!</p>
   </div>
 </section>
 
@@ -118,7 +119,7 @@
     <!-- Simple heading for Latest Phones -->
     <div class="w-full flex justify-center items-center mb-4">
       <div style="background: rgba(255,255,255,0.18); border-radius: 1em; box-shadow: 0 2px 16px 0 rgba(91,33,182,0.08); padding: 0.5em 2em; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border: 2px solid #111; display: flex; justify-content: center; align-items: center;">
-<h2 class="text-2xl font-bold" style="font-size:2.1rem; letter-spacing:0.12em; font-family: 'Orbitron', 'Poppins', sans-serif; color:#111; font-weight: 700; margin:0; text-align:center;">Latest Smartphones</h2>
+<h2 class="text-2xl font-bold" style="font-size:2.1rem; letter-spacing:0.12em; font-family: 'Montserrat', 'Poppins', sans-serif; color:#111; font-weight: 700; margin:0; text-align:center;">Latest Smartphones</h2>
       </div>
     </div>
     <!-- Slider controls -->
@@ -140,7 +141,7 @@
   <div class="container mx-auto px-6">
     <div class="w-full flex justify-center items-center mb-8">
       <div style="background: rgba(255,255,255,0.18); border-radius: 1em; box-shadow: 0 2px 16px 0 rgba(91,33,182,0.08); padding: 0.5em 2em; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border: 2px solid #111; display: flex; justify-content: center; align-items: center;">
-<h2 class="text-2xl font-bold" style="font-size:2.1rem; letter-spacing:0.12em; font-family: 'Orbitron', 'Poppins', sans-serif; color:#111; font-weight: 700; margin:0; text-align:center;">High Performance Laptops</h2>
+<h2 class="text-2xl font-bold" style="font-size:2.1rem; letter-spacing:0.12em; font-family: 'Montserrat', 'Poppins', sans-serif; color:#111; font-weight: 700; margin:0; text-align:center;">High Performance Laptops</h2>
       </div>
     </div>
     <div id="laptops-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
@@ -152,7 +153,7 @@
   <div class="container mx-auto px-6">
     <div class="w-full flex justify-center items-center mb-8">
       <div style="background: rgba(255,255,255,0.18); border-radius: 1em; box-shadow: 0 2px 16px 0 rgba(91,33,182,0.08); padding: 0.5em 2em; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border: 2px solid #111; display: flex; justify-content: center; align-items: center;">
-<h2 class="text-2xl font-bold" style="font-size:2.1rem; letter-spacing:0.12em; font-family: 'Orbitron', 'Poppins', sans-serif; color:#111; font-weight: 700; margin:0; text-align:center;">Best Quality Proteins</h2>
+<h2 class="text-2xl font-bold" style="font-size:2.1rem; letter-spacing:0.12em; font-family: 'Montserrat', 'Poppins', sans-serif; color:#111; font-weight: 700; margin:0; text-align:center;">Best Quality Proteins</h2>
       </div>
     </div>
     <div id="protein-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
@@ -164,7 +165,7 @@
   <div class="container mx-auto px-6">
     <div class="w-full flex justify-center items-center mb-8">
       <div style="background: rgba(255,255,255,0.18); border-radius: 1em; box-shadow: 0 2px 16px 0 rgba(91,33,182,0.08); padding: 0.5em 2em; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border: 2px solid #111; display: flex; justify-content: center; align-items: center;">
-<h2 id="how-it-works" class="text-2xl font-bold" style="font-size:2.1rem; letter-spacing:0.12em; font-family: 'Orbitron', 'Poppins', sans-serif; color:#111; font-weight: 700; margin:0; text-align:center;">How It Works</h2>
+<h2 id="how-it-works" class="text-2xl font-bold" style="font-size:2.1rem; letter-spacing:0.12em; font-family: 'Montserrat', 'Poppins', sans-serif; color:#111; font-weight: 700; margin:0; text-align:center;">How It Works</h2>
       </div>
     </div>
     <div class="grid md:grid-cols-3 gap-12 text-center">
@@ -222,7 +223,7 @@
 <div class="md:flex md:justify-between">
 <div class="mb-8 md:mb-0">
 <a class="crystal-brand text-2xl font-bold uppercase inline-flex" href="#">
-  <span class="logo-gradient-text" style="font-size:2.1rem; letter-spacing:0.12em; font-family: 'Orbitron', 'Poppins', sans-serif; background: linear-gradient(90deg, #8b5cf6 0%, #ec4899 50%, #38bdf8 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0 2px 16px rgba(139,92,246,0.18), 0 1px 8px rgba(236,72,153,0.12); font-weight: 700;">TEN-Z-VAULT</span>
+  <span class="logo-gradient-text" style="font-size:2.1rem; letter-spacing:0.12em; font-family: 'Montserrat', 'Poppins', sans-serif; background: linear-gradient(90deg, #8b5cf6 0%, #ec4899 50%, #38bdf8 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0 2px 16px rgba(139,92,246,0.18), 0 1px 8px rgba(236,72,153,0.12); font-weight: 700;">TEN-Z-VAULT</span>
 </a>
 <p class="mt-2 text-gray-400">We rank the BEST ! So you don’t have to GUESS !!</p>
 </div>
@@ -263,8 +264,8 @@
             </div>
 </div>
 </footer>
-<script src="main.js"></script>
-<script src="dataLoader.js"></script>
+<script src="main.js" defer></script>
+<script src="dataLoader.js" defer></script>
 <script>
 // filepath: /Users/varshasingh/Desktop/myworkspaces/websitecodes/index.html (inline script for slider)
 document.addEventListener('DOMContentLoaded', function() {
@@ -279,7 +280,35 @@ document.addEventListener('DOMContentLoaded', function() {
     btnRight.addEventListener('click', () => {
       slider.scrollBy({ left: slider.offsetWidth * 0.8, behavior: 'smooth' });
     });
+    // Keyboard navigation for slider
+    btnLeft.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        slider.scrollBy({ left: -slider.offsetWidth * 0.8, behavior: 'smooth' });
+      }
+    });
+    btnRight.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        slider.scrollBy({ left: slider.offsetWidth * 0.8, behavior: 'smooth' });
+      }
+    });
+    btnLeft.setAttribute('tabindex', '0');
+    btnRight.setAttribute('tabindex', '0');
+    btnLeft.setAttribute('aria-label', 'Scroll left');
+    btnRight.setAttribute('aria-label', 'Scroll right');
   }
+  // Scroll-to-top button
+  const scrollBtn = document.createElement('button');
+  scrollBtn.innerHTML = '<i class="material-icons">arrow_upward</i>';
+  scrollBtn.className = 'fixed bottom-8 right-8 bg-blue-600 text-white rounded-full p-3 shadow-lg z-50 hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-400';
+  scrollBtn.setAttribute('aria-label', 'Scroll to top');
+  scrollBtn.style.display = 'none';
+  document.body.appendChild(scrollBtn);
+  window.addEventListener('scroll', () => {
+    scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
+  });
+  scrollBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
 });
 </script>
 <!-- Modal for categories (moved to end of body for correct event handling) -->
