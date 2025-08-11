@@ -364,3 +364,63 @@ body {
   scroll-snap-align: start;
 }
 
+/* Animation keyframes and utility classes */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease-out forwards;
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, #e83e99 0%, #46d37a 50%, #a464e5 100%);
+  background-size: 200% 200%;
+  animation: shimmerMove 2.5s linear infinite;
+}
+@keyframes shimmerMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+.card-animate {
+  opacity: 0;
+  transform: scale(0.95);
+  animation: cardFadeIn 0.7s cubic-bezier(.5,1.5,.5,1) forwards;
+}
+@keyframes cardFadeIn {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.card-hover {
+  transition: transform 0.2s cubic-bezier(.5,1.5,.5,1), box-shadow 0.2s;
+}
+.card-hover:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 32px rgba(91,33,182,0.12);
+}
+
+.pulse {
+  animation: pulseBtn 0.6s;
+}
+@keyframes pulseBtn {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+.fade-scroll {
+  opacity: 0;
+  transition: opacity 0.8s;
+}
+.fade-scroll.visible {
+  opacity: 1;
+}
+

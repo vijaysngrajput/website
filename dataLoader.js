@@ -13,10 +13,10 @@ document.addEventListener('DOMContentLoaded', function() {
       mobiles.forEach(mobile => {
         let html = `<a href="${mobile.productLink}" target="_blank" rel="noopener" style="text-decoration:none;">
           <div class="crystal-card flex-shrink-0 p-5 text-center flex flex-col justify-between transform hover:-translate-y-2 transition duration-300 cursor-pointer card-animate"
-            style="width:370px; height:370px; margin:0 12px; background:rgba(255,255,255,0.16); backdrop-filter:blur(12px); box-shadow:0 4px 16px 0 rgba(59,130,246,0.18), 0 1px 6px 0 rgba(13,148,136,0.08); border:1.5px solid #000 !important; border-radius:1.5rem;">
+            style="width:370px; height:370px; margin:0 12px; background:linear-gradient(90deg, #f8fafc 0%, #d1c4e9 100%); backdrop-filter:blur(8px); box-shadow:0 4px 16px 0 rgba(59,130,246,0.18), 0 1px 6px 0 rgba(13,148,136,0.08); border:1.5px solid #000 !important; border-radius:1.5rem;">
             <img alt="${mobile.name}" class="h-36 mx-auto mb-4" src="${mobile.image}" style="object-fit:contain;"/>
-            <h3 class="text-2xl font-bold mb-2" style="color:#fff; letter-spacing:0.02em; text-shadow:0 2px 12px rgba(0,0,0,0.22); font-family:'Poppins',sans-serif;">${mobile.name}</h3>
-            <p class="crystal-card-desc mb-2" style="font-size:1.12rem; color:#b5e3ff; text-shadow:0 1px 8px rgba(0,0,0,0.18); font-family:'Poppins',sans-serif;">${mobile.description}</p>
+            <h3 class="text-2xl font-bold mb-2" style="color:#111; letter-spacing:0.02em; text-shadow:0 2px 12px rgba(0,0,0,0.22); font-family:'Poppins',sans-serif;">${mobile.name}</h3>
+            <p class="crystal-card-desc mb-2" style="font-size:1.12rem; color:#5b21b6; text-shadow:0 1px 8px rgba(0,0,0,0.18); font-family:'Poppins',sans-serif;">${mobile.description}</p>
           </div>
         </a>`;
         container.innerHTML += html;
@@ -58,10 +58,10 @@ document.addEventListener('DOMContentLoaded', function() {
       laptops.forEach(laptop => {
         let html = `<a href="${laptop.productLink}" target="_blank" rel="noopener" style="text-decoration:none;">
           <div class="crystal-card flex-shrink-0 p-5 text-center flex flex-col justify-between transform hover:-translate-y-2 transition duration-300 cursor-pointer card-animate"
-            style="width:370px; height:370px; margin:0 12px; background:rgba(255,255,255,0.16); backdrop-filter:blur(12px); box-shadow:0 4px 16px 0 rgba(59,130,246,0.18), 0 1px 6px 0 rgba(13,148,136,0.08); border:1.5px solid #000 !important; border-radius:1.5rem;">
+            style="width:370px; height:370px; margin:0 12px; background:linear-gradient(90deg, #f8fafc 0%, #d1c4e9 100%); backdrop-filter:blur(8px); box-shadow:0 4px 16px 0 rgba(59,130,246,0.18), 0 1px 6px 0 rgba(13,148,136,0.08); border:1.5px solid #000 !important; border-radius:1.5rem;">
             <img alt="${laptop.name}" class="h-36 mx-auto mb-4" src="${laptop.image}" style="object-fit:contain;"/>
-            <h3 class="text-2xl font-bold mb-2" style="color:#fff; letter-spacing:0.02em; text-shadow:0 2px 12px rgba(0,0,0,0.22); font-family:'Poppins',sans-serif;">${laptop.name}</h3>
-            <p class="crystal-card-desc mb-2" style="font-size:1.12rem; color:#b5e3ff; text-shadow:0 1px 8px rgba(0,0,0,0.18); font-family:'Poppins',sans-serif;">${laptop.description}</p>
+            <h3 class="text-2xl font-bold mb-2" style="color:#111; letter-spacing:0.02em; text-shadow:0 2px 12px rgba(0,0,0,0.22); font-family:'Poppins',sans-serif;">${laptop.name}</h3>
+            <p class="crystal-card-desc mb-2" style="font-size:1.12rem; color:#5b21b6; text-shadow:0 1px 8px rgba(0,0,0,0.18); font-family:'Poppins',sans-serif;">${laptop.description}</p>
           </div>
         </a>`;
         container.innerHTML += html;
@@ -103,10 +103,10 @@ document.addEventListener('DOMContentLoaded', function() {
       proteins.forEach(protein => {
         let html = `<a href="${protein.productLink}" target="_blank" rel="noopener" style="text-decoration:none;">
           <div class="crystal-card flex-shrink-0 p-5 text-center flex flex-col justify-between transform hover:-translate-y-2 transition duration-300 cursor-pointer card-animate"
-            style="width:370px; height:370px; margin:0 12px; background:rgba(255,255,255,0.16); backdrop-filter:blur(12px); box-shadow:0 4px 16px 0 rgba(59,130,246,0.18), 0 1px 6px 0 rgba(13,148,136,0.08); border:1.5px solid #000 !important; border-radius:1.5rem;">
+            style="width:370px; height:370px; margin:0 12px; background:linear-gradient(90deg, #f8fafc 0%, #d1c4e9 100%); backdrop-filter:blur(8px); box-shadow:0 4px 16px 0 rgba(59,130,246,0.18), 0 1px 6px 0 rgba(13,148,136,0.08); border:1.5px solid #000 !important; border-radius:1.5rem;">
             <img alt="${protein.name}" class="h-36 mx-auto mb-4" src="${protein.image}" style="object-fit:contain;"/>
-            <h3 class="text-2xl font-bold mb-2" style="color:#fff; letter-spacing:0.02em; text-shadow:0 2px 12px rgba(0,0,0,0.22); font-family:'Poppins',sans-serif;">${protein.name}</h3>
-            <p class="crystal-card-desc mb-2" style="font-size:1.12rem; color:#b5e3ff; text-shadow:0 1px 8px rgba(0,0,0,0.18); font-family:'Poppins',sans-serif;">${protein.description}</p>
+            <h3 class="text-2xl font-bold mb-2" style="color:#111; letter-spacing:0.02em; text-shadow:0 2px 12px rgba(0,0,0,0.22); font-family:'Poppins',sans-serif;">${protein.name}</h3>
+            <p class="crystal-card-desc mb-2" style="font-size:1.12rem; color:#5b21b6; text-shadow:0 1px 8px rgba(0,0,0,0.18); font-family:'Poppins',sans-serif;">${protein.description}</p>
           </div>
         </a>`;
         container.innerHTML += html;
