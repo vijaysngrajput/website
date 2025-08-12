@@ -10,9 +10,21 @@
   <script src="https://cdn.tailwindcss.com" defer></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-  <link rel="stylesheet" href="styles.css"/>
+  
+  <!-- CRITICAL: Tailwind overrides must come after Tailwind but before other CSS -->
+  <link rel="stylesheet" href="css/tailwind-overrides.css"/>
+  
+  <!-- Modular CSS Architecture -->
+  <link rel="stylesheet" href="css/base.css"/>
+  <link rel="stylesheet" href="css/components/header.css"/>
+  <link rel="stylesheet" href="css/components/cards.css"/>
+  <link rel="stylesheet" href="css/components/animations.css"/>
+  <link rel="stylesheet" href="css/components/sliders.css"/>
+  <link rel="stylesheet" href="css/components/footer.css"/>
+  <link rel="stylesheet" href="css/components/modals.css"/>
+  
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
-  <!-- All styles moved to styles.css for modularity -->
+  <!-- Modular CSS replaces styles.css for better maintainability -->
   <!-- Favicon: Single Z in Orbitron font, white background, purple Z -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='white'/%3E%3Ctext x='50%' y='60%' text-anchor='middle' font-family='Montserrat,Arial,sans-serif' font-size='38' font-weight='bold' fill='%238b5cf6' style='letter-spacing:2px;dominant-baseline:middle;'%3EZ%3C/text%3E%3C/svg%3E"/>
 </head>
@@ -20,28 +32,45 @@
 <!-- Unified background and text color, no background image -->
 <header class="sticky top-0 z-50 shadow-md frosted-header" style="background: rgba(255,255,255,0.32); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(59,130,246,0.10);">
   <nav class="container mx-auto px-6 py-2 flex justify-between items-center" aria-label="Main Navigation">
-    <span class="logo-gradient-text shimmer" style="font-size:1.26rem; letter-spacing:0.12em; font-family: 'Montserrat', 'Poppins', sans-serif; background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0 2px 16px rgba(139,92,246,0.18), 0 1px 8px rgba(236,72,153,0.12); font-weight: 700;">TEN-Z-VAULT</span>
-    <div class="hidden md:flex items-center space-x-8">
-      <a class="nav-link font-normal text-gray-500 focus:outline-none focus:text-blue-600" style="font-family: 'Poppins', sans-serif; font-size:1rem; font-weight:400; letter-spacing:0.08em; text-transform:none;" href="#" aria-label="Home">Home</a>
-      <a class="nav-link font-normal text-gray-500 focus:outline-none focus:text-blue-600" style="font-family: 'Poppins', sans-serif; font-size:1rem; font-weight:400; letter-spacing:0.08em; text-transform:none;" href="#" aria-label="Categories">Categories</a>
-      <a class="nav-link font-normal text-gray-500 focus:outline-none focus:text-blue-600" style="font-family: 'Poppins', sans-serif; font-size:1rem; font-weight:400; letter-spacing:0.08em; text-transform:none;" href="#" aria-label="Hot Top 10's">Hot Top 10's</a>
-      <a class="nav-link font-normal text-gray-500 focus:outline-none focus:text-blue-600" style="font-family: 'Poppins', sans-serif; font-size:1rem; font-weight:400; letter-spacing:0.08em; text-transform:none;" href="#" aria-label="About Us">About Us</a>
-      <a class="nav-link font-normal text-gray-500 focus:outline-none focus:text-blue-600" style="font-family: 'Poppins', sans-serif; font-size:1rem; font-weight:400; letter-spacing:0.08em; text-transform:none;" href="#" aria-label="Search">
+    <span class="logo-gradient-text shimmer">TEN-Z-VAULT</span>
+    <div class="desktop-nav">
+      <a class="nav-link" href="#" aria-label="Home">Home</a>
+      <a class="nav-link" href="#" aria-label="Categories">Categories</a>
+      <a class="nav-link" href="#" aria-label="Hot Top 10's">Hot Top 10's</a>
+      <a class="nav-link" href="#" aria-label="About Us">About Us</a>
+      <a class="nav-link" href="#" aria-label="Search">
         <i class="material-icons align-middle" aria-hidden="true">search</i>
       </a>
     </div>
-    <button class="md:hidden flex items-center" id="mobile-menu-button" aria-label="Open mobile menu">
+    <button class="mobile-menu-btn" id="mobile-menu-button" aria-label="Open mobile menu">
       <i class="material-icons text-gray-800" aria-hidden="true">menu</i>
     </button>
   </nav>
-  <div class="hidden md:hidden" id="mobile-menu" aria-label="Mobile Navigation">
-    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-      <a class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-white hover:bg-blue-500 focus:outline-none focus:bg-blue-700" href="#" aria-label="Home">Home</a>
-      <a class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-white hover:bg-blue-500 focus:outline-none focus:bg-blue-700" href="#" aria-label="Categories">Categories</a>
-      <a class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-white hover:bg-blue-500 focus:outline-none focus:bg-blue-700" href="#" aria-label="Hot Top 10's">Hot Top 10's</a>
-      <a class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-white hover:bg-blue-500 focus:outline-none focus:bg-blue-700" href="#" aria-label="About Us">About Us</a>
-      <a class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-white hover:bg-blue-500 focus:outline-none focus:bg-blue-700" href="#" aria-label="Search"><i class="material-icons align-middle" aria-hidden="true">search</i> Search</a>
-    </div>
+  
+  <!-- Simple Mobile Menu Dropdown -->
+  <div class="mobile-menu-dropdown hidden" id="mobile-menu" aria-label="Mobile Navigation">
+    <nav class="mobile-nav-list">
+      <a class="mobile-nav-item" href="#" aria-label="Home">
+        <i class="material-icons">home</i>
+        <span>Home</span>
+      </a>
+      <a class="mobile-nav-item" href="#" aria-label="Categories">
+        <i class="material-icons">category</i>
+        <span>Categories</span>
+      </a>
+      <a class="mobile-nav-item" href="#" aria-label="Hot Top 10's">
+        <i class="material-icons">whatshot</i>
+        <span>Hot Top 10's</span>
+      </a>
+      <a class="mobile-nav-item" href="#" aria-label="About Us">
+        <i class="material-icons">info</i>
+        <span>About Us</span>
+      </a>
+      <a class="mobile-nav-item" href="#" aria-label="Search">
+        <i class="material-icons">search</i>
+        <span>Search</span>
+      </a>
+    </nav>
   </div>
 </header>
 <!-- Remove gap and fill with blur between header and hero -->
@@ -114,7 +143,10 @@
   </div>
 </section>
 
-<section class="pt-4 pb-8" style="background: transparent;">
+<!-- Spacing between categories and smartphones -->
+<div class="py-8" style="background: transparent;"></div>
+
+<section class="pt-8 pb-8" style="background: transparent;">
   <div class="container mx-auto px-6">
     <!-- Simple heading for Latest Phones -->
     <div class="w-full flex justify-center items-center mb-4">
@@ -264,89 +296,6 @@
             </div>
 </div>
 </footer>
-<script src="main.js" defer></script>
-<script src="dataLoader.js" defer></script>
-<script>
-// Animation logic for homepage
-// Fade-in, shimmer, card entrance, button pulse, scroll-to-top fade, section fade-in
-
-document.addEventListener('DOMContentLoaded', function() {
-  // Hero fade-in
-  document.querySelectorAll('.hero-section .fade-in').forEach((el, i) => {
-    el.style.animationDelay = (i * 0.15 + 0.2) + 's';
-  });
-  // Staggered card entrance
-  const cards = document.querySelectorAll('.card-animate');
-  cards.forEach((card, i) => {
-    card.style.animationDelay = (i * 0.12 + 0.5) + 's';
-  });
-  // Button pulse effect
-  document.querySelectorAll('a,button').forEach(btn => {
-    btn.addEventListener('click', function(e) {
-      btn.classList.add('pulse');
-      setTimeout(() => btn.classList.remove('pulse'), 600);
-    });
-  });
-  // Slider logic for smartphones section
-  const slider = document.getElementById('categories-slider');
-  const btnLeft = document.getElementById('smartphones-slider-left');
-  const btnRight = document.getElementById('smartphones-slider-right');
-  if (slider && btnLeft && btnRight) {
-    btnLeft.addEventListener('click', () => {
-      slider.scrollBy({ left: -slider.offsetWidth * 0.8, behavior: 'smooth' });
-    });
-    btnRight.addEventListener('click', () => {
-      slider.scrollBy({ left: slider.offsetWidth * 0.8, behavior: 'smooth' });
-    });
-    // Keyboard navigation for slider
-    btnLeft.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        slider.scrollBy({ left: -slider.offsetWidth * 0.8, behavior: 'smooth' });
-      }
-    });
-    btnRight.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        slider.scrollBy({ left: slider.offsetWidth * 0.8, behavior: 'smooth' });
-      }
-    });
-    btnLeft.setAttribute('tabindex', '0');
-    btnRight.setAttribute('tabindex', '0');
-    btnLeft.setAttribute('aria-label', 'Scroll left');
-    btnRight.setAttribute('aria-label', 'Scroll right');
-  }
-  // Scroll-to-top button with fade
-  const scrollBtn = document.createElement('button');
-  scrollBtn.innerHTML = '<i class="material-icons">arrow_upward</i>';
-  scrollBtn.className = 'fixed bottom-8 right-8 bg-blue-600 text-white rounded-full p-3 shadow-lg z-50 hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-400 fade-scroll';
-  scrollBtn.setAttribute('aria-label', 'Scroll to top');
-  scrollBtn.style.display = 'none';
-  document.body.appendChild(scrollBtn);
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-      scrollBtn.style.display = 'block';
-      scrollBtn.classList.add('visible');
-    } else {
-      scrollBtn.classList.remove('visible');
-      setTimeout(() => scrollBtn.style.display = 'none', 400);
-    }
-  });
-  scrollBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-  // Section fade-in on scroll
-  const fadeSections = document.querySelectorAll('section');
-  const observer = new window.IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.2 });
-  fadeSections.forEach(sec => {
-    sec.classList.add('fade-scroll');
-    observer.observe(sec);
-  });
-});
-</script>
-<!-- Modal for categories (moved to end of body for correct event handling) -->
+<script type="module" src="js/main.js"></script>
+<!-- Modular ES6+ JavaScript replaces legacy scripts for better maintainability -->
 </body></html>
