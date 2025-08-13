@@ -163,8 +163,9 @@ html {
   section:nth-of-type(6) .absolute.bottom-0 {
     background: linear-gradient(to right, #f97316, #f59e0b) !important;
   }
+}
   
-  /* Category cards stabilization */
+  /* Stabilize category cards on mobile */
   .group.flex.items-center {
     min-height: 80px !important;
     padding: 1rem !important;
@@ -188,6 +189,7 @@ html {
     font-size: 1.625rem !important; /* text-2xl for very small screens */
     letter-spacing: 0.06em !important;
   }
+}
   
   .group.flex.items-center {
     min-height: 70px !important;

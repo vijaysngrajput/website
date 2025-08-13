@@ -29,7 +29,6 @@
       padding: 0;
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       min-height: 100vh;
-      opacity: 1;
     }
     
     /* Critical header styles */
@@ -63,26 +62,6 @@
     /* Critical grid layout */
     .grid { display: grid; }
     .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
-    
-    /* Enhanced fade-in animations */
-    .fade-in { 
-      opacity: 0; 
-      transform: translateY(30px);
-      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    
-    .fade-in.loaded { 
-      opacity: 1; 
-      transform: translateY(0);
-    }
-    
-    /* Staggered animation delays */
-    .fade-in:nth-child(1) { transition-delay: 0.1s; }
-    .fade-in:nth-child(2) { transition-delay: 0.2s; }
-    .fade-in:nth-child(3) { transition-delay: 0.3s; }
-    .fade-in:nth-child(4) { transition-delay: 0.4s; }
-    .fade-in:nth-child(5) { transition-delay: 0.5s; }
-    .fade-in:nth-child(6) { transition-delay: 0.6s; }
   </style>
   
   <script src="https://cdn.tailwindcss.com" defer></script>
@@ -161,27 +140,27 @@
 <!-- Remove gap and fill with blur between header and hero -->
 <div style="height:0; background:rgba(30,41,59,0.7); backdrop-filter:blur(8px);"></div>
 <main>
-<section class="hero-section text-gray-800 fade-in"
+<section class="hero-section text-gray-800"
   style="background: linear-gradient(135deg, rgba(243, 246, 250, 0.95) 0%, rgba(214, 187, 243, 0.92) 50%, rgba(243, 238, 246, 0.95) 100%); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); margin-top:0; border-bottom: 1px solid rgba(255, 255, 255, 0.6); box-shadow: 0 8px 32px rgba(0,0,0,0.15);">
   <div class="container mx-auto px-6 py-1 text-center" style="margin-bottom: 0;">
-    <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4 crystal-title-slogan fade-in" aria-label="Find the Best 10 in Every Category">
-      <span class="hero-title-black font-extrabold fade-in" style="color:#1f2937;">Find the</span>
-      <span class="relative inline-block px-3 py-1 rounded-xl fade-in" style="background: linear-gradient(135deg, rgba(139,92,246,0.15) 0%, rgba(236,72,153,0.15) 100%); box-shadow: 0 4px 20px rgba(139,92,246,0.2);">
+    <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4 crystal-title-slogan" aria-label="Find the Best 10 in Every Category">
+      <span class="hero-title-black font-extrabold" style="color:#1f2937;">Find the</span>
+      <span class="relative inline-block px-3 py-1 rounded-xl" style="background: linear-gradient(135deg, rgba(139,92,246,0.15) 0%, rgba(236,72,153,0.15) 100%); box-shadow: 0 4px 20px rgba(139,92,246,0.2);">
         <span class="bg-gradient-to-r from-purple-600 via-pink-500 to-purple-700 bg-clip-text text-transparent font-extrabold" style="padding:0.2em 0.5em; background: linear-gradient(135deg, #7c3aed 0%, #ec4899 50%, #8b5cf6 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Best 10</span>
       </span>
-      <span class="hero-title-black font-extrabold fade-in" style="color:#1f2937;"> in Every Category</span>
+      <span class="hero-title-black font-extrabold" style="color:#1f2937;"> in Every Category</span>
     </h1>
-    <p class="text-base md:text-lg font-normal tracking-wide mb-6 rounded-xl shadow-lg inline-block fade-in" style="background: linear-gradient(135deg, rgba(99,102,241,0.15) 0%, rgba(139,92,246,0.15) 100%); backdrop-filter: blur(10px); color: #374151; font-family: 'Poppins', 'Montserrat', 'Segoe UI', sans-serif; letter-spacing: 0.04em; font-size: 1.1rem; padding: 0.8em 1.5em; margin: 0 auto 1.8em auto; border: 1px solid rgba(139,92,246,0.3);">We rank the <span style="color:#7c3aed; font-weight:600; font-family: 'Poppins', sans-serif; font-size: 1.1rem;">BEST!</span> So you don't have to <span style="color:#ec4899; font-weight:600; font-family: 'Poppins', sans-serif; font-size: 1.1rem;">GUESS!</span></p>
-    <div class="flex justify-center space-x-4 fade-in">
+    <p class="text-base md:text-lg font-normal tracking-wide mb-6 rounded-xl shadow-lg inline-block" style="background: linear-gradient(135deg, rgba(99,102,241,0.15) 0%, rgba(139,92,246,0.15) 100%); backdrop-filter: blur(10px); color: #374151; font-family: 'Poppins', 'Montserrat', 'Segoe UI', sans-serif; letter-spacing: 0.04em; font-size: 1.1rem; padding: 0.8em 1.5em; margin: 0 auto 1.8em auto; border: 1px solid rgba(139,92,246,0.3);">We rank the <span style="color:#7c3aed; font-weight:600; font-family: 'Poppins', sans-serif; font-size: 1.1rem;">BEST!</span> So you don't have to <span style="color:#ec4899; font-weight:600; font-family: 'Poppins', sans-serif; font-size: 1.1rem;">GUESS!</span></p>
+    <div class="flex justify-center space-x-4">
       <a id="how-it-works-link" class="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold py-3 px-8 rounded-full transition duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 cursor-pointer focus:outline-none focus:ring-4 focus:ring-purple-300" href="#how-it-works" aria-label="How It Works">How It Works</a>
     </div>
-    <p class="mt-6 text-gray-600 text-lg fade-in" style="font-family: 'Poppins', sans-serif; font-weight: 400;">Your trusted source for unbiased top 10 rankings. Explore, compare, and choose with confidence!</p>
+    <p class="mt-6 text-gray-600 text-lg" style="font-family: 'Poppins', sans-serif; font-weight: 400;">Your trusted source for unbiased top 10 rankings. Explore, compare, and choose with confidence!</p>
   </div>
 </section>
 
 
 <!-- Categories Section -->
-<section class="pt-0 pb-12" style="background: transparent">
+<section class="pt-0 pb-12 categories-section" style="background: transparent">
   <div class="container mx-auto px-6">
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
       <!-- Row 1 -->
