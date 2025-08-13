@@ -9,14 +9,18 @@ import TenZVaultApp from './app.js';
 let app = null;
 
 /**
- * Initialize application
+ * Initialize application immediately - no waiting
  */
 function initApp() {
   try {
+    // Initialize immediately
     app = new TenZVaultApp();
     
     // Initialize interactive background
     initInteractiveBackground();
+    
+    // Initialize scroll-triggered animations
+    initScrollAnimations();
     
     // Make app globally accessible for debugging
     if (typeof window !== 'undefined') {
@@ -29,6 +33,30 @@ function initApp() {
     // Fallback initialization
     initFallback();
   }
+}
+
+/**
+ * Initialize scroll-triggered animations for better performance
+ */
+function initScrollAnimations() {
+  // Intersection Observer for scroll animations
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('loaded');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+  
+  // Observe elements that should animate on scroll
+  const scrollElements = document.querySelectorAll('.fade-in:not(.loaded)');
+  scrollElements.forEach(el => observer.observe(el));
 }
 
 /**
