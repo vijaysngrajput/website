@@ -28,9 +28,17 @@
   <!-- Favicon: Single Z in Orbitron font, white background, purple Z -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='white'/%3E%3Ctext x='50%' y='60%' text-anchor='middle' font-family='Montserrat,Arial,sans-serif' font-size='38' font-weight='bold' fill='%238b5cf6' style='letter-spacing:2px;dominant-baseline:middle;'%3EZ%3C/text%3E%3C/svg%3E"/>
 </head>
-<body class="text-gray-800" style="background: linear-gradient(120deg, #f7def0 0%, #b4a2dd 100%); min-height: 100vh;">
-<!-- Unified background and text color, no background image -->
-<header class="sticky top-0 z-50 shadow-md frosted-header" style="background: rgba(255,255,255,0.32); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(59,130,246,0.10);">
+<body class="text-gray-800" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; position: relative; overflow-x: hidden;">
+<!-- Interactive animated background -->
+<div class="animated-background"></div>
+<div class="floating-shapes">
+  <div class="shape shape-1"></div>
+  <div class="shape shape-2"></div>
+  <div class="shape shape-3"></div>
+  <div class="shape shape-4"></div>
+  <div class="shape shape-5"></div>
+</div>
+<header class="sticky top-0 z-50 shadow-md frosted-header" style="background: rgba(255,255,255,0.45); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(59,130,246,0.15);">
   <nav class="container mx-auto px-6 py-2 flex justify-between items-center" aria-label="Main Navigation">
     <span class="logo-gradient-text shimmer">TEN-Z-VAULT</span>
     <div class="desktop-nav">
@@ -77,20 +85,20 @@
 <div style="height:0; background:rgba(30,41,59,0.7); backdrop-filter:blur(8px);"></div>
 <main>
 <section class="hero-section text-gray-800 fade-in"
-  style="background: linear-gradient(90deg, #f8fafc 0%, #9d6dd1 100%); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); margin-top:0;">
-  <div class="container mx-auto px-6 py-4 text-center" style="margin-bottom: 0;">
-    <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-4 crystal-title-slogan fade-in" aria-label="Find the Best 10 in Every Category">
-      <span class="hero-title-black font-extrabold text-black fade-in" style="color:#111;">Find the</span>
-      <span class="relative inline-block px-2 rounded-xl fade-in" style="background:rgba(255,255,255,0.05);box-shadow:0 2px 16px 0 rgba(13,148,136,0.06);">
-        <span class="bg-gradient-to-r from-purple-800 via-purple-600 to-pink-700 bg-clip-text text-transparent font-extrabold drop-shadow-lg" style="padding:0.2em 0.5em; background: linear-gradient(90deg, #5b21b6 0%, #ce87d4 60%, #5b21b6 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Best 10</span>
+  style="background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.92) 50%, rgba(248,250,252,0.95) 100%); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); margin-top:0; border-bottom: 1px solid rgba(255, 255, 255, 0.6); box-shadow: 0 8px 32px rgba(0,0,0,0.15);">
+  <div class="container mx-auto px-6 py-1 text-center" style="margin-bottom: 0;">
+    <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4 crystal-title-slogan fade-in" aria-label="Find the Best 10 in Every Category">
+      <span class="hero-title-black font-extrabold fade-in" style="color:#1f2937;">Find the</span>
+      <span class="relative inline-block px-3 py-1 rounded-xl fade-in" style="background: linear-gradient(135deg, rgba(139,92,246,0.15) 0%, rgba(236,72,153,0.15) 100%); box-shadow: 0 4px 20px rgba(139,92,246,0.2);">
+        <span class="bg-gradient-to-r from-purple-600 via-pink-500 to-purple-700 bg-clip-text text-transparent font-extrabold" style="padding:0.2em 0.5em; background: linear-gradient(135deg, #7c3aed 0%, #ec4899 50%, #8b5cf6 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Best 10</span>
       </span>
-      <span class="hero-title-black font-extrabold text-black fade-in" style="color:#111;"> in Every Category</span>
+      <span class="hero-title-black font-extrabold fade-in" style="color:#1f2937;"> in Every Category</span>
     </h1>
-    <p class="text-base md:text-lg font-normal tracking-wide mb-8 rounded-xl shadow-lg inline-block fade-in" style="background: linear-gradient(90deg, rgba(30,41,59,0.7) 0%, rgba(67,56,202,0.7) 100%); backdrop-filter: blur(8px); color: #FDE68A; font-family: 'Poppins', 'Montserrat', 'Segoe UI', sans-serif; letter-spacing: 0.04em; font-size: 1rem; padding: 0.5em 1em; margin: 0 auto 2.5em auto;">We rank the <span style="color:#5EEAD4; font-weight:500; font-family: 'Poppins', sans-serif; font-size: 1rem;">BEST ! </span>  So you don’t have to <span style="color:#F472B6; font-weight:500; font-family: 'Poppins', sans-serif; font-size: 1rem;">GUESS !!</span></p>
+    <p class="text-base md:text-lg font-normal tracking-wide mb-6 rounded-xl shadow-lg inline-block fade-in" style="background: linear-gradient(135deg, rgba(99,102,241,0.15) 0%, rgba(139,92,246,0.15) 100%); backdrop-filter: blur(10px); color: #374151; font-family: 'Poppins', 'Montserrat', 'Segoe UI', sans-serif; letter-spacing: 0.04em; font-size: 1.1rem; padding: 0.8em 1.5em; margin: 0 auto 1.8em auto; border: 1px solid rgba(139,92,246,0.3);">We rank the <span style="color:#7c3aed; font-weight:600; font-family: 'Poppins', sans-serif; font-size: 1.1rem;">BEST!</span> So you don't have to <span style="color:#ec4899; font-weight:600; font-family: 'Poppins', sans-serif; font-size: 1.1rem;">GUESS!</span></p>
     <div class="flex justify-center space-x-4 fade-in">
-      <a id="how-it-works-link" class="bg-blue-600 border-2 border-blue-600 text-white font-semibold py-3 px-8 rounded-full transition duration-300 crystal-text cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-400" href="#how-it-works" aria-label="How It Works">How It Works</a>
+      <a id="how-it-works-link" class="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold py-3 px-8 rounded-full transition duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 cursor-pointer focus:outline-none focus:ring-4 focus:ring-purple-300" href="#how-it-works" aria-label="How It Works">How It Works</a>
     </div>
-    <p class="mt-6 text-gray-700 text-lg fade-in" style="font-family: 'Poppins', sans-serif;">Your trusted source for unbiased top 10 rankings. Explore, compare, and choose with confidence!</p>
+    <p class="mt-6 text-gray-600 text-lg fade-in" style="font-family: 'Poppins', sans-serif; font-weight: 400;">Your trusted source for unbiased top 10 rankings. Explore, compare, and choose with confidence!</p>
   </div>
 </section>
 
@@ -98,47 +106,99 @@
 <!-- Categories Section -->
 <section class="pt-0 pb-12" style="background: transparent">
   <div class="container mx-auto px-6">
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
       <!-- Row 1 -->
-      <a href="vault/smartphones/index.html" class="flex items-center space-x-4 rounded-xl p-6 shadow-md transition duration-200 cursor-pointer hover:bg-green-100 hover:bg-opacity-60 card-hover card-animate" style="text-decoration:none; border:1.5px solid #000; background: linear-gradient(90deg, #f8fafc 0%, #d1c4e9 100%); backdrop-filter: blur(8px);">
-        <span class="material-icons text-4xl text-blue-400">smartphone</span>
-        <span class="text-lg font-semibold text-black" style="color:#111;">Smart Phones</span>
+      <a href="vault/smartphones/index.html" class="group flex items-center space-x-4 rounded-2xl p-6 shadow-xl transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-2xl" style="text-decoration:none; border:1px solid rgba(255, 255, 255, 0.4); background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.08) 100%); backdrop-filter: blur(15px);">
+        <div class="flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-br from-blue-400 to-blue-600 shadow-lg group-hover:shadow-blue-400/50 transition-all duration-300">
+          <span class="material-icons text-3xl text-white">smartphone</span>
+        </div>
+        <div class="flex-1">
+          <span class="text-lg font-bold text-white block group-hover:text-blue-200 transition-colors duration-300">Smart Phones</span>
+          <span class="text-sm text-gray-200 opacity-80">Latest mobile devices</span>
+        </div>
       </a>
-      <div class="flex items-center space-x-4 rounded-xl p-6 shadow-md card-hover card-animate" style="border:1.5px solid #000; background: linear-gradient(90deg, #f8fafc 0%, #d1c4e9 100%); backdrop-filter: blur(8px);">
-        <span class="material-icons text-4xl text-green-400">laptop_mac</span>
-        <span class="text-lg font-semibold text-black" style="color:#111;">Laptops</span>
-      </div>
-      <div class="flex items-center space-x-4 rounded-xl p-6 shadow-md card-hover card-animate" style="border:1.5px solid #000; background: linear-gradient(90deg, #f8fafc 0%, #d1c4e9 100%); backdrop-filter: blur(8px);">
-        <span class="material-icons text-4xl text-yellow-400">fitness_center</span>
-        <span class="text-lg font-semibold text-black" style="color:#111;">Proteins</span>
-      </div>
+
+      <a href="vault/laptops/" class="group flex items-center space-x-4 rounded-2xl p-6 shadow-xl transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-2xl" style="text-decoration:none; border:1px solid rgba(255, 255, 255, 0.4); background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.08) 100%); backdrop-filter: blur(15px);">
+        <div class="flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-br from-green-400 to-green-600 shadow-lg group-hover:shadow-green-400/50 transition-all duration-300">
+          <span class="material-icons text-3xl text-white">laptop_mac</span>
+        </div>
+        <div class="flex-1">
+          <span class="text-lg font-bold text-white block group-hover:text-green-200 transition-colors duration-300">Laptops</span>
+          <span class="text-sm text-gray-200 opacity-80">High performance computing</span>
+        </div>
+      </a>
+
+      <a href="vault/proteins/" class="group flex items-center space-x-4 rounded-2xl p-6 shadow-xl transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-2xl" style="text-decoration:none; border:1px solid rgba(255, 255, 255, 0.4); background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.08) 100%); backdrop-filter: blur(15px);">
+        <div class="flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-br from-yellow-400 to-orange-500 shadow-lg group-hover:shadow-yellow-400/50 transition-all duration-300">
+          <span class="material-icons text-3xl text-white">fitness_center</span>
+        </div>
+        <div class="flex-1">
+          <span class="text-lg font-bold text-white block group-hover:text-yellow-200 transition-colors duration-300">Proteins</span>
+          <span class="text-sm text-gray-200 opacity-80">Premium supplements</span>
+        </div>
+      </a>
+
       <!-- Row 2 -->
-      <div class="flex items-center space-x-4 rounded-xl p-6 shadow-md card-hover card-animate" style="border:1.5px solid #000; background: linear-gradient(90deg, #f8fafc 0%, #d1c4e9 100%); backdrop-filter: blur(8px);">
-        <span class="material-icons text-4xl text-purple-400">tv</span>
-        <span class="text-lg font-semibold text-black" style="color:#111;">Smart TV</span>
-      </div>
-      <div class="flex items-center space-x-4 rounded-xl p-6 shadow-md card-hover card-animate" style="border:1.5px solid #000; background: linear-gradient(90deg, #f8fafc 0%, #d1c4e9 100%); backdrop-filter: blur(8px);">
-        <span class="material-icons text-4xl text-pink-400">sports_esports</span>
-        <span class="text-lg font-semibold text-black" style="color:#111;">Android Games</span>
-      </div>
-      <div class="flex items-center space-x-4 rounded-xl p-6 shadow-md card-hover card-animate" style="border:1.5px solid #000; background: linear-gradient(90deg, #f8fafc 0%, #d1c4e9 100%); backdrop-filter: blur(8px);">
-        <span class="material-icons text-4xl text-indigo-400">local_laundry_service</span>
-        <span class="text-lg font-semibold text-black" style="color:#111;">Washing Machine</span>
-      </div>
+      <a href="vault/smarttv/" class="group flex items-center space-x-4 rounded-2xl p-6 shadow-xl transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-2xl" style="text-decoration:none; border:1px solid rgba(255, 255, 255, 0.4); background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.08) 100%); backdrop-filter: blur(15px);">
+        <div class="flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-br from-purple-400 to-purple-600 shadow-lg group-hover:shadow-purple-400/50 transition-all duration-300">
+          <span class="material-icons text-3xl text-white">tv</span>
+        </div>
+        <div class="flex-1">
+          <span class="text-lg font-bold text-white block group-hover:text-purple-200 transition-colors duration-300">Smart TV</span>
+          <span class="text-sm text-gray-200 opacity-80">Entertainment systems</span>
+        </div>
+      </a>
+
+      <a href="vault/androidgames/" class="group flex items-center space-x-4 rounded-2xl p-6 shadow-xl transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-2xl" style="text-decoration:none; border:1px solid rgba(255, 255, 255, 0.4); background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.08) 100%); backdrop-filter: blur(15px);">
+        <div class="flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-br from-pink-400 to-rose-500 shadow-lg group-hover:shadow-pink-400/50 transition-all duration-300">
+          <span class="material-icons text-3xl text-white">sports_esports</span>
+        </div>
+        <div class="flex-1">
+          <span class="text-lg font-bold text-white block group-hover:text-pink-200 transition-colors duration-300">Android Games</span>
+          <span class="text-sm text-gray-200 opacity-80">Top mobile games</span>
+        </div>
+      </a>
+
+      <a href="vault/washingmachine/" class="group flex items-center space-x-4 rounded-2xl p-6 shadow-xl transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-2xl" style="text-decoration:none; border:1px solid rgba(255, 255, 255, 0.4); background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.08) 100%); backdrop-filter: blur(15px);">
+        <div class="flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-br from-indigo-400 to-indigo-600 shadow-lg group-hover:shadow-indigo-400/50 transition-all duration-300">
+          <span class="material-icons text-3xl text-white">local_laundry_service</span>
+        </div>
+        <div class="flex-1">
+          <span class="text-lg font-bold text-white block group-hover:text-indigo-200 transition-colors duration-300">Washing Machine</span>
+          <span class="text-sm text-gray-200 opacity-80">Home appliances</span>
+        </div>
+      </a>
+
       <!-- Row 3 -->
-      <div class="flex items-center space-x-4 rounded-xl p-6 shadow-md card-hover card-animate" style="border:1.5px solid #000; background: linear-gradient(90deg, #f8fafc 0%, #d1c4e9 100%); backdrop-filter: blur(8px);">
-        <span class="material-icons text-4xl text-red-400">memory</span>
-        <span class="text-lg font-semibold text-black" style="color:#111;">Graphic Cards</span>
-      </div>
-      <div class="flex items-center space-x-4 rounded-xl p-6 shadow-md card-hover card-animate" style="border:1.5px solid #000; background: linear-gradient(90deg, #f8fafc 0%, #d1c4e9 100%); backdrop-filter: blur(8px);">
-        <span class="material-icons text-4xl text-orange-400">two_wheeler</span>
-        <span class="text-lg font-semibold text-black" style="color:#111;">Bikes</span>
-      </div>
-      <div class="flex items-center space-x-4 rounded-xl p-6 shadow-md card-hover card-animate" style="border:1.5px solid #000; background: linear-gradient(90deg, #f8fafc 0%, #d1c4e9 100%); backdrop-filter: blur(8px);">
-        <span class="material-icons text-4xl text-blue-300">directions_car</span>
-        <span class="text-lg font-semibold text-black" style="color:#111;">Cars</span>
-      </div>
-      <!-- Add more categories here if needed -->
+      <a href="vault/graphiccards/" class="group flex items-center space-x-4 rounded-2xl p-6 shadow-xl transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-2xl" style="text-decoration:none; border:1px solid rgba(255, 255, 255, 0.4); background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.08) 100%); backdrop-filter: blur(15px);">
+        <div class="flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-br from-red-400 to-red-600 shadow-lg group-hover:shadow-red-400/50 transition-all duration-300">
+          <span class="material-icons text-3xl text-white">memory</span>
+        </div>
+        <div class="flex-1">
+          <span class="text-lg font-bold text-white block group-hover:text-red-200 transition-colors duration-300">Graphic Cards</span>
+          <span class="text-sm text-gray-200 opacity-80">Gaming & rendering</span>
+        </div>
+      </a>
+
+      <a href="vault/bikes/" class="group flex items-center space-x-4 rounded-2xl p-6 shadow-xl transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-2xl" style="text-decoration:none; border:1px solid rgba(255, 255, 255, 0.4); background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.08) 100%); backdrop-filter: blur(15px);">
+        <div class="flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-br from-orange-400 to-orange-600 shadow-lg group-hover:shadow-orange-400/50 transition-all duration-300">
+          <span class="material-icons text-3xl text-white">two_wheeler</span>
+        </div>
+        <div class="flex-1">
+          <span class="text-lg font-bold text-white block group-hover:text-orange-200 transition-colors duration-300">Bikes</span>
+          <span class="text-sm text-gray-200 opacity-80">Two-wheelers</span>
+        </div>
+      </a>
+
+      <a href="vault/cars/" class="group flex items-center space-x-4 rounded-2xl p-6 shadow-xl transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-2xl" style="text-decoration:none; border:1px solid rgba(255, 255, 255, 0.4); background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.08) 100%); backdrop-filter: blur(15px);">
+        <div class="flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-br from-cyan-400 to-blue-500 shadow-lg group-hover:shadow-cyan-400/50 transition-all duration-300">
+          <span class="material-icons text-3xl text-white">directions_car</span>
+        </div>
+        <div class="flex-1">
+          <span class="text-lg font-bold text-white block group-hover:text-cyan-200 transition-colors duration-300">Cars</span>
+          <span class="text-sm text-gray-200 opacity-80">Automobiles</span>
+        </div>
+      </a>
     </div>
   </div>
 </section>
@@ -148,10 +208,14 @@
 
 <section class="pt-8 pb-8" style="background: transparent;">
   <div class="container mx-auto px-6">
-    <!-- Simple heading for Latest Phones -->
-    <div class="w-full flex justify-center items-center mb-4">
-      <div style="background: rgba(255,255,255,0.18); border-radius: 1em; box-shadow: 0 2px 16px 0 rgba(91,33,182,0.08); padding: 0.5em 2em; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border: 2px solid #111; display: flex; justify-content: center; align-items: center;">
-<h2 class="text-2xl font-bold" style="font-size:2.1rem; letter-spacing:0.12em; font-family: 'Montserrat', 'Poppins', sans-serif; color:#111; font-weight: 700; margin:0; text-align:center;">Latest Smartphones</h2>
+    <!-- Enhanced heading for Latest Phones -->
+    <div class="w-full flex justify-center items-center mb-8">
+      <div class="group relative overflow-hidden" style="background: linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.15) 100%); border-radius: 2rem; box-shadow: 0 20px 40px rgba(0,0,0,0.15), 0 8px 16px rgba(59,130,246,0.1); padding: 1rem 3rem; backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.4); transform: perspective(1000px); transition: all 0.3s ease;">
+        <div class="absolute inset-0 bg-gradient-to-r from-blue-400/20 via-purple-500/20 to-pink-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <h2 class="relative text-3xl font-black tracking-wide text-center" style="font-family: 'Montserrat', 'Poppins', sans-serif; background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 50%, #ddd6fe 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0 4px 20px rgba(255,255,255,0.3); letter-spacing: 0.08em; font-weight: 900; margin: 0;">
+          <span class="inline-block transform group-hover:scale-105 transition-transform duration-300">Latest Smartphones</span>
+        </h2>
+        <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full opacity-60"></div>
       </div>
     </div>
     <!-- Slider controls -->
@@ -171,9 +235,13 @@
 </section>
 <section class="py-20" style="background: transparent;">
   <div class="container mx-auto px-6">
-    <div class="w-full flex justify-center items-center mb-8">
-      <div style="background: rgba(255,255,255,0.18); border-radius: 1em; box-shadow: 0 2px 16px 0 rgba(91,33,182,0.08); padding: 0.5em 2em; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border: 2px solid #111; display: flex; justify-content: center; align-items: center;">
-<h2 class="text-2xl font-bold" style="font-size:2.1rem; letter-spacing:0.12em; font-family: 'Montserrat', 'Poppins', sans-serif; color:#111; font-weight: 700; margin:0; text-align:center;">High Performance Laptops</h2>
+    <div class="w-full flex justify-center items-center mb-12">
+      <div class="group relative overflow-hidden" style="background: linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.15) 100%); border-radius: 2rem; box-shadow: 0 20px 40px rgba(0,0,0,0.15), 0 8px 16px rgba(34,197,94,0.1); padding: 1rem 3rem; backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.4); transform: perspective(1000px); transition: all 0.3s ease;">
+        <div class="absolute inset-0 bg-gradient-to-r from-green-400/20 via-emerald-500/20 to-teal-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <h2 class="relative text-3xl font-black tracking-wide text-center" style="font-family: 'Montserrat', 'Poppins', sans-serif; background: linear-gradient(135deg, #ffffff 0%, #dcfce7 50%, #bbf7d0 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0 4px 20px rgba(255,255,255,0.3); letter-spacing: 0.08em; font-weight: 900; margin: 0;">
+          <span class="inline-block transform group-hover:scale-105 transition-transform duration-300">High Performance Laptops</span>
+        </h2>
+        <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full opacity-60"></div>
       </div>
     </div>
     <div id="laptops-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
@@ -183,9 +251,13 @@
 </section>
 <section class="py-20" style="background: transparent;">
   <div class="container mx-auto px-6">
-    <div class="w-full flex justify-center items-center mb-8">
-      <div style="background: rgba(255,255,255,0.18); border-radius: 1em; box-shadow: 0 2px 16px 0 rgba(91,33,182,0.08); padding: 0.5em 2em; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border: 2px solid #111; display: flex; justify-content: center; align-items: center;">
-<h2 class="text-2xl font-bold" style="font-size:2.1rem; letter-spacing:0.12em; font-family: 'Montserrat', 'Poppins', sans-serif; color:#111; font-weight: 700; margin:0; text-align:center;">Best Quality Proteins</h2>
+    <div class="w-full flex justify-center items-center mb-12">
+      <div class="group relative overflow-hidden" style="background: linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.15) 100%); border-radius: 2rem; box-shadow: 0 20px 40px rgba(0,0,0,0.15), 0 8px 16px rgba(251,146,60,0.1); padding: 1rem 3rem; backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.4); transform: perspective(1000px); transition: all 0.3s ease;">
+        <div class="absolute inset-0 bg-gradient-to-r from-orange-400/20 via-amber-500/20 to-yellow-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <h2 class="relative text-3xl font-black tracking-wide text-center" style="font-family: 'Montserrat', 'Poppins', sans-serif; background: linear-gradient(135deg, #ffffff 0%, #fef3c7 50%, #fde68a 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0 4px 20px rgba(255,255,255,0.3); letter-spacing: 0.08em; font-weight: 900; margin: 0;">
+          <span class="inline-block transform group-hover:scale-105 transition-transform duration-300">Best Quality Proteins</span>
+        </h2>
+        <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-orange-500 to-amber-600 rounded-full opacity-60"></div>
       </div>
     </div>
     <div id="protein-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
@@ -195,32 +267,36 @@
 </section>
 <section class="py-20" style="background: transparent;">
   <div class="container mx-auto px-6">
-    <div class="w-full flex justify-center items-center mb-8">
-      <div style="background: rgba(255,255,255,0.18); border-radius: 1em; box-shadow: 0 2px 16px 0 rgba(91,33,182,0.08); padding: 0.5em 2em; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border: 2px solid #111; display: flex; justify-content: center; align-items: center;">
-<h2 id="how-it-works" class="text-2xl font-bold" style="font-size:2.1rem; letter-spacing:0.12em; font-family: 'Montserrat', 'Poppins', sans-serif; color:#111; font-weight: 700; margin:0; text-align:center;">How It Works</h2>
+    <div class="w-full flex justify-center items-center mb-12">
+      <div class="group relative overflow-hidden" style="background: linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.15) 100%); border-radius: 2rem; box-shadow: 0 20px 40px rgba(0,0,0,0.15), 0 8px 16px rgba(139,92,246,0.1); padding: 1rem 3rem; backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.4); transform: perspective(1000px); transition: all 0.3s ease;">
+        <div class="absolute inset-0 bg-gradient-to-r from-purple-400/20 via-violet-500/20 to-indigo-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <h2 id="how-it-works" class="relative text-3xl font-black tracking-wide text-center" style="font-family: 'Montserrat', 'Poppins', sans-serif; background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 50%, #c7d2fe 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0 4px 20px rgba(255,255,255,0.3); letter-spacing: 0.08em; font-weight: 900; margin: 0;">
+          <span class="inline-block transform group-hover:scale-105 transition-transform duration-300">How It Works</span>
+        </h2>
+        <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-full opacity-60"></div>
       </div>
     </div>
     <div class="grid md:grid-cols-3 gap-12 text-center">
       <div class="flex flex-col items-center">
-        <div class="bg-blue-100 rounded-full p-6 mb-4">
-          <i class="material-icons text-4xl text-blue-600">search</i>
+        <div class="bg-white bg-opacity-20 rounded-full p-6 mb-4" style="backdrop-filter: blur(10px);">
+          <i class="material-icons text-4xl text-white">search</i>
         </div>
-        <h3 class="text-xl font-semibold mb-2 crystal-text">We research thousands of products.</h3>
-        <p class="crystal-text">Our team scours the market to identify top contenders in every category.</p>
+        <h3 class="text-xl font-semibold mb-2 text-white">We research thousands of products.</h3>
+        <p class="text-gray-100">Our team scours the market to identify top contenders in every category.</p>
       </div>
       <div class="flex flex-col items-center">
-        <div class="bg-blue-100 rounded-full p-6 mb-4">
-          <i class="material-icons text-4xl text-blue-600">star_rate</i>
+        <div class="bg-white bg-opacity-20 rounded-full p-6 mb-4" style="backdrop-filter: blur(10px);">
+          <i class="material-icons text-4xl text-white">star_rate</i>
         </div>
-        <h3 class="text-xl font-semibold mb-2 crystal-text">We rank the top 10 based on reviews, features, and price.</h3>
-        <p class="crystal-text">A comprehensive analysis ensures only the best make our lists.</p>
+        <h3 class="text-xl font-semibold mb-2 text-white">We rank the top 10 based on reviews, features, and price.</h3>
+        <p class="text-gray-100">A comprehensive analysis ensures only the best make our lists.</p>
       </div>
       <div class="flex flex-col items-center">
-        <div class="bg-blue-100 rounded-full p-6 mb-4">
-          <i class="material-icons text-4xl text-blue-600">verified</i>
+        <div class="bg-white bg-opacity-20 rounded-full p-6 mb-4" style="backdrop-filter: blur(10px);">
+          <i class="material-icons text-4xl text-white">verified</i>
         </div>
-        <h3 class="text-xl font-semibold mb-2 crystal-text">You get the best picks—instantly.</h3>
-        <p class="crystal-text">Save time and choose confidently with our curated selections.</p>
+        <h3 class="text-xl font-semibold mb-2 text-white">You get the best picks—instantly.</h3>
+        <p class="text-gray-100">Save time and choose confidently with our curated selections.</p>
       </div>
     </div>
   </div>
