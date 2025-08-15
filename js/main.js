@@ -4,6 +4,7 @@
  */
 
 import TenZVaultApp from './app.js';
+import { cacheBuster } from './cacheBuster.js';
 
 // Global application instance
 let app = null;
@@ -13,6 +14,13 @@ let app = null;
  */
 function initApp() {
   try {
+    // Initialize cache busting first
+    console.log('Initializing cache buster...');
+    cacheBuster.init();
+    
+    // Register service worker for advanced caching
+    registerServiceWorker();
+    
     // Initialize immediately
     app = new TenZVaultApp();
     
@@ -33,6 +41,58 @@ function initApp() {
     // Fallback initialization
     initFallback();
   }
+}
+
+/**
+ * Register service worker for advanced caching
+ */
+async function registerServiceWorker() {
+  if ('serviceWorker' in navigator) {
+    try {
+      const registration = await navigator.serviceWorker.register('/sw.js');
+      console.log('Service Worker registered successfully:', registration);
+      
+      // Listen for updates
+      registration.addEventListener('updatefound', () => {
+        const newWorker = registration.installing;
+        newWorker.addEventListener('statechange', () => {
+          if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+            console.log('New version available! Refresh the page to update.');
+            // Optionally show a notification to user
+            showUpdateNotification();
+          }
+        });
+      });
+    } catch (error) {
+      console.log('Service Worker registration failed:', error);
+    }
+  }
+}
+
+/**
+ * Show update notification to user
+ */
+function showUpdateNotification() {
+  const notification = document.createElement('div');
+  notification.innerHTML = `
+    <div style="position: fixed; top: 20px; right: 20px; background: #4CAF50; color: white; padding: 15px 20px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); z-index: 10000; font-family: 'Poppins', sans-serif;">
+      <div style="margin-bottom: 10px;">🔄 New version available!</div>
+      <button onclick="window.location.reload()" style="background: white; color: #4CAF50; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; font-weight: 600;">
+        Refresh Now
+      </button>
+      <button onclick="this.parentElement.parentElement.remove()" style="background: transparent; color: white; border: 1px solid white; padding: 8px 16px; border-radius: 4px; cursor: pointer; margin-left: 10px;">
+        Later
+      </button>
+    </div>
+  `;
+  document.body.appendChild(notification);
+  
+  // Auto-remove after 10 seconds
+  setTimeout(() => {
+    if (notification.parentElement) {
+      notification.remove();
+    }
+  }, 10000);
 }
 
 /**
