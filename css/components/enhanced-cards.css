@@ -370,6 +370,7 @@
   .compact-enhanced-card,
   .minimal-enhanced-card {
     width: 280px;
+    height: 380px;
   }
   
   .compact-enhanced-card {
@@ -382,5 +383,34 @@
     height: 140px;
     margin-right: 0;
     margin-bottom: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .enhanced-card {
+    width: 260px;
+    height: 360px;
+    padding: 20px;
+  }
+  
+  .enhanced-image-container {
+    height: 160px;
+    margin-bottom: 16px;
+  }
+  
+  .enhanced-content {
+    gap: 10px;
+  }
+  
+  .product-specs {
+    padding: 10px;
+  }
+  
+  .spec-item {
+    font-size: 0.8rem;
+  }
+  
+  .enhanced-title {
+    font-size: 1.2rem;
   }
 }
