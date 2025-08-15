@@ -441,13 +441,14 @@ export class UIComponents {
   animateScroll(element, start, end, duration) {
     const startTime = performance.now();
     const distance = end - start;
+    // Adaptive duration: slightly longer on small screens for perceived smoothness
+    const effectiveDuration = window.innerWidth <= 640 ? duration * 1.15 : duration;
 
     const animateFrame = (currentTime) => {
       const elapsed = currentTime - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      
-      // Easing function (ease-out cubic)
-      const easeProgress = 1 - Math.pow(1 - progress, 3);
+      const progress = Math.min(elapsed / effectiveDuration, 1);
+      // Smoother ease-out (quintic) for gentler finish
+      const easeProgress = 1 - Math.pow(1 - progress, 5);
       
       element.scrollLeft = start + (distance * easeProgress);
 
@@ -467,12 +468,18 @@ export class UIComponents {
     let startX = 0;
     let scrollStart = 0;
     let isDragging = false;
+    let lastX = 0;
+    let lastTime = 0;
+    let velocity = 0;
 
     const handleTouchStart = (e) => {
       startX = e.touches[0].clientX;
       scrollStart = slider.scrollLeft;
       isDragging = true;
       slider.style.scrollBehavior = 'auto';
+      lastX = startX;
+      lastTime = performance.now();
+      velocity = 0;
     };
 
     const handleTouchMove = (e) => {
@@ -481,11 +488,29 @@ export class UIComponents {
       const currentX = e.touches[0].clientX;
       const deltaX = startX - currentX;
       slider.scrollLeft = scrollStart + deltaX;
+      // Track velocity
+      const now = performance.now();
+      const dx = currentX - lastX; // movement since last frame (negative if swiping left)
+      const dt = now - lastTime;
+      if (dt > 0) {
+        velocity = dx / dt; // px per ms
+      }
+      lastX = currentX;
+      lastTime = now;
     };
 
     const handleTouchEnd = () => {
       isDragging = false;
       slider.style.scrollBehavior = 'smooth';
+      // Apply momentum/inertia
+      const momentumThreshold = 0.05; // minimum velocity to trigger momentum
+      if (Math.abs(velocity) > momentumThreshold) {
+        const momentumDistance = velocity * 800; // scale factor for glide
+        const target = slider.scrollLeft - momentumDistance; // reverse because dx sign
+        const clamped = Math.max(0, Math.min(slider.scrollWidth - slider.clientWidth, target));
+        // Animate manually for consistent easing
+        this.animateScroll(slider, slider.scrollLeft, clamped, 700);
+      }
     };
 
     slider.addEventListener('touchstart', handleTouchStart, { passive: true });
