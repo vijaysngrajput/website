@@ -109,8 +109,10 @@ export class TenZVaultApp {
     this.containers.laptops.classList.remove(
       'grid', 'grid-cols-1', 'sm:grid-cols-2', 'md:grid-cols-3', 'lg:grid-cols-4', 'gap-8'
     );
+    
+    // Add slider classes
     this.containers.laptops.classList.add(
-      'flex', 'overflow-x-auto', 'space-x-8', 'scrollbar-hide', 'px-8', 'py-2', 'snap-x', 'snap-mandatory'
+      'flex', 'overflow-x-auto', 'space-x-8', 'scrollbar-hide', 'px-8', 'py-2', 'snap-x', 'snap-mandatory', 'scroll-smooth', 'slider-converted'
     );
 
     // Add slider controls
@@ -127,8 +129,10 @@ export class TenZVaultApp {
     this.containers.proteins.classList.remove(
       'grid', 'grid-cols-1', 'sm:grid-cols-2', 'md:grid-cols-3', 'lg:grid-cols-4', 'gap-8'
     );
+    
+    // Add slider classes
     this.containers.proteins.classList.add(
-      'flex', 'overflow-x-auto', 'space-x-8', 'scrollbar-hide', 'px-8', 'py-2', 'snap-x', 'snap-mandatory'
+      'flex', 'overflow-x-auto', 'space-x-8', 'scrollbar-hide', 'px-8', 'py-2', 'snap-x', 'snap-mandatory', 'scroll-smooth', 'slider-converted'
     );
 
     // Add slider controls

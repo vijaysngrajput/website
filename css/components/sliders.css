@@ -494,3 +494,64 @@
     margin-bottom: 1rem;
   }
 }
+
+/* Mobile-optimized slider styles */
+@media (max-width: 768px) {
+  /* Complete override for mobile sliders */
+  #laptops-container.slider-converted,
+  #protein-container.slider-converted,
+  #categories-slider {
+    display: flex !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    scroll-behavior: smooth !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding: 0.5rem 1rem !important;
+    gap: 0 !important;
+  }
+  
+  /* Force proper spacing between cards */
+  #laptops-container.slider-converted > *,
+  #protein-container.slider-converted > *,
+  #categories-slider > * {
+    scroll-snap-align: center !important;
+    flex-shrink: 0 !important;
+    min-width: 250px !important;
+    max-width: 250px !important;
+    width: 250px !important;
+    margin-left: 0 !important;
+    margin-right: 1.5rem !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* Remove last child margin to prevent extra space */
+  #laptops-container.slider-converted > *:last-child,
+  #protein-container.slider-converted > *:last-child,
+  #categories-slider > *:last-child {
+    margin-right: 0 !important;
+  }
+  
+  /* Override all Tailwind space-x classes on mobile */
+  #laptops-container.slider-converted.space-x-8 > * + *,
+  #protein-container.slider-converted.space-x-8 > * + *,
+  #categories-slider.space-x-8 > * + *,
+  #laptops-container.slider-converted > * + *,
+  #protein-container.slider-converted > * + *,
+  #categories-slider > * + * {
+    margin-left: 0 !important;
+  }
+  
+  /* Hide scrollbar on mobile for cleaner look */
+  #laptops-container.slider-converted::-webkit-scrollbar,
+  #protein-container.slider-converted::-webkit-scrollbar,
+  #categories-slider::-webkit-scrollbar {
+    display: none;
+  }
+  
+  #laptops-container.slider-converted,
+  #protein-container.slider-converted,
+  #categories-slider {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}

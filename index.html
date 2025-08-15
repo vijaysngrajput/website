@@ -282,7 +282,7 @@
         <i class="material-icons">chevron_right</i>
       </button>
       <!-- Horizontal slider container -->
-      <div id="categories-slider" class="flex overflow-x-auto space-x-8 scrollbar-hide px-8 py-2 snap-x snap-mandatory">
+      <div id="categories-slider" class="flex overflow-x-auto space-x-8 scrollbar-hide px-8 py-2 snap-x snap-mandatory scroll-smooth">
         <!-- Cards will be injected here -->
       </div>
     </div>
@@ -359,11 +359,11 @@
 </section>
 <section class="bg-blue-600 text-white">
 <div class="container mx-auto px-6 py-16 text-center">
-<h2 class="text-3xl font-bold mb-4">Stay Updated with the Best Rankings</h2>
-<p class="mb-8">Join our newsletter to get the latest Top 10 lists directly in your inbox.</p>
-<form class="max-w-md mx-auto flex">
-<input class="flex-grow py-3 px-4 rounded-l-full text-gray-800 focus:outline-none" placeholder="Your email address" type="email"/>
-<button class="bg-blue-800 text-white font-semibold py-3 px-8 rounded-r-full hover:bg-blue-900 transition duration-300" type="submit">Subscribe</button>
+<h2 class="text-2xl sm:text-3xl font-bold mb-4">Stay Updated with the Best Rankings</h2>
+<p class="mb-8 text-sm sm:text-base">Join our newsletter to get the latest Top 10 lists directly in your inbox.</p>
+<form class="max-w-md mx-auto flex flex-col sm:flex-row gap-3 sm:gap-0">
+<input class="flex-grow py-3 px-4 rounded-full sm:rounded-l-full sm:rounded-r-none text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-300 w-full" placeholder="Your email address" type="email"/>
+<button class="bg-blue-800 text-white font-semibold py-3 px-6 sm:px-8 rounded-full sm:rounded-r-full sm:rounded-l-none hover:bg-blue-900 transition duration-300 whitespace-nowrap" type="submit">Subscribe</button>
 </form>
 
 <!-- Modal for categories (moved outside form for correct event handling) -->

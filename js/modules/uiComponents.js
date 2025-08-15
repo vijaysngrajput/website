@@ -300,28 +300,60 @@ export class UIComponents {
    * @param {Element} rightBtn - Right button
    */
   addSliderFunctionality(slider, leftBtn, rightBtn) {
-    const scrollAmount = slider.offsetWidth * CONFIG.SLIDER.scrollRatio;
+    const getCardWidth = () => {
+      const firstCard = slider.querySelector('.card-animate');
+      if (!firstCard) return slider.offsetWidth * CONFIG.SLIDER.scrollRatio;
+      
+      // Get card width including margins/gaps
+      const cardStyle = window.getComputedStyle(firstCard);
+      const cardWidth = firstCard.offsetWidth;
+      const marginRight = parseInt(cardStyle.marginRight) || 0;
+      const gap = parseInt(window.getComputedStyle(slider).gap) || 32; // Default gap from space-x-8
+      
+      return cardWidth + gap;
+    };
+
+    const scrollToPosition = (direction) => {
+      const cardWidth = getCardWidth();
+      const currentScroll = slider.scrollLeft;
+      const containerWidth = slider.offsetWidth;
+      
+      let targetScroll;
+      if (direction === 'left') {
+        // Scroll left by one card width, ensuring we don't go negative
+        targetScroll = Math.max(0, currentScroll - cardWidth);
+      } else {
+        // Scroll right by one card width
+        targetScroll = currentScroll + cardWidth;
+        
+        // Don't scroll past the last item
+        const maxScroll = slider.scrollWidth - containerWidth;
+        targetScroll = Math.min(targetScroll, maxScroll);
+      }
+      
+      slider.scrollTo({ left: targetScroll, behavior: 'smooth' });
+    };
 
     Utils.addEventListener(leftBtn, 'click', () => {
-      slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      scrollToPosition('left');
     });
 
     Utils.addEventListener(rightBtn, 'click', () => {
-      slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      scrollToPosition('right');
     });
 
     // Keyboard navigation
     Utils.addEventListener(leftBtn, 'keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
-        slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        scrollToPosition('left');
       }
     });
 
     Utils.addEventListener(rightBtn, 'keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
-        slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        scrollToPosition('right');
       }
     });
   }
