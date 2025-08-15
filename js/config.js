@@ -15,9 +15,9 @@ export const CONFIG = {
 
   // Data endpoints
   API: {
-    mobiles: 'data/mobiles/mobiles.json',
-    laptops: 'data/laptops/laptops.json',
-    proteins: 'data/protein/protein.json'
+    mobiles: 'data/mobiles/mobiles_enhanced.json',
+    laptops: 'data/laptops/laptops_enhanced.json',
+    proteins: 'data/protein/protein_enhanced.json'
   },
 
   // Animation settings

@@ -17,6 +17,7 @@ export class UIComponents {
    */
   loadTemplates() {
     this.templates.set('productCard', this.getProductCardTemplate());
+    this.templates.set('modernProductCard', this.getModernProductCardTemplate());
     this.templates.set('categoryCard', this.getCategoryCardTemplate());
     this.templates.set('loadingSpinner', this.getLoadingSpinnerTemplate());
     this.templates.set('errorMessage', this.getErrorMessageTemplate());
@@ -156,45 +157,332 @@ export class UIComponents {
   }
 
   /**
-   * Render product grid
-   * @param {Array} products - Product data
+   * Render product grid for modern sliders
+   * @param {Array} products - Products to render
    * @param {Element} container - Container element
-   * @param {Object} options - Rendering options
    */
-  renderProductGrid(products, container, options = {}) {
-    if (!container) return;
+  renderModernProductGrid(products, container) {
+    if (!container || !Array.isArray(products)) return;
 
-    const {
-      showLoading = true,
-      showError = true,
-      emptyMessage = 'No products found'
-    } = options;
+    const template = this.templates.get('modernProductCard');
+    const html = products.map(product => template(product)).join('');
+    
+    container.innerHTML = html;
+    
+    // Add entrance animations
+    this.addEntranceAnimations(container);
+  }
 
-    try {
-      if (products.length === 0) {
-        container.innerHTML = `
-          <div class="empty-state text-center py-8">
-            <i class="material-icons text-6xl text-gray-400 mb-4">inventory_2</i>
-            <p class="text-gray-600">${Utils.escapeHtml(emptyMessage)}</p>
-          </div>
-        `;
-        return;
-      }
+  /**
+   * Modern product card template optimized for sliders
+   * @returns {Function}
+   */
+  getModernProductCardTemplate() {
+    return (product) => `
+      <div class="enhanced-card" data-product-id="${product.id}">
+        <div class="enhanced-image-container">
+          <img alt="${Utils.escapeHtml(product.name)}" 
+               src="${product.image}" 
+               loading="lazy"
+               onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNGM0Y0RjYiLz48cGF0aCBkPSJNNzAgNzBIMTMwVjEzMEg3MFY3MFoiIGZpbGw9IiNEMUQ1REIiLz48L3N2Zz0='"/>
+          
+          ${product.badge ? `<div class="product-badge">${Utils.escapeHtml(product.badge)}</div>` : ''}
+        </div>
+        
+        <div class="enhanced-content">
+          <h3 class="enhanced-title">${Utils.escapeHtml(product.name)}</h3>
+          
+          ${product.specs ? `
+            <div class="product-specs">
+              ${product.specs.map(spec => `
+                <div class="spec-item">
+                  <span class="spec-label">${Utils.escapeHtml(spec.label)}:</span>
+                  <span class="spec-value">${Utils.escapeHtml(spec.value)}</span>
+                </div>
+              `).join('')}
+            </div>
+          ` : ''}
+          
+          ${product.rating ? this.renderEnhancedRating(product.rating, product.reviewCount) : ''}
+          
+          ${product.price ? this.renderEnhancedPrice(product.price, product.originalPrice, product.discount) : ''}
+          
+          <a href="${product.productLink || '#'}" 
+             target="_blank" 
+             rel="noopener"
+             class="enhanced-action-btn">
+            View Details
+            <i class="material-icons">arrow_forward</i>
+          </a>
+        </div>
+      </div>
+    `;
+  }
 
-      const template = this.templates.get('productCard');
-      const productsHTML = products.map(product => template(product)).join('');
-      
-      container.innerHTML = productsHTML;
-      
-      // Add click analytics
-      this.addProductAnalytics(container);
-      
-    } catch (error) {
-      console.error('Error rendering product grid:', error);
-      if (showError) {
-        container.innerHTML = this.templates.get('errorMessage')('Failed to load products');
+  /**
+   * Modern rating display
+   * @param {number} rating - Rating value
+   * @returns {string} HTML for rating
+   */
+  renderModernRating(rating) {
+    const stars = Math.round(rating);
+    const maxStars = 5;
+    let starsHTML = '';
+    
+    for (let i = 1; i <= maxStars; i++) {
+      if (i <= stars) {
+        starsHTML += '<i class="material-icons">star</i>';
+      } else {
+        starsHTML += '<i class="material-icons">star_border</i>';
       }
     }
+    
+    return `
+      <div class="rating">
+        ${starsHTML}
+        <span class="rating-text">(${rating})</span>
+      </div>
+    `;
+  }
+
+  /**
+   * Enhanced rating display for detailed cards
+   * @param {number} rating - Rating value
+   * @param {number} reviewCount - Number of reviews
+   * @returns {string} HTML for enhanced rating
+   */
+  renderEnhancedRating(rating, reviewCount = 0) {
+    const normalizedRating = Math.max(0, Math.min(5, parseFloat(rating) || 0));
+    const fullStars = Math.floor(normalizedRating);
+    const hasHalfStar = normalizedRating % 1 >= 0.5;
+    const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+
+    let starsHTML = '';
+    
+    // Full stars
+    for (let i = 0; i < fullStars; i++) {
+      starsHTML += '<i class="material-icons">star</i>';
+    }
+    
+    // Half star
+    if (hasHalfStar) {
+      starsHTML += '<i class="material-icons">star_half</i>';
+    }
+    
+    // Empty stars
+    for (let i = 0; i < emptyStars; i++) {
+      starsHTML += '<i class="material-icons">star_border</i>';
+    }
+
+    return `
+      <div class="enhanced-rating">
+        <div class="rating-stars">
+          ${starsHTML}
+        </div>
+        <div class="rating-info">
+          <div class="rating-score">${rating}</div>
+          <div class="rating-count">${reviewCount.toLocaleString()} reviews</div>
+        </div>
+      </div>
+    `;
+  }
+
+  /**
+   * Enhanced price display for detailed cards
+   * @param {string} price - Current price
+   * @param {string} originalPrice - Original price (optional)
+   * @param {number} discount - Discount percentage (optional)
+   * @returns {string} HTML for enhanced price
+   */
+  renderEnhancedPrice(price, originalPrice = null, discount = null) {
+    return `
+      <div class="enhanced-price">
+        <div>
+          <div class="price-current">${Utils.escapeHtml(price)}</div>
+          ${originalPrice ? `<div class="price-original">${Utils.escapeHtml(originalPrice)}</div>` : ''}
+        </div>
+        ${discount ? `<div class="price-discount">${discount}% OFF</div>` : ''}
+      </div>
+    `;
+  }
+
+  /**
+   * Create modern slider controls
+   * @param {Element} container - Slider container
+   * @param {string} leftBtnSelector - Left button selector
+   * @param {string} rightBtnSelector - Right button selector
+   */
+  createModernSliderControls(container, leftBtnSelector, rightBtnSelector) {
+    const leftBtn = Utils.querySelector(leftBtnSelector);
+    const rightBtn = Utils.querySelector(rightBtnSelector);
+    
+    if (!leftBtn || !rightBtn || !container) return;
+
+    // Add smooth scrolling functionality
+    this.addModernSliderFunctionality(container, leftBtn, rightBtn);
+  }
+
+  /**
+   * Add modern slider functionality with smooth scrolling
+   * @param {Element} slider - Slider container
+   * @param {Element} leftBtn - Left button
+   * @param {Element} rightBtn - Right button
+   */
+  addModernSliderFunctionality(slider, leftBtn, rightBtn) {
+    const getScrollAmount = () => {
+      const firstCard = slider.querySelector('.enhanced-card');
+      if (!firstCard) return slider.offsetWidth * 0.8;
+      
+      // Calculate card width + gap
+      const cardWidth = firstCard.offsetWidth;
+      const gap = 32; // 2rem gap from CSS
+      return cardWidth + gap;
+    };
+
+    const smoothScroll = (direction) => {
+      const scrollAmount = getScrollAmount();
+      const currentScroll = slider.scrollLeft;
+      const containerWidth = slider.offsetWidth;
+      const maxScroll = slider.scrollWidth - containerWidth;
+      
+      let targetScroll;
+      if (direction === 'left') {
+        targetScroll = Math.max(0, currentScroll - scrollAmount);
+      } else {
+        targetScroll = Math.min(maxScroll, currentScroll + scrollAmount);
+      }
+      
+      // Smooth scroll with custom easing
+      this.animateScroll(slider, currentScroll, targetScroll, 600);
+    };
+
+    // Button event listeners
+    Utils.addEventListener(leftBtn, 'click', () => {
+      smoothScroll('left');
+    });
+
+    Utils.addEventListener(rightBtn, 'click', () => {
+      smoothScroll('right');
+    });
+
+    // Touch/swipe support
+    this.addTouchSupport(slider);
+
+    // Keyboard support
+    Utils.addEventListener(slider, 'keydown', (e) => {
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        smoothScroll('left');
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        smoothScroll('right');
+      }
+    });
+
+    // Update button states based on scroll position
+    this.updateSliderButtons(slider, leftBtn, rightBtn);
+    
+    Utils.addEventListener(slider, 'scroll', () => {
+      this.updateSliderButtons(slider, leftBtn, rightBtn);
+    });
+  }
+
+  /**
+   * Animate scroll with custom easing
+   * @param {Element} element - Element to scroll
+   * @param {number} start - Start position
+   * @param {number} end - End position
+   * @param {number} duration - Animation duration
+   */
+  animateScroll(element, start, end, duration) {
+    const startTime = performance.now();
+    const distance = end - start;
+
+    const animateFrame = (currentTime) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      
+      // Easing function (ease-out cubic)
+      const easeProgress = 1 - Math.pow(1 - progress, 3);
+      
+      element.scrollLeft = start + (distance * easeProgress);
+
+      if (progress < 1) {
+        requestAnimationFrame(animateFrame);
+      }
+    };
+
+    requestAnimationFrame(animateFrame);
+  }
+
+  /**
+   * Add touch/swipe support to slider
+   * @param {Element} slider - Slider element
+   */
+  addTouchSupport(slider) {
+    let startX = 0;
+    let scrollStart = 0;
+    let isDragging = false;
+
+    const handleTouchStart = (e) => {
+      startX = e.touches[0].clientX;
+      scrollStart = slider.scrollLeft;
+      isDragging = true;
+      slider.style.scrollBehavior = 'auto';
+    };
+
+    const handleTouchMove = (e) => {
+      if (!isDragging) return;
+      
+      const currentX = e.touches[0].clientX;
+      const deltaX = startX - currentX;
+      slider.scrollLeft = scrollStart + deltaX;
+    };
+
+    const handleTouchEnd = () => {
+      isDragging = false;
+      slider.style.scrollBehavior = 'smooth';
+    };
+
+    slider.addEventListener('touchstart', handleTouchStart, { passive: true });
+    slider.addEventListener('touchmove', handleTouchMove, { passive: true });
+    slider.addEventListener('touchend', handleTouchEnd, { passive: true });
+  }
+
+  /**
+   * Update slider button states
+   * @param {Element} slider - Slider element
+   * @param {Element} leftBtn - Left button
+   * @param {Element} rightBtn - Right button
+   */
+  updateSliderButtons(slider, leftBtn, rightBtn) {
+    const isAtStart = slider.scrollLeft <= 10;
+    const isAtEnd = slider.scrollLeft >= slider.scrollWidth - slider.offsetWidth - 10;
+    
+    leftBtn.style.opacity = isAtStart ? '0.5' : '1';
+    rightBtn.style.opacity = isAtEnd ? '0.5' : '1';
+    
+    leftBtn.style.pointerEvents = isAtStart ? 'none' : 'auto';
+    rightBtn.style.pointerEvents = isAtEnd ? 'none' : 'auto';
+  }
+
+  /**
+   * Add entrance animations to cards
+   * @param {Element} container - Container element
+   */
+  addEntranceAnimations(container) {
+    const cards = container.querySelectorAll('.enhanced-card');
+    
+    cards.forEach((card, index) => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(20px)';
+      
+      setTimeout(() => {
+        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
+      }, index * 100);
+    });
   }
 
   /**

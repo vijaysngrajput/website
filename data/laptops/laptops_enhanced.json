@@ -1,0 +1,70 @@
+[
+  {
+    "name": "MSI Titan 18 HX AI",
+    "image": "data/laptops/pngs/MSITITAN.png",
+    "description": "Intel Ultra 9, RTX 5090, 18″ Mini‑LED powerhouse.",
+    "productLink": "https://www.msi.com/Laptop/Titan-18-HX-AI-A2XWX",
+    "price": "$4,999",
+    "originalPrice": "$5,499",
+    "discount": 9,
+    "rating": 4.8,
+    "reviewCount": 127,
+    "badge": "FLAGSHIP",
+    "specs": [
+      { "label": "CPU", "value": "Intel Ultra 9 285HX" },
+      { "label": "GPU", "value": "RTX 5090" },
+      { "label": "RAM", "value": "64GB DDR5" },
+      { "label": "Display", "value": "18\" Mini-LED" }
+    ]
+  },
+  {
+    "name": "Razer Blade 16",
+    "image": "data/laptops/pngs/RAZER.png",
+    "description": "Slim design, Ryzen AI 9, RTX 5090, vibrant QHD+ display.",
+    "productLink": "https://www.razer.com/gaming-laptops/razer-blade-16?srsltid=AfmBOoq3MYbqlWNHpZdzxSYsvZavuetwvCA5jc29iNkbUK9sIldOEc8q",
+    "price": "$2,999",
+    "rating": 4.6,
+    "reviewCount": 289,
+    "badge": "SLIM GAMING",
+    "specs": [
+      { "label": "CPU", "value": "Ryzen AI 9 HX 370" },
+      { "label": "GPU", "value": "RTX 5090" },
+      { "label": "RAM", "value": "32GB DDR5" },
+      { "label": "Display", "value": "16\" QHD+ 240Hz" }
+    ]
+  },
+  {
+    "name": "MacBook Pro M4 Max",
+    "image": "data/laptops/pngs/macbook.png",
+    "description": "M4 Max chip, Liquid Retina XDR, top-tier macOS performance.",
+    "productLink": "https://www.apple.com/in/shop/buy-mac/macbook-pro/14-inch-space-black-standard-display-apple-m4-chip-with-10-core-cpu-and-10-core-gpu-16gb-memory-512gb",
+    "price": "$1,999",
+    "rating": 4.9,
+    "reviewCount": 1456,
+    "badge": "BESTSELLER",
+    "specs": [
+      { "label": "Chip", "value": "M4 Max" },
+      { "label": "Memory", "value": "16GB Unified" },
+      { "label": "Storage", "value": "512GB SSD" },
+      { "label": "Display", "value": "14\" Liquid Retina XDR" }
+    ]
+  },
+  {
+    "name": "Lenovo Legion Pro 7i Gen 10",
+    "image": "data/laptops/pngs/legion.png",
+    "description": "Intel Ultra 9 HX, RTX 5090, QHD+ 240 Hz, pro‑gaming cooled.",
+    "productLink": "https://www.lenovo.com/in/en/p/laptops/legion-laptops/legion-pro-series/legion-pro-7i-gen-10-16-inch-intel/len101g0039?orgRef=https%253A%252F%252Fwww.google.com%252F&srsltid=AfmBOoqLmtO4TMfzHo7PtT0_pUAfusEfPephkK1R9eoz_T4lB7JC_XrH#",
+    "price": "$1,799",
+    "originalPrice": "$2,099",
+    "discount": 14,
+    "rating": 4.7,
+    "reviewCount": 542,
+    "badge": "PRO GAMING",
+    "specs": [
+      { "label": "CPU", "value": "Intel Ultra 9 HX" },
+      { "label": "GPU", "value": "RTX 5090" },
+      { "label": "RAM", "value": "32GB DDR5" },
+      { "label": "Display", "value": "16\" QHD+ 240Hz" }
+    ]
+  }
+]

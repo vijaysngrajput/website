@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Smooth Slider Demo - Ten Z Vault</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="css/components/modern-slider.css">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      margin: 0;
+      padding: 20px;
+      min-height: 100vh;
+    }
+    
+    .demo-header {
+      text-align: center;
+      color: white;
+      margin-bottom: 50px;
+    }
+    
+    .demo-header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 50%, #ddd6fe 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .demo-header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      margin-bottom: 30px;
+    }
+    
+    .section-header {
+      text-align: center;
+      margin: 60px 0 30px 0;
+    }
+    
+    .section-header h2 {
+      color: white;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .section-header p {
+      color: rgba(255,255,255,0.8);
+      font-size: 1.1rem;
+    }
+    
+    .demo-features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .feature-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 15px;
+      padding: 20px;
+      text-align: center;
+      color: white;
+    }
+    
+    .feature-card h3 {
+      margin: 0 0 10px 0;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    
+    .feature-card p {
+      margin: 0;
+      opacity: 0.8;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="demo-header">
+    <h1>✨ Modern Smooth Slider</h1>
+    <p>Experience buttery smooth, eye-catching product sliders</p>
+    
+    <div class="demo-features">
+      <div class="feature-card">
+        <h3>🚀 Smooth Scrolling</h3>
+        <p>Physics-based momentum with custom easing</p>
+      </div>
+      <div class="feature-card">
+        <h3>🎭 Card Animations</h3>
+        <p>Floating effects and shimmer on hover</p>
+      </div>
+      <div class="feature-card">
+        <h3>📱 Touch Support</h3>
+        <p>Perfect swipe gestures for mobile</p>
+      </div>
+      <div class="feature-card">
+        <h3>⌨️ Keyboard Navigation</h3>
+        <p>Arrow keys and accessibility support</p>
+      </div>
+      <div class="feature-card">
+        <h3>🎨 Glassmorphism Design</h3>
+        <p>Modern frosted glass card effects</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" style="max-width: 1200px; margin: 0 auto;">
+    
+    <!-- Smartphones Section -->
+    <div class="section-header">
+      <h2>📱 Latest Smartphones</h2>
+      <p>Flagship devices with cutting-edge technology</p>
+    </div>
+    
+    <div class="relative">
+      <button class="modern-nav-btn" style="position: absolute; left: 4px; top: 50%; transform: translateY(-50%); z-index: 20;" onclick="scrollSlider('smartphones', 'left')">
+        <i class="material-icons">chevron_left</i>
+      </button>
+      <button class="modern-nav-btn" style="position: absolute; right: 4px; top: 50%; transform: translateY(-50%); z-index: 20;" onclick="scrollSlider('smartphones', 'right')">
+        <i class="material-icons">chevron_right</i>
+      </button>
+      
+      <div id="smartphones-slider" class="modern-slider">
+        <div class="crystal-card">
+          <div class="product-image-container">
+            <img src="data/mobiles/pngs/apple16pro.png" alt="iPhone 16 Pro" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNGM0Y0RjYiLz48cGF0aCBkPSJNNzAgNzBIMTMwVjEzMEg3MFY3MFoiIGZpbGw9IiNEMUQ1REIiLz48L3N2Zz4='">
+          </div>
+          <div class="product-content">
+            <h3>iPhone 16 Pro</h3>
+            <p class="crystal-card-desc">Latest flagship with A18 Pro chip and advanced camera system</p>
+            <div class="rating">
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <span class="rating-text">(4.9)</span>
+            </div>
+            <div class="price">$999</div>
+          </div>
+          <a href="#" class="view-details-btn">
+            View Details
+            <i class="material-icons">arrow_forward</i>
+          </a>
+        </div>
+
+        <div class="crystal-card">
+          <div class="product-image-container">
+            <img src="data/mobiles/pngs/samsungs24ultra.png" alt="Samsung S24 Ultra" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNGM0Y0RjYiLz48cGF0aCBkPSJNNzAgNzBIMTMwVjEzMEg3MFY3MFoiIGZpbGw9IiNEMUQ1REIiLz48L3N2Zz4='">
+          </div>
+          <div class="product-content">
+            <h3>Samsung S24 Ultra</h3>
+            <p class="crystal-card-desc">Ultimate productivity phone with S Pen and advanced AI</p>
+            <div class="rating">
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <i class="material-icons">star_border</i>
+              <span class="rating-text">(4.7)</span>
+            </div>
+            <div class="price">$1,199</div>
+          </div>
+          <a href="#" class="view-details-btn">
+            View Details
+            <i class="material-icons">arrow_forward</i>
+          </a>
+        </div>
+
+        <div class="crystal-card">
+          <div class="product-image-container">
+            <img src="data/mobiles/pngs/pixel9pro.png" alt="Google Pixel 9 Pro" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNGM0Y0RjYiLz48cGF0aCBkPSJNNzAgNzBIMTMwVjEzMEg3MFY3MFoiIGZpbGw9IiNEMUQ1REIiLz48L3N2Zz4='">
+          </div>
+          <div class="product-content">
+            <h3>Google Pixel 9 Pro</h3>
+            <p class="crystal-card-desc">AI-powered photography and pure Android experience</p>
+            <div class="rating">
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <span class="rating-text">(4.8)</span>
+            </div>
+            <div class="price">$899</div>
+          </div>
+          <a href="#" class="view-details-btn">
+            View Details
+            <i class="material-icons">arrow_forward</i>
+          </a>
+        </div>
+
+        <div class="crystal-card">
+          <div class="product-image-container">
+            <img src="data/mobiles/pngs/asusrog9.png" alt="ASUS ROG Phone 9" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNGM0Y0RjYiLz48cGF0aCBkPSJNNzAgNzBIMTMwVjEzMEg3MFY3MFoiIGZpbGw9IiNEMUQ1REIiLz48L3N2Zz4='">
+          </div>
+          <div class="product-content">
+            <h3>ASUS ROG Phone 9</h3>
+            <p class="crystal-card-desc">Ultimate gaming phone with advanced cooling system</p>
+            <div class="rating">
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <i class="material-icons">star_border</i>
+              <span class="rating-text">(4.6)</span>
+            </div>
+            <div class="price">$799</div>
+          </div>
+          <a href="#" class="view-details-btn">
+            View Details
+            <i class="material-icons">arrow_forward</i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Laptops Section -->
+    <div class="section-header">
+      <h2>💻 High Performance Laptops</h2>
+      <p>Powerful machines for work and gaming</p>
+    </div>
+    
+    <div class="relative">
+      <button class="modern-nav-btn" style="position: absolute; left: 4px; top: 50%; transform: translateY(-50%); z-index: 20;" onclick="scrollSlider('laptops', 'left')">
+        <i class="material-icons">chevron_left</i>
+      </button>
+      <button class="modern-nav-btn" style="position: absolute; right: 4px; top: 50%; transform: translateY(-50%); z-index: 20;" onclick="scrollSlider('laptops', 'right')">
+        <i class="material-icons">chevron_right</i>
+      </button>
+      
+      <div id="laptops-slider" class="modern-slider">
+        <div class="crystal-card">
+          <div class="product-image-container">
+            <img src="data/laptops/pngs/macbook.png" alt="MacBook Pro" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNGM0Y0RjYiLz48cGF0aCBkPSJNNzAgNzBIMTMwVjEzMEg3MFY3MFoiIGZpbGw9IiNEMUQ1REIiLz48L3N2Zz4='">
+          </div>
+          <div class="product-content">
+            <h3>MacBook Pro M4</h3>
+            <p class="crystal-card-desc">Revolutionary M4 chip with incredible performance</p>
+            <div class="rating">
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <span class="rating-text">(4.9)</span>
+            </div>
+            <div class="price">$1,999</div>
+          </div>
+          <a href="#" class="view-details-btn">
+            View Details
+            <i class="material-icons">arrow_forward</i>
+          </a>
+        </div>
+
+        <div class="crystal-card">
+          <div class="product-image-container">
+            <img src="data/laptops/pngs/RAZER.png" alt="Razer Blade" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNGM0Y0RjYiLz48cGF0aCBkPSJNNzAgNzBIMTMwVjEzMEg3MFY3MFoiIGZpbGw9IiNEMUQ1REIiLz48L3N2Zz4='">
+          </div>
+          <div class="product-content">
+            <h3>Razer Blade 18</h3>
+            <p class="crystal-card-desc">Ultimate gaming laptop with RTX 4090</p>
+            <div class="rating">
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <i class="material-icons">star_border</i>
+              <span class="rating-text">(4.7)</span>
+            </div>
+            <div class="price">$2,999</div>
+          </div>
+          <a href="#" class="view-details-btn">
+            View Details
+            <i class="material-icons">arrow_forward</i>
+          </a>
+        </div>
+
+        <div class="crystal-card">
+          <div class="product-image-container">
+            <img src="data/laptops/pngs/legion.png" alt="Legion Gaming" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNGM0Y0RjYiLz48cGF0aCBkPSJNNzAgNzBIMTMwVjEzMEg3MFY3MFoiIGZpbGw9IiNEMUQ1REIiLz48L3N2Zz4='">
+          </div>
+          <div class="product-content">
+            <h3>Legion Pro 7i</h3>
+            <p class="crystal-card-desc">Professional gaming with Intel 14th gen</p>
+            <div class="rating">
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <i class="material-icons">star</i>
+              <span class="rating-text">(4.8)</span>
+            </div>
+            <div class="price">$1,799</div>
+          </div>
+          <a href="#" class="view-details-btn">
+            View Details
+            <i class="material-icons">arrow_forward</i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Instructions -->
+    <div style="text-align: center; margin-top: 60px; color: rgba(255,255,255,0.8);">
+      <p style="font-size: 1.3rem; margin-bottom: 25px;">🎮 <strong>Try the smooth interactions:</strong></p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; max-width: 800px; margin: 0 auto;">
+        <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 10px;">
+          🖱️ <strong>Click</strong><br>Navigation buttons
+        </div>
+        <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 10px;">
+          📱 <strong>Swipe</strong><br>Touch & drag on mobile
+        </div>
+        <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 10px;">
+          ⌨️ <strong>Arrow Keys</strong><br>Keyboard navigation
+        </div>
+        <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 10px;">
+          ✨ <strong>Hover</strong><br>Card animations
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function scrollSlider(sliderId, direction) {
+      const slider = document.getElementById(sliderId + '-slider');
+      if (!slider) return;
+
+      const cardWidth = 340 + 32; // card width + gap
+      const scrollAmount = direction === 'left' ? -cardWidth : cardWidth;
+      
+      slider.scrollBy({
+        left: scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+
+    // Add keyboard support
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') {
+        scrollSlider('smartphones', 'left');
+      } else if (e.key === 'ArrowRight') {
+        scrollSlider('smartphones', 'right');
+      }
+    });
+
+    // Add some interactivity
+    document.querySelectorAll('.crystal-card').forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        card.style.transform = 'translateY(-12px) scale(1.02)';
+      });
+      
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'translateY(0) scale(1)';
+      });
+    });
+  </script>
+</body>
+</html>

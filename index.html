@@ -74,8 +74,10 @@
   <link rel="stylesheet" href="css/base.css"/>
   <link rel="stylesheet" href="css/components/header.css"/>
   <link rel="stylesheet" href="css/components/cards.css"/>
+  <link rel="stylesheet" href="css/components/enhanced-cards.css"/>
   <link rel="stylesheet" href="css/components/animations.css"/>
   <link rel="stylesheet" href="css/components/sliders.css"/>
+  <link rel="stylesheet" href="css/components/modern-slider.css"/>
   <link rel="stylesheet" href="css/components/sections.css"/>
   <link rel="stylesheet" href="css/components/footer.css"/>
   <link rel="stylesheet" href="css/components/modals.css"/>
@@ -261,6 +263,7 @@
 <!-- Spacing between categories and smartphones -->
 <div class="py-8" style="background: transparent;"></div>
 
+<!-- Latest Smartphones Section -->
 <section class="pt-8 pb-8" style="background: transparent;">
   <div class="container mx-auto px-6">
     <!-- Enhanced heading for Latest Phones -->
@@ -273,21 +276,25 @@
         <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full opacity-60"></div>
       </div>
     </div>
-    <!-- Slider controls -->
+    
+    <!-- Enhanced Slider Container -->
     <div class="relative">
-      <button id="smartphones-slider-left" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white bg-opacity-40 hover:bg-opacity-70 text-blue-600 rounded-full p-2 shadow-lg" style="backdrop-filter: blur(8px);">
+      <button id="smartphones-slider-left" class="absolute left-4 top-1/2 -translate-y-1/2 z-20 modern-nav-btn">
         <i class="material-icons">chevron_left</i>
       </button>
-      <button id="smartphones-slider-right" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white bg-opacity-40 hover:bg-opacity-70 text-blue-600 rounded-full p-2 shadow-lg" style="backdrop-filter: blur(8px);">
+      <button id="smartphones-slider-right" class="absolute right-4 top-1/2 -translate-y-1/2 z-20 modern-nav-btn">
         <i class="material-icons">chevron_right</i>
       </button>
-      <!-- Horizontal slider container -->
-      <div id="categories-slider" class="flex overflow-x-auto space-x-8 scrollbar-hide px-8 py-2 snap-x snap-mandatory scroll-smooth">
+      
+      <!-- Smooth Slider Container -->
+      <div id="categories-slider" class="modern-slider">
         <!-- Cards will be injected here -->
       </div>
     </div>
   </div>
 </section>
+
+<!-- High Performance Laptops Section -->
 <section class="py-20" style="background: transparent;">
   <div class="container mx-auto px-6">
     <div class="w-full flex justify-center items-center mb-12">
@@ -299,11 +306,24 @@
         <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full opacity-60"></div>
       </div>
     </div>
-    <div id="laptops-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-      <!-- Cards will be injected here -->
+    
+    <!-- Enhanced Slider Container -->
+    <div class="relative">
+      <button id="laptops-slider-left" class="absolute left-4 top-1/2 -translate-y-1/2 z-20 modern-nav-btn">
+        <i class="material-icons">chevron_left</i>
+      </button>
+      <button id="laptops-slider-right" class="absolute right-4 top-1/2 -translate-y-1/2 z-20 modern-nav-btn">
+        <i class="material-icons">chevron_right</i>
+      </button>
+      
+      <div id="laptops-container" class="modern-slider">
+        <!-- Cards will be injected here -->
+      </div>
     </div>
   </div>
 </section>
+
+<!-- Best Quality Proteins Section -->
 <section class="py-20" style="background: transparent;">
   <div class="container mx-auto px-6">
     <div class="w-full flex justify-center items-center mb-12">
@@ -315,8 +335,19 @@
         <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-orange-500 to-amber-600 rounded-full opacity-60"></div>
       </div>
     </div>
-    <div id="protein-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-      <!-- Cards will be injected here -->
+    
+    <!-- Enhanced Slider Container -->
+    <div class="relative">
+      <button id="proteins-slider-left" class="absolute left-4 top-1/2 -translate-y-1/2 z-20 modern-nav-btn">
+        <i class="material-icons">chevron_left</i>
+      </button>
+      <button id="proteins-slider-right" class="absolute right-4 top-1/2 -translate-y-1/2 z-20 modern-nav-btn">
+        <i class="material-icons">chevron_right</i>
+      </button>
+      
+      <div id="protein-container" class="modern-slider">
+        <!-- Cards will be injected here -->
+      </div>
     </div>
   </div>
 </section>
@@ -372,9 +403,9 @@
     <button id="close-categories-modal" class="absolute top-2 right-2 text-gray-500 hover:text-gray-800 text-2xl">&times;</button>
     <h2 class="text-2xl font-bold mb-6">Categories</h2>
     <ul class="space-y-4">
-      <li><a href="#categories-container" class="text-blue-600 font-semibold hover:underline">Mobiles</a></li>
+      <li><a href="#categories-slider" class="text-blue-600 font-semibold hover:underline">Smartphones</a></li>
       <li><a href="#laptops-container" class="text-blue-600 font-semibold hover:underline">Laptops</a></li>
-      <li><a href="#protein-container" class="text-blue-600 font-semibold hover:underline">Protein</a></li>
+      <li><a href="#protein-container" class="text-blue-600 font-semibold hover:underline">Proteins</a></li>
     </ul>
   </div>
 </div>

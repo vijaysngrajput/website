@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Carousel Demo - Ten Z Vault</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="css/components/carousel-3d.css">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      margin: 0;
+      padding: 20px;
+      min-height: 100vh;
+    }
+    .demo-header {
+      text-align: center;
+      color: white;
+      margin-bottom: 50px;
+    }
+    .demo-header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 50%, #ddd6fe 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .demo-header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+  <div class="demo-header">
+    <h1>🎡 3D Carousel Demo</h1>
+    <p>Experience the stunning 3D carousel effect for Ten Z Vault</p>
+  </div>
+
+  <div class="container" style="max-width: 1200px; margin: 0 auto;">
+    <!-- Category Switcher -->
+    <div class="category-switcher">
+      <button class="category-tab active" data-category="smartphones">
+        <i class="material-icons mr-2">smartphone</i>
+        Smartphones
+      </button>
+      <button class="category-tab" data-category="laptops">
+        <i class="material-icons mr-2">laptop_mac</i>
+        Laptops
+      </button>
+      <button class="category-tab" data-category="proteins">
+        <i class="material-icons mr-2">fitness_center</i>
+        Proteins
+      </button>
+    </div>
+
+    <!-- 3D Carousel -->
+    <div class="carousel-3d-container">
+      <div class="carousel-3d">
+        <!-- Sample items -->
+        <div class="carousel-3d-item active">
+          <div class="crystal-card flex flex-col justify-between p-6 text-center">
+            <div class="product-image-container mb-4">
+              <img src="data/mobiles/pngs/apple16pro.png" alt="iPhone 16 Pro" class="h-32 w-full object-contain mx-auto">
+            </div>
+            <div class="product-info flex-grow">
+              <h3 class="text-xl font-bold mb-2 text-gray-800">iPhone 16 Pro</h3>
+              <p class="text-sm text-gray-600 mb-3 line-clamp-2">Latest flagship with A18 Pro chip and advanced camera system</p>
+              <div class="flex items-center justify-center mb-2">
+                <div class="flex">
+                  <i class="material-icons text-yellow-400 text-sm">star</i>
+                  <i class="material-icons text-yellow-400 text-sm">star</i>
+                  <i class="material-icons text-yellow-400 text-sm">star</i>
+                  <i class="material-icons text-yellow-400 text-sm">star</i>
+                  <i class="material-icons text-yellow-400 text-sm">star</i>
+                </div>
+                <span class="ml-1 text-sm text-gray-600">(4.9)</span>
+              </div>
+              <div class="text-lg font-semibold text-blue-600 mt-2">$999</div>
+            </div>
+            <div class="mt-4">
+              <a href="#" class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200 text-sm font-medium">
+                View Details
+                <i class="material-icons ml-1 text-sm">arrow_forward</i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-3d-item prev-1">
+          <div class="crystal-card flex flex-col justify-between p-6 text-center">
+            <div class="product-image-container mb-4">
+              <img src="data/mobiles/pngs/samsungs24ultra.png" alt="Samsung S24 Ultra" class="h-32 w-full object-contain mx-auto">
+            </div>
+            <div class="product-info flex-grow">
+              <h3 class="text-xl font-bold mb-2 text-gray-800">Samsung S24 Ultra</h3>
+              <p class="text-sm text-gray-600 mb-3 line-clamp-2">Ultimate productivity phone with S Pen and advanced AI features</p>
+              <div class="flex items-center justify-center mb-2">
+                <div class="flex">
+                  <i class="material-icons text-yellow-400 text-sm">star</i>
+                  <i class="material-icons text-yellow-400 text-sm">star</i>
+                  <i class="material-icons text-yellow-400 text-sm">star</i>
+                  <i class="material-icons text-yellow-400 text-sm">star</i>
+                  <i class="material-icons text-gray-300 text-sm">star_border</i>
+                </div>
+                <span class="ml-1 text-sm text-gray-600">(4.7)</span>
+              </div>
+              <div class="text-lg font-semibold text-blue-600 mt-2">$1,199</div>
+            </div>
+            <div class="mt-4">
+              <a href="#" class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200 text-sm font-medium">
+                View Details
+                <i class="material-icons ml-1 text-sm">arrow_forward</i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-3d-item next-1">
+          <div class="crystal-card flex flex-col justify-between p-6 text-center">
+            <div class="product-image-container mb-4">
+              <img src="data/mobiles/pngs/pixel9pro.png" alt="Google Pixel 9 Pro" class="h-32 w-full object-contain mx-auto">
+            </div>
+            <div class="product-info flex-grow">
+              <h3 class="text-xl font-bold mb-2 text-gray-800">Google Pixel 9 Pro</h3>
+              <p class="text-sm text-gray-600 mb-3 line-clamp-2">AI-powered photography and pure Android experience</p>
+              <div class="flex items-center justify-center mb-2">
+                <div class="flex">
+                  <i class="material-icons text-yellow-400 text-sm">star</i>
+                  <i class="material-icons text-yellow-400 text-sm">star</i>
+                  <i class="material-icons text-yellow-400 text-sm">star</i>
+                  <i class="material-icons text-yellow-400 text-sm">star</i>
+                  <i class="material-icons text-yellow-400 text-sm">star</i>
+                </div>
+                <span class="ml-1 text-sm text-gray-600">(4.8)</span>
+              </div>
+              <div class="text-lg font-semibold text-blue-600 mt-2">$899</div>
+            </div>
+            <div class="mt-4">
+              <a href="#" class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200 text-sm font-medium">
+                View Details
+                <i class="material-icons ml-1 text-sm">arrow_forward</i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-3d-item prev-2">
+          <div class="crystal-card flex flex-col justify-between p-6 text-center">
+            <div class="product-image-container mb-4">
+              <img src="data/mobiles/pngs/asusrog9.png" alt="ASUS ROG Phone 9" class="h-32 w-full object-contain mx-auto">
+            </div>
+            <div class="product-info flex-grow">
+              <h3 class="text-xl font-bold mb-2 text-gray-800">ASUS ROG Phone 9</h3>
+              <p class="text-sm text-gray-600 mb-3 line-clamp-2">Ultimate gaming phone with advanced cooling and 165Hz display</p>
+              <div class="text-lg font-semibold text-blue-600 mt-2">$799</div>
+            </div>
+            <div class="mt-4">
+              <a href="#" class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200 text-sm font-medium">
+                View Details
+                <i class="material-icons ml-1 text-sm">arrow_forward</i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-3d-item next-2">
+          <div class="crystal-card flex flex-col justify-between p-6 text-center">
+            <div class="product-image-container mb-4">
+              <div style="height: 128px; background: #f3f4f6; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9ca3af;">
+                More Products
+              </div>
+            </div>
+            <div class="product-info flex-grow">
+              <h3 class="text-xl font-bold mb-2 text-gray-800">OnePlus 12</h3>
+              <p class="text-sm text-gray-600 mb-3 line-clamp-2">Fast charging and smooth performance at competitive price</p>
+              <div class="text-lg font-semibold text-blue-600 mt-2">$699</div>
+            </div>
+            <div class="mt-4">
+              <a href="#" class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200 text-sm font-medium">
+                View Details
+                <i class="material-icons ml-1 text-sm">arrow_forward</i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation buttons -->
+      <button class="carousel-3d-nav prev" onclick="rotateCarousel(-1)">
+        <i class="material-icons">chevron_left</i>
+      </button>
+      <button class="carousel-3d-nav next" onclick="rotateCarousel(1)">
+        <i class="material-icons">chevron_right</i>
+      </button>
+
+      <!-- Indicators -->
+      <div class="carousel-3d-indicators">
+        <button class="carousel-3d-indicator" onclick="goToSlide(0)"></button>
+        <button class="carousel-3d-indicator active" onclick="goToSlide(1)"></button>
+        <button class="carousel-3d-indicator" onclick="goToSlide(2)"></button>
+        <button class="carousel-3d-indicator" onclick="goToSlide(3)"></button>
+        <button class="carousel-3d-indicator" onclick="goToSlide(4)"></button>
+      </div>
+    </div>
+
+    <!-- Category Stats -->
+    <div class="category-info text-center mt-8">
+      <div class="category-stats flex justify-center space-x-8 text-sm text-white/80">
+        <div class="stat">
+          <span class="block text-2xl font-bold">5</span>
+          <span>Products</span>
+        </div>
+        <div class="stat">
+          <span class="block text-2xl font-bold">4.8</span>
+          <span>Avg Rating</span>
+        </div>
+        <div class="stat">
+          <span class="block text-2xl font-bold">$699-$1199</span>
+          <span>Price Range</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let currentIndex = 0;
+    const items = document.querySelectorAll('.carousel-3d-item');
+    const indicators = document.querySelectorAll('.carousel-3d-indicator');
+
+    function updateCarousel() {
+      items.forEach((item, index) => {
+        item.classList.remove('active', 'prev-1', 'prev-2', 'next-1', 'next-2', 'hidden');
+        
+        const relativeIndex = index - currentIndex;
+        
+        if (relativeIndex === 0) {
+          item.classList.add('active');
+        } else if (relativeIndex === -1) {
+          item.classList.add('prev-1');
+        } else if (relativeIndex === -2) {
+          item.classList.add('prev-2');
+        } else if (relativeIndex === 1) {
+          item.classList.add('next-1');
+        } else if (relativeIndex === 2) {
+          item.classList.add('next-2');
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+
+      indicators.forEach((indicator, index) => {
+        indicator.classList.toggle('active', index === currentIndex);
+      });
+    }
+
+    function rotateCarousel(direction) {
+      currentIndex = (currentIndex + direction + items.length) % items.length;
+      updateCarousel();
+    }
+
+    function goToSlide(index) {
+      currentIndex = index;
+      updateCarousel();
+    }
+
+    // Initialize
+    updateCarousel();
+
+    // Auto-play demo
+    setInterval(() => {
+      rotateCarousel(1);
+    }, 4000);
+  </script>
+</body>
+</html>

@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enhanced Product Cards - Information Display Options</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="css/components/enhanced-cards.css">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      margin: 0;
+      padding: 20px;
+      min-height: 100vh;
+    }
+    
+    .demo-header {
+      text-align: center;
+      color: white;
+      margin-bottom: 50px;
+    }
+    
+    .demo-header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 50%, #ddd6fe 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .demo-header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      margin-bottom: 30px;
+    }
+    
+    .layout-section {
+      margin-bottom: 80px;
+    }
+    
+    .section-title {
+      color: white;
+      font-size: 2rem;
+      margin-bottom: 15px;
+      font-family: 'Montserrat', sans-serif;
+      text-align: center;
+    }
+    
+    .section-description {
+      color: rgba(255,255,255,0.8);
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 1.1rem;
+    }
+    
+    .cards-container {
+      display: flex;
+      gap: 24px;
+      overflow-x: auto;
+      padding: 20px 0;
+      scroll-snap-type: x mandatory;
+    }
+    
+    .cards-container > * {
+      scroll-snap-align: start;
+    }
+    
+    .feature-highlights {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .feature-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 15px;
+      padding: 20px;
+      text-align: center;
+      color: white;
+    }
+    
+    .feature-card h3 {
+      margin: 0 0 10px 0;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    
+    .feature-card p {
+      margin: 0;
+      opacity: 0.8;
+      font-size: 0.9rem;
+    }
+    
+    .comparison-table {
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin: 40px auto;
+      max-width: 800px;
+      color: white;
+    }
+    
+    .comparison-table table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    
+    .comparison-table th,
+    .comparison-table td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+    
+    .comparison-table th {
+      font-weight: 700;
+      color: #ffffff;
+    }
+    
+    .comparison-table td {
+      color: rgba(255,255,255,0.9);
+    }
+    
+    .check-icon {
+      color: #10b981;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="demo-header">
+    <h1>📊 Enhanced Product Information Display</h1>
+    <p>Better ways to showcase product details with increased card sizes</p>
+    
+    <div class="feature-highlights">
+      <div class="feature-card">
+        <h3>📏 Larger Card Sizes</h3>
+        <p>Increased dimensions for more information</p>
+      </div>
+      <div class="feature-card">
+        <h3>📝 Detailed Specs</h3>
+        <p>Key specifications clearly displayed</p>
+      </div>
+      <div class="feature-card">
+        <h3>⭐ Enhanced Ratings</h3>
+        <p>Visual ratings with review counts</p>
+      </div>
+      <div class="feature-card">
+        <h3>💰 Better Pricing</h3>
+        <p>Current price, discounts, and savings</p>
+      </div>
+      <div class="feature-card">
+        <h3>🏷️ Product Badges</h3>
+        <p>Bestseller, new arrival indicators</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" style="max-width: 1400px; margin: 0 auto;">
+    
+    <!-- Enhanced Detailed Cards -->
+    <div class="layout-section">
+      <h2 class="section-title">🔍 Option 1: Enhanced Detailed Cards</h2>
+      <p class="section-description">
+        Larger vertical cards (380x500px) with comprehensive product information, specs, and enhanced pricing display
+      </p>
+      
+      <div class="cards-container">
+        <div class="enhanced-card">
+          <div class="enhanced-image-container">
+            <img src="data/mobiles/pngs/apple16pro.png" alt="iPhone 16 Pro" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNGM0Y0RjYiLz48cGF0aCBkPSJNNzAgNzBIMTMwVjEzMEg3MFY3MFoiIGZpbGw9IiNEMUQ1REIiLz48L3N2Zz4='">
+            <div class="product-badge">BESTSELLER</div>
+          </div>
+          
+          <div class="enhanced-content">
+            <h3 class="enhanced-title">iPhone 16 Pro</h3>
+            
+            <div class="product-specs">
+              <div class="spec-item">
+                <span class="spec-label">Chip:</span>
+                <span class="spec-value">A18 Pro</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Storage:</span>
+                <span class="spec-value">256GB</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Camera:</span>
+                <span class="spec-value">48MP Pro</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Display:</span>
+                <span class="spec-value">6.3" OLED</span>
+              </div>
+            </div>
+            
+            <div class="enhanced-rating">
+              <div class="rating-stars">
+                <i class="material-icons">star</i>
+                <i class="material-icons">star</i>
+                <i class="material-icons">star</i>
+                <i class="material-icons">star</i>
+                <i class="material-icons">star</i>
+              </div>
+              <div class="rating-info">
+                <div class="rating-score">4.9</div>
+                <div class="rating-count">2,847 reviews</div>
+              </div>
+            </div>
+            
+            <div class="enhanced-price">
+              <div>
+                <div class="price-current">$999</div>
+                <div class="price-original">$1,199</div>
+              </div>
+              <div class="price-discount">17% OFF</div>
+            </div>
+            
+            <a href="#" class="enhanced-action-btn">
+              View Details
+              <i class="material-icons">arrow_forward</i>
+            </a>
+          </div>
+        </div>
+
+        <div class="enhanced-card">
+          <div class="enhanced-image-container">
+            <img src="data/laptops/pngs/macbook.png" alt="MacBook Pro M4" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNGM0Y0RjYiLz48cGF0aCBkPSJNNzAgNzBIMTMwVjEzMEg3MFY3MFoiIGZpbGw9IiNEMUQ1REIiLz48L3N2Zz4='">
+            <div class="product-badge">NEW</div>
+          </div>
+          
+          <div class="enhanced-content">
+            <h3 class="enhanced-title">MacBook Pro M4</h3>
+            
+            <div class="product-specs">
+              <div class="spec-item">
+                <span class="spec-label">Chip:</span>
+                <span class="spec-value">M4 Pro</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Memory:</span>
+                <span class="spec-value">16GB</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Storage:</span>
+                <span class="spec-value">512GB SSD</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Display:</span>
+                <span class="spec-value">14" Liquid Retina</span>
+              </div>
+            </div>
+            
+            <div class="enhanced-rating">
+              <div class="rating-stars">
+                <i class="material-icons">star</i>
+                <i class="material-icons">star</i>
+                <i class="material-icons">star</i>
+                <i class="material-icons">star</i>
+                <i class="material-icons">star</i>
+              </div>
+              <div class="rating-info">
+                <div class="rating-score">4.8</div>
+                <div class="rating-count">1,923 reviews</div>
+              </div>
+            </div>
+            
+            <div class="enhanced-price">
+              <div>
+                <div class="price-current">$1,999</div>
+              </div>
+            </div>
+            
+            <a href="#" class="enhanced-action-btn">
+              View Details
+              <i class="material-icons">arrow_forward</i>
+            </a>
+          </div>
+        </div>
+
+        <div class="enhanced-card">
+          <div class="enhanced-image-container">
+            <img src="data/protein/pngs/on.png" alt="Optimum Nutrition Gold Standard" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNGM0Y0RjYiLz48cGF0aCBkPSJNNzAgNzBIMTMwVjEzMEg3MFY3MFoiIGZpbGw9IiNEMUQ1REIiLz48L3N2Zz4='">
+            <div class="product-badge">TOP RATED</div>
+          </div>
+          
+          <div class="enhanced-content">
+            <h3 class="enhanced-title">Gold Standard Whey</h3>
+            
+            <div class="product-specs">
+              <div class="spec-item">
+                <span class="spec-label">Protein:</span>
+                <span class="spec-value">24g per serving</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Servings:</span>
+                <span class="spec-value">74 servings</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Flavor:</span>
+                <span class="spec-value">Double Chocolate</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Type:</span>
+                <span class="spec-value">Whey Isolate</span>
+              </div>
+            </div>
+            
+            <div class="enhanced-rating">
+              <div class="rating-stars">
+                <i class="material-icons">star</i>
+                <i class="material-icons">star</i>
+                <i class="material-icons">star</i>
+                <i class="material-icons">star</i>
+                <i class="material-icons">star_border</i>
+              </div>
+              <div class="rating-info">
+                <div class="rating-score">4.7</div>
+                <div class="rating-count">5,634 reviews</div>
+              </div>
+            </div>
+            
+            <div class="enhanced-price">
+              <div>
+                <div class="price-current">$54.99</div>
+                <div class="price-original">$69.99</div>
+              </div>
+              <div class="price-discount">21% OFF</div>
+            </div>
+            
+            <a href="#" class="enhanced-action-btn">
+              View Details
+              <i class="material-icons">arrow_forward</i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Compact Horizontal Cards -->
+    <div class="layout-section">
+      <h2 class="section-title">📱 Option 2: Compact Horizontal Cards</h2>
+      <p class="section-description">
+        Wider horizontal cards (450x280px) with side-by-side image and information layout for efficient space usage
+      </p>
+      
+      <div class="cards-container">
+        <div class="compact-enhanced-card">
+          <div class="compact-image-section">
+            <img src="data/mobiles/pngs/samsungs24ultra.png" alt="Samsung S24 Ultra" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNGM0Y0RjYiLz48cGF0aCBkPSJNNzAgNzBIMTMwVjEzMEg3MFY3MFoiIGZpbGw9IiNEMUQ1REIiLz48L3N2Zz4='">
+          </div>
+          
+          <div class="compact-content-section">
+            <div>
+              <h3 class="enhanced-title" style="font-size: 1.2rem; margin-bottom: 8px;">Samsung Galaxy S24 Ultra</h3>
+              
+              <div class="compact-info-grid">
+                <div class="info-item">
+                  <div class="info-label">Display</div>
+                  <div class="info-value">6.8" AMOLED</div>
+                </div>
+                <div class="info-item">
+                  <div class="info-label">Storage</div>
+                  <div class="info-value">256GB</div>
+                </div>
+                <div class="info-item">
+                  <div class="info-label">Camera</div>
+                  <div class="info-value">200MP</div>
+                </div>
+                <div class="info-item">
+                  <div class="info-label">S Pen</div>
+                  <div class="info-value">Included</div>
+                </div>
+              </div>
+              
+              <div class="enhanced-rating" style="margin: 8px 0;">
+                <div class="rating-stars">
+                  <i class="material-icons">star</i>
+                  <i class="material-icons">star</i>
+                  <i class="material-icons">star</i>
+                  <i class="material-icons">star</i>
+                  <i class="material-icons">star_border</i>
+                </div>
+                <div class="rating-info">
+                  <div class="rating-score">4.7</div>
+                </div>
+              </div>
+            </div>
+            
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <div class="price-current" style="font-size: 1.3rem;">$1,199</div>
+              <a href="#" class="enhanced-action-btn" style="margin: 0; padding: 10px 16px;">
+                View
+                <i class="material-icons" style="font-size: 16px;">arrow_forward</i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="compact-enhanced-card">
+          <div class="compact-image-section">
+            <img src="data/laptops/pngs/RAZER.png" alt="Razer Blade" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNGM0Y0RjYiLz48cGF0aCBkPSJNNzAgNzBIMTMwVjEzMEg3MFY3MFoiIGZpbGw9IiNEMUQ1REIiLz48L3N2Zz4='">
+          </div>
+          
+          <div class="compact-content-section">
+            <div>
+              <h3 class="enhanced-title" style="font-size: 1.2rem; margin-bottom: 8px;">Razer Blade 18</h3>
+              
+              <div class="compact-info-grid">
+                <div class="info-item">
+                  <div class="info-label">CPU</div>
+                  <div class="info-value">i9-14900HX</div>
+                </div>
+                <div class="info-item">
+                  <div class="info-label">GPU</div>
+                  <div class="info-value">RTX 4090</div>
+                </div>
+                <div class="info-item">
+                  <div class="info-label">RAM</div>
+                  <div class="info-value">32GB DDR5</div>
+                </div>
+                <div class="info-item">
+                  <div class="info-label">Display</div>
+                  <div class="info-value">18" QHD+</div>
+                </div>
+              </div>
+              
+              <div class="enhanced-rating" style="margin: 8px 0;">
+                <div class="rating-stars">
+                  <i class="material-icons">star</i>
+                  <i class="material-icons">star</i>
+                  <i class="material-icons">star</i>
+                  <i class="material-icons">star</i>
+                  <i class="material-icons">star_border</i>
+                </div>
+                <div class="rating-info">
+                  <div class="rating-score">4.6</div>
+                </div>
+              </div>
+            </div>
+            
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <div class="price-current" style="font-size: 1.3rem;">$2,999</div>
+              <a href="#" class="enhanced-action-btn" style="margin: 0; padding: 10px 16px;">
+                View
+                <i class="material-icons" style="font-size: 16px;">arrow_forward</i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Minimal Clean Cards -->
+    <div class="layout-section">
+      <h2 class="section-title">🎨 Option 3: Minimal Clean Cards</h2>
+      <p class="section-description">
+        Clean, simple design (300x420px) focusing on essential information with plenty of white space
+      </p>
+      
+      <div class="cards-container">
+        <div class="minimal-enhanced-card">
+          <div class="minimal-image">
+            <img src="data/mobiles/pngs/pixel9pro.png" alt="Google Pixel 9 Pro" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNGM0Y0RjYiLz48cGF0aCBkPSJNNzAgNzBIMTMwVjEzMEg3MFY3MFoiIGZpbGw9IiNEMUQ1REIiLz48L3N2Zz4='">
+          </div>
+          
+          <div class="minimal-content">
+            <h3 class="minimal-title">Google Pixel 9 Pro</h3>
+            
+            <p class="minimal-description">
+              Advanced AI photography features with pure Android experience and 7 years of security updates.
+            </p>
+            
+            <div class="minimal-footer">
+              <div class="minimal-price">$899</div>
+              <div class="minimal-rating">
+                <i class="material-icons" style="color: #fbbf24; font-size: 16px;">star</i>
+                <span>4.8</span>
+              </div>
+            </div>
+            
+            <a href="#" class="enhanced-action-btn" style="margin-top: 12px; padding: 12px;">
+              View Details
+              <i class="material-icons">arrow_forward</i>
+            </a>
+          </div>
+        </div>
+
+        <div class="minimal-enhanced-card">
+          <div class="minimal-image">
+            <img src="data/laptops/pngs/legion.png" alt="Legion Pro 7i" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNGM0Y0RjYiLz48cGF0aCBkPSJNNzAgNzBIMTMwVjEzMEg3MFY7MFoiIGZpbGw9IiNEMUQ1REIiLz48L3N2Zz4='">
+          </div>
+          
+          <div class="minimal-content">
+            <h3 class="minimal-title">Legion Pro 7i</h3>
+            
+            <p class="minimal-description">
+              Professional gaming laptop with Intel 14th gen processor and RTX 4070 graphics for ultimate performance.
+            </p>
+            
+            <div class="minimal-footer">
+              <div class="minimal-price">$1,799</div>
+              <div class="minimal-rating">
+                <i class="material-icons" style="color: #fbbf24; font-size: 16px;">star</i>
+                <span>4.8</span>
+              </div>
+            </div>
+            
+            <a href="#" class="enhanced-action-btn" style="margin-top: 12px; padding: 12px;">
+              View Details
+              <i class="material-icons">arrow_forward</i>
+            </a>
+          </div>
+        </div>
+
+        <div class="minimal-enhanced-card">
+          <div class="minimal-image">
+            <img src="data/protein/pngs/dymatize.png" alt="Dymatize ISO100" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNGM0Y0RjYiLz48cGF0aCBkPSJNNzAgNzBIMTMwVjEzMEg3MFY3MFoiIGZpbGw9IiNEMUQ1REIiLz48L3N2Zz4='">
+          </div>
+          
+          <div class="minimal-content">
+            <h3 class="minimal-title">Dymatize ISO100</h3>
+            
+            <p class="minimal-description">
+              Hydrolyzed whey protein isolate with fast absorption and superior taste. 25g protein per serving.
+            </p>
+            
+            <div class="minimal-footer">
+              <div class="minimal-price">$64.99</div>
+              <div class="minimal-rating">
+                <i class="material-icons" style="color: #fbbf24; font-size: 16px;">star</i>
+                <span>4.6</span>
+              </div>
+            </div>
+            
+            <a href="#" class="enhanced-action-btn" style="margin-top: 12px; padding: 12px;">
+              View Details
+              <i class="material-icons">arrow_forward</i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Comparison Section -->
+    <div class="comparison-table">
+      <h2 style="text-align: center; margin-bottom: 30px; font-family: 'Montserrat', sans-serif;">📊 Layout Comparison</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Enhanced Detailed</th>
+            <th>Compact Horizontal</th>
+            <th>Minimal Clean</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Card Size</strong></td>
+            <td>380×500px</td>
+            <td>450×280px</td>
+            <td>300×420px</td>
+          </tr>
+          <tr>
+            <td><strong>Information Density</strong></td>
+            <td><span class="check-icon">●●●●●</span> Highest</td>
+            <td><span class="check-icon">●●●●○</span> High</td>
+            <td><span class="check-icon">●●●○○</span> Moderate</td>
+          </tr>
+          <tr>
+            <td><strong>Detailed Specs</strong></td>
+            <td><span class="check-icon">✓</span> Full specs list</td>
+            <td><span class="check-icon">✓</span> Key features grid</td>
+            <td><span class="check-icon">○</span> Description only</td>
+          </tr>
+          <tr>
+            <td><strong>Pricing Display</strong></td>
+            <td><span class="check-icon">✓</span> Enhanced with discounts</td>
+            <td><span class="check-icon">✓</span> Current price</td>
+            <td><span class="check-icon">✓</span> Simple price</td>
+          </tr>
+          <tr>
+            <td><strong>Product Badges</strong></td>
+            <td><span class="check-icon">✓</span> Bestseller, New, etc.</td>
+            <td><span class="check-icon">○</span> Not included</td>
+            <td><span class="check-icon">○</span> Not included</td>
+          </tr>
+          <tr>
+            <td><strong>Best For</strong></td>
+            <td>Detailed comparison shopping</td>
+            <td>Efficient space usage</td>
+            <td>Clean, simple browsing</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Recommendation -->
+    <div style="text-align: center; margin-top: 60px; color: rgba(255,255,255,0.9);">
+      <h2 style="color: white; font-family: 'Montserrat', sans-serif; margin-bottom: 20px;">💡 Recommendation</h2>
+      <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto;">
+        For your Ten Z Vault website, I recommend <strong>Option 1: Enhanced Detailed Cards</strong> 
+        because they provide the most comprehensive product information, helping users make informed decisions 
+        about top 10 rankings. The larger size accommodates detailed specs, enhanced pricing, and visual indicators.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    // Add some interactivity
+    document.querySelectorAll('.enhanced-card, .compact-enhanced-card, .minimal-enhanced-card').forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        card.style.transform = card.classList.contains('compact-enhanced-card') 
+          ? 'translateY(-8px) scale(1.02)' 
+          : 'translateY(-12px) scale(1.02)';
+      });
+      
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'translateY(0) scale(1)';
+      });
+    });
+  </script>
+</body>
+</html>

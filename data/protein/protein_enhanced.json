@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Optimum Nutrition Gold Standard 100% Whey",
+    "image": "data/protein/pngs/on.png",
+    "description": "Trusted whey with 24g protein, BCAAs, fast absorption, great taste.",
+    "productLink": "https://www.optimumnutrition.co.in/products/gold-standard-100-whey-protein-powder-double-rich-chocolate-1118949",
+    "price": "$54.99",
+    "originalPrice": "$69.99",
+    "discount": 21,
+    "rating": 4.7,
+    "reviewCount": 5634,
+    "badge": "TOP RATED",
+    "specs": [
+      { "label": "Protein", "value": "24g per serving" },
+      { "label": "Servings", "value": "74 servings" },
+      { "label": "Flavor", "value": "Double Chocolate" },
+      { "label": "Type", "value": "Whey Isolate" }
+    ]
+  },
+  {
+    "name": "MyProtein Impact Whey Isolate",
+    "image": "data/protein/pngs/mypr.png",
+    "description": "High-purity whey isolate with 90% protein content, low sugar, gluten-free.",
+    "productLink": "https://www.myprotein.co.in/p/sports-nutrition/impact-whey-protein/11654605/?thg_ppc_campaign=20963608740&gclid=CjwKCAjw1ozEBhAdEiwAn9qbzQBiyvkLs_qAouQ7T4opq02nA1MZiwn5eVHDWm9wdWXfTWVC15YcOxoCSHIQAvD_BwE&gclsrc=aw.ds&gad_campaignid=20963608740&kwds=13569431859&affil=thgppc&adtype=&product_id=&gad_source=1",
+    "price": "$39.99",
+    "originalPrice": "$49.99",
+    "discount": 20,
+    "rating": 4.5,
+    "reviewCount": 3128,
+    "badge": "VALUE PICK",
+    "specs": [
+      { "label": "Protein", "value": "23g per serving" },
+      { "label": "Purity", "value": "90% protein" },
+      { "label": "Sugar", "value": "Low carb" },
+      { "label": "Type", "value": "Whey Isolate" }
+    ]
+  },
+  {
+    "name": "Dymatize ISO100 Hydrolyzed",
+    "image": "data/protein/pngs/dymatize.png",
+    "description": "Hydrolyzed isolate for rapid absorption, 25g protein, zero fat or sugar.",
+    "productLink": "https://nutrabay.com/product/dymatize-elite-100-whey-protein?pId=7333254&vId=4587259",
+    "price": "$64.99",
+    "rating": 4.6,
+    "reviewCount": 1892,
+    "badge": "FAST ABSORPTION",
+    "specs": [
+      { "label": "Protein", "value": "25g per serving" },
+      { "label": "Type", "value": "Hydrolyzed Isolate" },
+      { "label": "Fat", "value": "Zero fat" },
+      { "label": "Sugar", "value": "Zero sugar" }
+    ]
+  },
+  {
+    "name": "MuscleBlaze Biozyme Whey Protein",
+    "image": "data/protein/pngs/muscle.png",
+    "description": "Indian-made with enhanced absorption, lab-certified, 25g protein per scoop.",
+    "productLink": "https://www.muscleblaze.com/sv/muscleblaze-biozyme-whey-protein/SP-69673?srsltid=AfmBOop_0_jGxypdaxkL_30BsduGF8_OajZiTqNI7FgEi-XTNnRfMDWg",
+    "price": "$44.99",
+    "originalPrice": "$54.99",
+    "discount": 18,
+    "rating": 4.4,
+    "reviewCount": 2567,
+    "badge": "MADE IN INDIA",
+    "specs": [
+      { "label": "Protein", "value": "25g per serving" },
+      { "label": "Enhanced", "value": "Biozyme formula" },
+      { "label": "Certified", "value": "Lab tested" },
+      { "label": "Origin", "value": "Made in India" }
+    ]
+  }
+]

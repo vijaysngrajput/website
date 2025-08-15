@@ -67,7 +67,8 @@ export class TenZVaultApp {
     loadingContainers.forEach(selector => {
       const container = Utils.querySelector(selector);
       if (container) {
-        container.innerHTML = '<div class="text-center py-8">Loading...</div>';
+        container.innerHTML = '<div class="text-center py-8 text-white">Loading amazing products...</div>';
+        container.classList.add('loading');
       }
     });
   }
@@ -94,49 +95,44 @@ export class TenZVaultApp {
     this.containers.proteins = Utils.querySelector(CONFIG.SELECTORS.proteinContainer);
     this.containers.categories = Utils.querySelector('.categories-grid');
 
-    // Convert laptops container to slider
-    this.setupLaptopsSlider();
-    this.setupProteinsSlider();
+    // Setup modern sliders
+    this.setupModernSliders();
   }
 
   /**
-   * Setup laptops slider
+   * Setup modern smooth sliders
    */
-  setupLaptopsSlider() {
-    if (!this.containers.laptops) return;
+  setupModernSliders() {
+    // Add modern slider classes to all containers
+    [this.containers.smartphones, this.containers.laptops, this.containers.proteins].forEach(container => {
+      if (container) {
+        // Remove any existing grid classes
+        container.classList.remove('grid', 'grid-cols-1', 'sm:grid-cols-2', 'md:grid-cols-3', 'lg:grid-cols-4', 'gap-8');
+        
+        // Add modern slider classes
+        container.classList.add('modern-slider');
+      }
+    });
 
-    // Convert grid to slider
-    this.containers.laptops.classList.remove(
-      'grid', 'grid-cols-1', 'sm:grid-cols-2', 'md:grid-cols-3', 'lg:grid-cols-4', 'gap-8'
-    );
-    
-    // Add slider classes
-    this.containers.laptops.classList.add(
-      'flex', 'overflow-x-auto', 'space-x-8', 'scrollbar-hide', 'px-8', 'py-2', 'snap-x', 'snap-mandatory', 'scroll-smooth', 'slider-converted'
-    );
-
-    // Add slider controls
-    this.modules.ui.createSliderControls(this.containers.laptops, 'laptops');
+    // Setup navigation for each slider
+    this.setupSliderNavigation();
   }
 
   /**
-   * Setup proteins slider
+   * Setup navigation for modern sliders
    */
-  setupProteinsSlider() {
-    if (!this.containers.proteins) return;
+  setupSliderNavigation() {
+    const sliders = [
+      { container: this.containers.smartphones, leftBtn: '#smartphones-slider-left', rightBtn: '#smartphones-slider-right' },
+      { container: this.containers.laptops, leftBtn: '#laptops-slider-left', rightBtn: '#laptops-slider-right' },
+      { container: this.containers.proteins, leftBtn: '#proteins-slider-left', rightBtn: '#proteins-slider-right' }
+    ];
 
-    // Convert grid to slider
-    this.containers.proteins.classList.remove(
-      'grid', 'grid-cols-1', 'sm:grid-cols-2', 'md:grid-cols-3', 'lg:grid-cols-4', 'gap-8'
-    );
-    
-    // Add slider classes
-    this.containers.proteins.classList.add(
-      'flex', 'overflow-x-auto', 'space-x-8', 'scrollbar-hide', 'px-8', 'py-2', 'snap-x', 'snap-mandatory', 'scroll-smooth', 'slider-converted'
-    );
-
-    // Add slider controls
-    this.modules.ui.createSliderControls(this.containers.proteins, 'proteins');
+    sliders.forEach(({ container, leftBtn, rightBtn }) => {
+      if (container) {
+        this.modules.ui.createModernSliderControls(container, leftBtn, rightBtn);
+      }
+    });
   }
 
   /**
@@ -163,7 +159,8 @@ export class TenZVaultApp {
       this.state.currentData.smartphones = processedData;
       
       if (this.containers.smartphones) {
-        this.modules.ui.renderProductGrid(processedData, this.containers.smartphones);
+        this.containers.smartphones.classList.remove('loading');
+        this.modules.ui.renderModernProductGrid(processedData, this.containers.smartphones);
       }
     } catch (error) {
       console.error('Failed to load smartphones:', error);
@@ -184,7 +181,8 @@ export class TenZVaultApp {
       this.state.currentData.laptops = processedData;
       
       if (this.containers.laptops) {
-        this.modules.ui.renderProductGrid(processedData, this.containers.laptops);
+        this.containers.laptops.classList.remove('loading');
+        this.modules.ui.renderModernProductGrid(processedData, this.containers.laptops);
       }
     } catch (error) {
       console.error('Failed to load laptops:', error);
@@ -205,7 +203,8 @@ export class TenZVaultApp {
       this.state.currentData.proteins = processedData;
       
       if (this.containers.proteins) {
-        this.modules.ui.renderProductGrid(processedData, this.containers.proteins);
+        this.containers.proteins.classList.remove('loading');
+        this.modules.ui.renderModernProductGrid(processedData, this.containers.proteins);
       }
     } catch (error) {
       console.error('Failed to load proteins:', error);
