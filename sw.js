@@ -3,8 +3,8 @@
  * Handles advanced caching strategies and cache busting
  */
 
-const CACHE_NAME = 'tenz-vault-v1.0.5';
-const CACHE_VERSION = '1.0.5';
+const CACHE_NAME = 'tenz-vault-v1.0.6';
+const CACHE_VERSION = '1.0.6';
 
 // Resources to cache
 const STATIC_RESOURCES = [

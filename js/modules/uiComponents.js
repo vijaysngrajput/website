@@ -171,6 +171,36 @@ export class UIComponents {
     
     // Add entrance animations
     this.addEntranceAnimations(container);
+
+  // Notify listeners (e.g., slider control logic) that content has changed
+  const evt = new Event('content-updated');
+  container.dispatchEvent(evt);
+  // Bind collapsible spec toggles once per container
+  if (!container.dataset.specsToggleBound) {
+    container.addEventListener('click', (e) => {
+      const btn = e.target.closest('[data-specs-toggle]');
+      if (!btn) return;
+      const card = btn.closest('.enhanced-card');
+      if (!card) return;
+      const collapsible = card.querySelector('[data-collapsible]');
+      if (!collapsible) return;
+      const collapsed = collapsible.classList.contains('collapsed');
+      if (collapsed) {
+        collapsible.classList.remove('collapsed');
+        collapsible.classList.add('expanded');
+        btn.textContent = 'Show Less';
+        btn.setAttribute('aria-expanded', 'true');
+        btn.setAttribute('aria-label', 'Hide specifications');
+      } else {
+        collapsible.classList.add('collapsed');
+        collapsible.classList.remove('expanded');
+        btn.textContent = 'Show More';
+        btn.setAttribute('aria-expanded', 'false');
+        btn.setAttribute('aria-label', 'Show full specifications');
+      }
+    });
+    container.dataset.specsToggleBound = 'true';
+  }
   }
 
   /**
@@ -356,6 +386,8 @@ export class UIComponents {
       this.animateScroll(slider, currentScroll, targetScroll, 600);
     };
 
+    const updateButtons = () => this.updateSliderButtons(slider, leftBtn, rightBtn);
+
     // Button event listeners
     Utils.addEventListener(leftBtn, 'click', () => {
       smoothScroll('left');
@@ -380,11 +412,24 @@ export class UIComponents {
     });
 
     // Update button states based on scroll position
-    this.updateSliderButtons(slider, leftBtn, rightBtn);
-    
-    Utils.addEventListener(slider, 'scroll', () => {
-      this.updateSliderButtons(slider, leftBtn, rightBtn);
+    updateButtons();
+    Utils.addEventListener(slider, 'scroll', updateButtons);
+
+    // Mutation observer to detect dynamic card injection
+    const mutationObserver = new MutationObserver(() => {
+      // Allow layout to settle
+      requestAnimationFrame(() => updateButtons());
     });
+    mutationObserver.observe(slider, { childList: true, subtree: false });
+
+    // Resize observer for responsive changes
+    if (typeof ResizeObserver !== 'undefined') {
+      const resizeObserver = new ResizeObserver(() => updateButtons());
+      resizeObserver.observe(slider);
+    }
+
+    // Custom event hook if other modules dispatch manual updates
+    Utils.addEventListener(slider, 'content-updated', updateButtons);
   }
 
   /**

@@ -5,7 +5,7 @@
 
 export class CacheBuster {
   constructor() {
-    this.version = '1.0.5';
+  this.version = '1.0.6';
     this.lastClearTime = localStorage.getItem('tenzv_last_cache_clear');
     this.cacheExpiryHours = 24; // Force refresh every 24 hours
   }

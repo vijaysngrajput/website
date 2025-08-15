@@ -1,0 +1,24 @@
+/* Reusable utility classes extracted from inline styles (v1.0.6) */
+
+.site-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+.glass-header { background: rgba(255,255,255,0.45); backdrop-filter: blur(20px); }
+.hero-panel { background: linear-gradient(135deg, rgba(252,252,252,0.95) 0%, rgba(241,241,241,0.92) 50%, rgba(243,238,246,0.95) 100%); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.6); box-shadow: 0 8px 32px rgba(0,0,0,0.15); margin-top:0; }
+.glass-tile { border:1px solid rgba(255,255,255,0.4); background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.08) 100%); backdrop-filter: blur(15px); }
+.section-heading-shell { background: linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.15) 100%); border-radius: 2rem; box-shadow: 0 20px 40px rgba(0,0,0,0.15); padding: 1rem 3rem; border: 1px solid rgba(255,255,255,0.4); transition: all .3s ease; }
+/* Color variants for headings could be specialized later */
+
+/* Utility for transparent sections previously using inline style */
+.bg-transparent { background: transparent; }
+
+/* Slider layout utilities */
+.slider-full-bleed { width: 100%; }
+.slider-spacing { padding-left: 0.5rem; padding-right: 0.5rem; }
+@media (min-width: 640px) {
+	.slider-spacing { padding-left: 1rem; padding-right: 1rem; }
+}
+@media (min-width: 1024px) {
+	.slider-spacing { padding-left: 2rem; padding-right: 2rem; }
+}
+
+/* Allow container to grow beyond default max-width when embedded inside .container */
+.container .slider-full-bleed .modern-slider { width: 100%; }

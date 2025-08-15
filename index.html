@@ -1,26 +1,16 @@
-<!D  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ten Z Vault</title>
   <meta name="description" content="Discover the best top 10 products in every category. We rank the best so you don't have to guess!"/>
   <meta name="keywords" content="top 10, rankings, best products, reviews, smartphones, laptops, proteins, games, electronics"/>
   <meta name="author" content="Ten Z Vault"/>
-  
-  <!-- Cache Control Meta Tags -->
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Expires" content="0">
-  <meta name="cache-version" content="1.0.5">
-  
-  <!-- Preload critical fonts to prevent FOUC -->
-<html lang="en">
-<head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>Ten Z Vault</title>
-  <meta name="description" content="Discover the best top 10 products in every category. We rank the best so you don’t have to guess!"/>
-  <meta name="keywords" content="top 10, rankings, best products, reviews, smartphones, laptops, proteins, games, electronics"/>
-  <meta name="author" content="Ten Z Vault"/>
-  
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+  <meta http-equiv="Pragma" content="no-cache"/>
+  <meta http-equiv="Expires" content="0"/>
+  <meta name="cache-version" content="1.0.6"/>
   <!-- Preload critical fonts to prevent FOUC -->
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -81,25 +71,24 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
   
   <!-- CRITICAL: Tailwind overrides must come after Tailwind but before other CSS -->
-  <link rel="stylesheet" href="css/tailwind-overrides.css?v=1.0.5"/>
+  <link rel="stylesheet" href="css/tailwind-overrides.css?v=1.0.6"/>
   
   <!-- Modular CSS Architecture -->
-  <link rel="stylesheet" href="css/base.css?v=1.0.5"/>
-  <link rel="stylesheet" href="css/components/header.css?v=1.0.5"/>
-  <link rel="stylesheet" href="css/components/cards.css?v=1.0.5"/>
-  <link rel="stylesheet" href="css/components/enhanced-cards.css?v=1.0.5"/>
-  <link rel="stylesheet" href="css/components/animations.css?v=1.0.5"/>
-  <link rel="stylesheet" href="css/components/sliders.css?v=1.0.5"/>
-  <link rel="stylesheet" href="css/components/modern-slider.css?v=1.0.5"/>
-  <link rel="stylesheet" href="css/components/sections.css?v=1.0.5"/>
-  <link rel="stylesheet" href="css/components/footer.css?v=1.0.5"/>
-  <link rel="stylesheet" href="css/components/modals.css?v=1.0.5"/>
-  
-  
-  <script src="https://cdn.tailwindcss.com" defer></script>  <!-- Favicon: Single Z in Orbitron font, white background, purple Z -->
+  <link rel="stylesheet" href="css/base.css?v=1.0.6"/>
+  <link rel="stylesheet" href="css/components/header.css?v=1.0.6"/>
+  <link rel="stylesheet" href="css/components/cards.css?v=1.0.6"/>
+  <link rel="stylesheet" href="css/components/enhanced-cards.css?v=1.0.6"/>
+  <link rel="stylesheet" href="css/components/animations.css?v=1.0.6"/>
+  <link rel="stylesheet" href="css/components/sliders.css?v=1.0.6"/>
+  <link rel="stylesheet" href="css/components/modern-slider.css?v=1.0.6"/>
+  <link rel="stylesheet" href="css/components/sections.css?v=1.0.6"/>
+  <link rel="stylesheet" href="css/components/footer.css?v=1.0.6"/>
+  <link rel="stylesheet" href="css/components/modals.css?v=1.0.6"/>
+  <link rel="stylesheet" href="css/components/utilities.css?v=1.0.6"/>
+  <!-- Favicon: Single Z in Orbitron font, white background, purple Z -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='white'/%3E%3Ctext x='50%' y='60%' text-anchor='middle' font-family='Montserrat,Arial,sans-serif' font-size='38' font-weight='bold' fill='%238b5cf6' style='letter-spacing:2px;dominant-baseline:middle;'%3EZ%3C/text%3E%3C/svg%3E"/>
 </head>
-<body class="text-gray-800" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; position: relative; overflow-x: hidden;">
+<body class="text-gray-800 site-bg min-h-screen relative overflow-x-hidden">
 <!-- Interactive animated background -->
 <div class="animated-background"></div>
 <div class="floating-shapes">
@@ -109,7 +98,7 @@
   <div class="shape shape-4"></div>
   <div class="shape shape-5"></div>
 </div>
-<header class="sticky top-0 z-50 shadow-md frosted-header" style="background: rgba(255,255,255,0.45); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(59,130,246,0.15);">
+<header class="sticky top-0 z-50 shadow-md frosted-header glass-header border-b border-blue-500/15">
   <nav class="container mx-auto px-6 py-2 flex justify-between items-center" aria-label="Main Navigation">
     <span class="logo-gradient-text shimmer" style="font-size:1.26rem; letter-spacing:0.12em; font-family: 'Orbitron', 'Poppins', sans-serif;">TEN-Z-VAULT</span>
     <div class="desktop-nav">
@@ -155,8 +144,7 @@
 <!-- Remove gap and fill with blur between header and hero -->
 <div style="height:0; background:rgba(30,41,59,0.7); backdrop-filter:blur(8px);"></div>
 <main>
-<section class="hero-section text-gray-800"
-  style="background: linear-gradient(135deg, rgba(252, 252, 252, 0.95) 0%, rgba(241, 241, 241, 0.92) 50%, rgba(243, 238, 246, 0.95) 100%); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); margin-top:0; border-bottom: 1px solid rgba(255, 255, 255, 0.6); box-shadow: 0 8px 32px rgba(0,0,0,0.15);">
+<section class="hero-section text-gray-800 hero-panel">
   <div class="container mx-auto px-6 py-1 text-center" style="margin-bottom: 0;">
     <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4 crystal-title-slogan" aria-label="Find the Best 10 in Every Category">
       <span class="hero-title-black font-extrabold" style="color:#1f2937;">Find the</span>
@@ -174,7 +162,7 @@
 
 
 <!-- Categories Section -->
-<section class="pt-0 pb-12 categories-section" style="background: transparent">
+<section class="pt-0 pb-12 categories-section bg-transparent">
   <div class="container mx-auto px-6">
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
       <!-- Row 1 -->
@@ -277,7 +265,7 @@
 <div class="py-8" style="background: transparent;"></div>
 
 <!-- Latest Smartphones Section -->
-<section class="pt-8 pb-8" style="background: transparent;">
+<section class="pt-8 pb-8 bg-transparent">
   <div class="container mx-auto px-6">
     <!-- Enhanced heading for Latest Phones -->
     <div class="w-full flex justify-center items-center mb-8">
@@ -290,8 +278,8 @@
       </div>
     </div>
     
-    <!-- Enhanced Slider Container -->
-    <div class="relative">
+  <!-- Enhanced Slider Container -->
+  <div class="relative slider-full-bleed slider-spacing">
       <button id="smartphones-slider-left" class="absolute left-4 top-1/2 -translate-y-1/2 z-20 modern-nav-btn">
         <i class="material-icons">chevron_left</i>
       </button>
@@ -308,7 +296,7 @@
 </section>
 
 <!-- High Performance Laptops Section -->
-<section class="py-20" style="background: transparent;">
+<section class="py-20 bg-transparent">
   <div class="container mx-auto px-6">
     <div class="w-full flex justify-center items-center mb-12">
       <div class="group relative overflow-hidden" style="background: linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.15) 100%); border-radius: 2rem; box-shadow: 0 20px 40px rgba(0,0,0,0.15), 0 8px 16px rgba(34,197,94,0.1); padding: 1rem 3rem; border: 1px solid rgba(255, 255, 255, 0.4); transition: all 0.3s ease;">
@@ -320,8 +308,8 @@
       </div>
     </div>
     
-    <!-- Enhanced Slider Container -->
-    <div class="relative">
+  <!-- Enhanced Slider Container -->
+  <div class="relative slider-full-bleed slider-spacing">
       <button id="laptops-slider-left" class="absolute left-4 top-1/2 -translate-y-1/2 z-20 modern-nav-btn">
         <i class="material-icons">chevron_left</i>
       </button>
@@ -337,7 +325,7 @@
 </section>
 
 <!-- Best Quality Proteins Section -->
-<section class="py-20" style="background: transparent;">
+<section class="py-20 bg-transparent">
   <div class="container mx-auto px-6">
     <div class="w-full flex justify-center items-center mb-12">
       <div class="group relative overflow-hidden" style="background: linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.15) 100%); border-radius: 2rem; box-shadow: 0 20px 40px rgba(0,0,0,0.15), 0 8px 16px rgba(251,146,60,0.1); padding: 1rem 3rem; border: 1px solid rgba(255, 255, 255, 0.4); transition: all 0.3s ease;">
@@ -349,8 +337,8 @@
       </div>
     </div>
     
-    <!-- Enhanced Slider Container -->
-    <div class="relative">
+  <!-- Enhanced Slider Container -->
+  <div class="relative slider-full-bleed slider-spacing">
       <button id="proteins-slider-left" class="absolute left-4 top-1/2 -translate-y-1/2 z-20 modern-nav-btn">
         <i class="material-icons">chevron_left</i>
       </button>
@@ -364,7 +352,7 @@
     </div>
   </div>
 </section>
-<section class="py-20" style="background: transparent;">
+<section class="py-20 bg-transparent">
   <div class="container mx-auto px-6">
     <div class="w-full flex justify-center items-center mb-12">
       <div class="group relative overflow-hidden" style="background: linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.15) 100%); border-radius: 2rem; box-shadow: 0 20px 40px rgba(0,0,0,0.15), 0 8px 16px rgba(139,92,246,0.1); padding: 1rem 3rem; border: 1px solid rgba(255, 255, 255, 0.4); transition: all 0.3s ease;">
@@ -471,6 +459,6 @@
             </div>
 </div>
 </footer>
-<script type="module" src="js/main.js?v=1.0.5"></script>
+<script type="module" src="js/main.js?v=1.0.6"></script>
 <!-- Modular ES6+ JavaScript replaces legacy scripts for better maintainability -->
 </body></html>

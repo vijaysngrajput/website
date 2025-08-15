@@ -7,10 +7,10 @@
 .modern-slider {
   display: flex;
   overflow-x: auto;
-  overflow-y: hidden;
+  overflow-y: visible; /* allow vertical growth of taller cards */
   scroll-behavior: smooth;
   gap: 2rem;
-  padding: 2rem 1rem;
+  padding: 2rem 1rem 2.5rem; /* extra bottom space for shadows */
   position: relative;
   
   /* Hide scrollbar but keep functionality */
@@ -49,9 +49,48 @@
   z-index: 20;
 }
 
+/* Ensure buttons sit above content but allow interaction */
+.modern-slider + .modern-nav-btn { pointer-events: auto; }
+
+/* General small-screen adjustments */
+@media (max-width: 640px) {
+  .modern-nav-btn {
+    width:48px;
+    height:48px;
+  }
+  /* Move nav buttons BELOW the slider so they do not cover card content */
+  .modern-slider { margin-bottom: 70px; }
+  #smartphones-slider-left, #laptops-slider-left, #proteins-slider-left,
+  #smartphones-slider-right, #laptops-slider-right, #proteins-slider-right {
+    top: auto;
+    bottom: -60px; /* place below slider */
+    transform: none;
+  }
+  #smartphones-slider-left, #laptops-slider-left, #proteins-slider-left { left: 50%; transform: translateX(-110%); }
+  #smartphones-slider-right, #laptops-slider-right, #proteins-slider-right { right: 50%; transform: translateX(110%); }
+}
+
+/* Very small screens: tighten spacing of below-slider buttons */
+@media (max-width: 430px) {
+  #smartphones-slider-left, #laptops-slider-left, #proteins-slider-left,
+  #smartphones-slider-right, #laptops-slider-right, #proteins-slider-right {
+    bottom: -56px;
+  }
+  #smartphones-slider-left, #laptops-slider-left, #proteins-slider-left { transform: translateX(-115%); }
+  #smartphones-slider-right, #laptops-slider-right, #proteins-slider-right { transform: translateX(115%); }
+}
+
+/* Ultra narrow: further reduce size */
+@media (max-width: 360px) {
+  .modern-nav-btn { width:42px; height:42px; }
+  #smartphones-slider-left, #laptops-slider-left, #proteins-slider-left,
+  #smartphones-slider-right, #laptops-slider-right, #proteins-slider-right { bottom: -52px; }
+}
+
+/* Preserve existing translateY from Tailwind (-translate-y-1/2) when scaling */
 .modern-nav-btn:hover {
   background: rgba(255, 255, 255, 1);
-  transform: scale(1.1);
+  transform: translateY(-50%) scale(1.1);
   box-shadow: 
     0 12px 40px rgba(0, 0, 0, 0.2),
     0 6px 20px rgba(59, 130, 246, 0.3),
@@ -60,7 +99,7 @@
 }
 
 .modern-nav-btn:active {
-  transform: scale(1.05);
+  transform: translateY(-50%) scale(1.05);
 }
 
 .modern-nav-btn i {
@@ -363,6 +402,9 @@
   animation: spin 1s linear infinite;
   z-index: 10;
 }
+
+/* Utility wrapper to ensure nav button positioning is consistent */
+.slider-full-bleed { position: relative; }
 
 @keyframes spin {
   0% { transform: translate(-50%, -50%) rotate(0deg); }

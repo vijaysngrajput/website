@@ -155,15 +155,30 @@ export class DataManager {
    */
   _formatPrice(price) {
     if (!price) return 'Price not available';
-    
-    const numPrice = parseFloat(price);
-    if (isNaN(numPrice)) return price;
-    
+    // Accept strings like "$1,299", "1299", "₹1,299.00", etc.
+    if (typeof price === 'number') {
+      return this._formatINR(price);
+    }
+    const cleaned = price
+      .toString()
+      .replace(/[^0-9.]/g, '') // remove currency symbols & commas
+      .replace(/(\..*)\./, '$1'); // keep only first decimal point
+    const num = parseFloat(cleaned);
+    if (isNaN(num)) return price; // fallback to original if cannot parse
+    return this._formatINR(num);
+  }
+
+  /**
+   * Format number to INR currency (no decimals)
+   * @param {number} value
+   * @returns {string}
+   */
+  _formatINR(value) {
     return new Intl.NumberFormat('en-IN', {
       style: 'currency',
       currency: 'INR',
       minimumFractionDigits: 0
-    }).format(numPrice);
+    }).format(value);
   }
 
   /**
@@ -222,8 +237,8 @@ export class DataManager {
           bValue = this._normalizeRating(b.rating);
           break;
         case 'price':
-          aValue = parseFloat(a.price) || 0;
-          bValue = parseFloat(b.price) || 0;
+          aValue = this._extractNumeric(a.price);
+          bValue = this._extractNumeric(b.price);
           break;
         case 'name':
           aValue = a.name.toLowerCase();
@@ -239,6 +254,19 @@ export class DataManager {
     });
 
     return sorted;
+  }
+
+  /**
+   * Extract numeric value from formatted price string
+   * @param {string|number} price
+   * @returns {number}
+   */
+  _extractNumeric(price) {
+    if (typeof price === 'number') return price;
+    if (!price) return 0;
+    const cleaned = price.toString().replace(/[^0-9.]/g, '');
+    const num = parseFloat(cleaned);
+    return isNaN(num) ? 0 : num;
   }
 
   /**
