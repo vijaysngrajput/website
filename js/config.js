@@ -39,7 +39,7 @@ export const CONFIG = {
   SELECTORS: {
     mobileMenu: '#mobile-menu',
     mobileMenuButton: '#mobile-menu-button',
-    categoriesSlider: '#categories-slider',
+    smartphonesContainer: '#smartphones-container',
     laptopsContainer: '#laptops-container',
     proteinContainer: '#protein-container',
     heroSection: '.hero-section',

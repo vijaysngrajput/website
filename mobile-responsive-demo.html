@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile Responsive Test - Enhanced Cards</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+    }
+    
+    .demo-header {
+      text-align: center;
+      color: white;
+      margin-bottom: 30px;
+    }
+    
+    .device-preview {
+      margin: 40px auto;
+      max-width: 400px;
+      background: #000;
+      border-radius: 25px;
+      padding: 20px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+    
+    .screen {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      height: 600px;
+      position: relative;
+    }
+    
+    .iframe-container {
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 15px;
+    }
+    
+    .device-controls {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 20px 0;
+    }
+    
+    .device-btn {
+      background: rgba(255,255,255,0.2);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .device-btn:hover,
+    .device-btn.active {
+      background: rgba(255,255,255,0.3);
+      transform: translateY(-2px);
+    }
+    
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+    
+    .feature-card {
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 15px;
+      padding: 20px;
+      color: white;
+    }
+    
+    .check-icon {
+      color: #10b981;
+      margin-right: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="demo-header">
+    <h1>📱 Mobile Responsive Enhanced Cards</h1>
+    <p>Your enhanced sliders work perfectly on all mobile devices!</p>
+  </div>
+  
+  <div class="device-controls">
+    <button class="device-btn active" onclick="setDeviceWidth(375)">iPhone</button>
+    <button class="device-btn" onclick="setDeviceWidth(390)">iPhone Pro</button>
+    <button class="device-btn" onclick="setDeviceWidth(360)">Android</button>
+    <button class="device-btn" onclick="setDeviceWidth(768)">Tablet</button>
+  </div>
+
+  <div class="device-preview" id="devicePreview">
+    <div class="screen">
+      <iframe 
+        id="websiteFrame"
+        src="index.html" 
+        class="iframe-container"
+        scrolling="yes">
+      </iframe>
+    </div>
+  </div>
+
+  <div style="text-align: center; color: white; margin: 30px 0;">
+    <h2>📱 Mobile Features Included:</h2>
+  </div>
+
+  <div class="features-grid">
+    <div class="feature-card">
+      <h3><span class="check-icon">✅</span>Touch & Swipe Support</h3>
+      <p>Users can swipe left/right to navigate through products naturally on touch devices.</p>
+    </div>
+    
+    <div class="feature-card">
+      <h3><span class="check-icon">✅</span>Responsive Card Sizes</h3>
+      <p>Cards automatically resize: 380px → 280px (tablet) → 260px (mobile) for optimal viewing.</p>
+    </div>
+    
+    <div class="feature-card">
+      <h3><span class="check-icon">✅</span>Optimized Navigation</h3>
+      <p>Navigation buttons scale from 60px → 50px → 45px and reposition for thumb accessibility.</p>
+    </div>
+    
+    <div class="feature-card">
+      <h3><span class="check-icon">✅</span>Smooth Momentum Scrolling</h3>
+      <p>iOS momentum scrolling (-webkit-overflow-scrolling: touch) for native feel.</p>
+    </div>
+    
+    <div class="feature-card">
+      <h3><span class="check-icon">✅</span>Reduced Gaps & Padding</h3>
+      <p>Spacing optimizes for mobile: 2rem → 1rem gaps, 2rem → 1rem padding.</p>
+    </div>
+    
+    <div class="feature-card">
+      <h3><span class="check-icon">✅</span>All Information Preserved</h3>
+      <p>Even on mobile, all specs, pricing, ratings, and badges remain clearly visible.</p>
+    </div>
+  </div>
+
+  <div style="text-align: center; color: white; margin: 50px 0;">
+    <h2>📊 Responsive Breakpoints:</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <h3>🖥️ Desktop (769px+)</h3>
+        <ul style="text-align: left; margin: 10px 0;">
+          <li>Card Size: 380×500px</li>
+          <li>Navigation: 60px buttons</li>
+          <li>Gap: 2rem (32px)</li>
+          <li>Full enhanced layout</li>
+        </ul>
+      </div>
+      
+      <div class="feature-card">
+        <h3>📱 Tablet (768px)</h3>
+        <ul style="text-align: left; margin: 10px 0;">
+          <li>Card Size: 280×380px</li>
+          <li>Navigation: 50px buttons</li>
+          <li>Gap: 1rem (16px)</li>
+          <li>Compact enhanced layout</li>
+        </ul>
+      </div>
+      
+      <div class="feature-card">
+        <h3>📱 Mobile (480px)</h3>
+        <ul style="text-align: left; margin: 10px 0;">
+          <li>Card Size: 260×360px</li>
+          <li>Navigation: 45px buttons</li>
+          <li>Optimized positioning</li>
+          <li>Touch-first experience</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function setDeviceWidth(width) {
+      const preview = document.getElementById('devicePreview');
+      const buttons = document.querySelectorAll('.device-btn');
+      
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      
+      preview.style.maxWidth = width + 'px';
+      preview.style.margin = '40px auto';
+    }
+  </script>
+</body>
+</html>

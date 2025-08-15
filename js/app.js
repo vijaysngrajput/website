@@ -59,7 +59,7 @@ export class TenZVaultApp {
    */
   showInitialLoading() {
     const loadingContainers = [
-      CONFIG.SELECTORS.categoriesSlider,
+      CONFIG.SELECTORS.smartphonesContainer,
       CONFIG.SELECTORS.laptopsContainer,
       CONFIG.SELECTORS.proteinContainer
     ];
@@ -90,7 +90,7 @@ export class TenZVaultApp {
    * Setup container references
    */
   setupContainers() {
-    this.containers.smartphones = Utils.querySelector(CONFIG.SELECTORS.categoriesSlider);
+    this.containers.smartphones = Utils.querySelector(CONFIG.SELECTORS.smartphonesContainer);
     this.containers.laptops = Utils.querySelector(CONFIG.SELECTORS.laptopsContainer);
     this.containers.proteins = Utils.querySelector(CONFIG.SELECTORS.proteinContainer);
     this.containers.categories = Utils.querySelector('.categories-grid');
