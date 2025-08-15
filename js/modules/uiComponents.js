@@ -59,7 +59,7 @@ export class UIComponents {
             </p>
             
             ${product.rating ? this.renderRating(product.rating) : ''}
-            ${product.price ? `<div class="product-price text-lg font-semibold text-green-600">${product.price}</div>` : ''}
+            <!-- Price intentionally removed per requirement -->
           </div>
         </div>
       </a>
@@ -234,8 +234,7 @@ export class UIComponents {
           ` : ''}
           
           ${product.rating ? this.renderEnhancedRating(product.rating, product.reviewCount) : ''}
-          
-          ${product.price ? this.renderEnhancedPrice(product.price, product.originalPrice, product.discount) : ''}
+          <!-- Price section removed per requirement -->
           
           <a href="${product.productLink || '#'}" 
              target="_blank" 
