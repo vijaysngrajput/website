@@ -34,3 +34,177 @@ brand_websites = {
     "ASUS": "https://rog.asus.com/in/phones-group/"
     "IQOO": "https://shop.iqoo.com/in/products/phone"
 }
+
+
+
+
+
+
+
+
+ROOT_FOLDER / DATE_TIMESTAMP / REGION_NAME / CATEGORIES / CATEGORY_NAME /
+- CATALOG / catalog.JSON
+- ALL_DATA / CATEGORY_PRODUCT_ID=ID / 
+id.jpeg 
+id.png 
+id.json
+
+
+Id.jpeg or id.png contains image of product
+Id.json contains specifications which we will decide soon
+
+
+ROOT_FOLDER / JOB_RUN_LOG / CATEGORY_NAME / DATE_Timestamp  / run_log.json
+
+{ useragent: String }
+
+
+
+Id.json
+
+METADATA:
+
+{
+  "id": "Unique identifier for the product (internal ID, SKU, or database key)",
+  "brand": "Brand name of the product (e.g., Apple, Samsung, Dell)",
+  "model_name": "Specific model name or variant (e.g., iPhone 15 Pro Max)",
+  "release_date": "Official release date of the product (ISO format YYYY-MM-DD)",
+  "category": "Product category (e.g., Mobile, Laptop, Tablet)",
+
+  "display": {
+    "size_inch": "Display size in inches (numeric, may include decimal)",
+    "type": "Type of display panel (e.g., OLED, AMOLED, LCD)",
+    "resolution": "Screen resolution in pixels (e.g., 2796x1290)",
+    "refresh_rate": "Screen refresh rate (e.g., 60Hz, 120Hz)",
+    "protection": "Type of protective glass or coating (e.g., Gorilla Glass, Ceramic Shield)"
+  },
+
+  "processor": {
+    "chipset": "Chipset name (e.g., A17 Pro, Snapdragon 8 Gen 2)",
+    "cpu": "CPU specification (e.g., Octa-core, Hexa-core with details)",
+    "gpu": "GPU specification (e.g., Apple GPU, Adreno)"
+  },
+
+  "memory": {
+    "ram": "Amount of RAM (e.g., 8GB, 12GB)",
+    "storage": "Internal storage capacity (e.g., 128GB, 512GB, 1TB)"
+  },
+
+  "camera": {
+    "rear": "List of rear cameras, each with megapixel count and type (e.g., Wide, Ultra Wide, Telephoto)",
+    "front": "Front camera details with megapixel count and type (e.g., TrueDepth, Punch Hole)",
+    "video": "Maximum supported video recording quality (e.g., 4K@60fps, 8K@30fps)"
+  },
+
+  "battery": {
+    "capacity_mAh": "Battery capacity in milliampere-hours (mAh)"
+  },
+
+  "connectivity": {
+    "sim": "SIM configuration (e.g., Dual SIM, eSIM support)",
+    "5g": "Boolean indicating 5G network support",
+    "wifi": "Wi-Fi standard supported (e.g., Wi-Fi 6, Wi-Fi 6E)",
+    "bluetooth": "Bluetooth version (e.g., 5.3)",
+    "nfc": "Boolean indicating NFC support"
+  },
+
+  "design": {
+    "dimensions": "Physical dimensions of the product (height x width x thickness in mm)",
+    "weight_g": "Weight of the product in grams",
+    "material": "Build materials used (e.g., aluminum, titanium, glass)",
+    "colors_available": "List of available color variants"
+  },
+
+  "extra_features": {
+    "ip_rating": "Ingress protection rating for dust/water resistance (e.g., IP68)",
+    "fingerprint": "Boolean indicating if fingerprint sensor is available",
+    "face_id": "Boolean indicating if face recognition is available",
+    "stylus_support": "Boolean indicating if stylus is supported",
+    "special_features": "List of unique/exclusive features (e.g., Dynamic Island, Satellite SOS)"
+  },
+
+  "official_link": "Official product webpage URL",
+  "crawl_metadata": {
+    "fetched_at": "Timestamp when data was last fetched (ISO 8601 format)",
+    "source": "Source domain or website where the data was fetched",
+    "user_agent": "User-agent string used while crawling the source"
+  }
+}
+
+
+
+EXAMPLE JSON:
+
+
+
+{
+  "id": "unique_product_id",
+  "brand": "Apple",
+  "model_name": "iPhone 15 Pro Max",
+  "release_date": "2023-09-22",
+  "category": "Mobile",
+
+  "display": {
+    "size_inch": "6.7",
+    "type": "Super Retina XDR OLED",
+    "resolution": "2796x1290",
+    "refresh_rate": "120Hz",
+    "protection": "Ceramic Shield"
+  },
+
+  "processor": {
+    "chipset": "A17 Pro",
+    "cpu": "Hexa-core",
+    "gpu": "Apple GPU (6-core)"
+  },
+
+  "memory": {
+    "ram": "12GB",
+    "storage": "512GB"
+  },
+
+  "camera": {
+    "rear": [
+      { "megapixel": "48MP", "type": "Wide" },
+      { "megapixel": "12MP", "type": "Ultra Wide" },
+      { "megapixel": "12MP", "type": "Telephoto" }
+    ],
+    "front": { "megapixel": "12MP", "type": "TrueDepth" },
+    "video": "4K@60fps"
+  },
+
+  "battery": {
+    "capacity_mAh": "4422"
+  },
+
+  "connectivity": {
+    "sim": "Dual eSIM (nano+eSIM in some regions)",
+    "5g": true,
+    "wifi": "Wi-Fi 6E",
+    "bluetooth": "5.3",
+    "nfc": true
+  },
+
+  "design": {
+    "dimensions": "159.9 x 76.7 x 8.25 mm",
+    "weight_g": "221",
+    "material": "Titanium frame, Ceramic Shield front, Textured glass back",
+    "colors_available": ["Natural Titanium", "Blue Titanium", "White Titanium", "Black Titanium"]
+  },
+
+  "extra_features": {
+    "ip_rating": "IP68 dust/water resistant",
+    "fingerprint": false,
+    "face_id": true,
+    "stylus_support": false,
+    "special_features": ["Dynamic Island", "Always-On Display", "Satellite SOS"]
+  },
+
+  "official_link": "https://www.apple.com/in/iphone-15-pro/",
+  "crawl_metadata": {
+    "fetched_at": "2025-08-17T22:30:00Z",
+    "source": "apple.com/in",
+    "user_agent": "Mozilla/5.0"
+  }
+}
+
