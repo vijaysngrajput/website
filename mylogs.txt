@@ -3,11 +3,34 @@ BACKGROUND PIC REFERENCE:
 https://mobbin.com/apps/discord-web-63b553b8-8f26-4929-b83f-a04a9bfcc72b/ff9ff653-8c03-4859-8ad7-d84d8bcce5fc/ui-elements
 
 
-"TEN" in a gold-pink gradient
-"Z" in a blue gradient
-"VAULT" in a purple-pink gradient
-Each word pulses gently for a modern effect
+
+TOP 10 LOGIC CATEGORIES WHICH EVERY PRODUCT WILL HAVE:
+1.	Super Best
+2.	Best by Price Range
+3.	Best Value for Money
+4.	Best by Use-Case
+5.	Most Popular
+6.	Latest Launches
+7.	Best by Brand Ecosystem
+8.	Flagship Killers
+9.	Best in Innovation & Design
+10.	Best for Long-Term Reliability
 
 
 
-linear-gradient(90deg, #e83e99 0%, #4d33d0 50%, #a464e5 100%);
+brand_websites = {
+    "Apple": "https://www.apple.com/in/iphone/",
+    "Samsung": "https://www.samsung.com/in/smartphones/",
+    "Google": "https://store.google.com/in/category/phones",
+    "OnePlus": "https://www.oneplus.in/",
+    "Xiaomi": "https://www.mi.com/in/",
+    "POCO": "https://www.po.co/global",
+    "Motorola": "https://www.motorola.in/",
+    "Realme": "https://www.realme.com/in/",
+    "Vivo": "https://www.vivo.com/in",
+    "Oppo": "https://www.oppo.com/in/",
+    "Nokia": "https://www.hmd.com/en_in/smartphones",
+    "Lava": "https://www.lavamobiles.com/",
+    "ASUS": "https://rog.asus.com/in/phones-group/"
+    "IQOO": "https://shop.iqoo.com/in/products/phone"
+}

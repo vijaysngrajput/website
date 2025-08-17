@@ -49,78 +49,30 @@ export const CONFIG = {
 
   // Category configuration
   CATEGORIES: [
-    {
-      id: 'smartphones',
-      name: 'Smart Phones',
-      icon: 'smartphone',
-      iconColor: 'text-blue-400',
-      link: 'vault/smartphones/index.html',
-      dataKey: 'mobiles'
-    },
-    {
-      id: 'laptops',
-      name: 'Laptops',
-      icon: 'laptop_mac',
-      iconColor: 'text-green-400',
-      link: '#laptops-container',
-      dataKey: 'laptops'
-    },
-    {
-      id: 'proteins',
-      name: 'Proteins',
-      icon: 'fitness_center',
-      iconColor: 'text-yellow-400',
-      link: '#protein-container',
-      dataKey: 'proteins'
-    },
-    {
-      id: 'smarttv',
-      name: 'Smart TV',
-      icon: 'tv',
-      iconColor: 'text-purple-400',
-      link: '#',
-      dataKey: null
-    },
-    {
-      id: 'games',
-      name: 'Android Games',
-      icon: 'sports_esports',
-      iconColor: 'text-pink-400',
-      link: '#',
-      dataKey: null
-    },
-    {
-      id: 'washing-machine',
-      name: 'Washing Machine',
-      icon: 'local_laundry_service',
-      iconColor: 'text-indigo-400',
-      link: '#',
-      dataKey: null
-    },
-    {
-      id: 'graphics-cards',
-      name: 'Graphic Cards',
-      icon: 'memory',
-      iconColor: 'text-red-400',
-      link: '#',
-      dataKey: null
-    },
-    {
-      id: 'bikes',
-      name: 'Bikes',
-      icon: 'two_wheeler',
-      iconColor: 'text-orange-400',
-      link: '#',
-      dataKey: null
-    },
-    {
-      id: 'cars',
-      name: 'Cars',
-      icon: 'directions_car',
-      iconColor: 'text-blue-300',
-      link: '#',
-      dataKey: null
-    }
+    // 1. Smart Phones
+    { id: 'smartphones', name: 'Smart Phones', icon: 'smartphone', iconColor: 'text-blue-400', link: 'vault/smartphones/index.html', dataKey: 'mobiles' },
+    // 2. Laptops
+    { id: 'laptops', name: 'Laptops', icon: 'laptop_mac', iconColor: 'text-green-400', link: '#laptops-container', dataKey: 'laptops' },
+    // 3. Headphones / Earbuds
+    { id: 'headphones', name: 'Headphones / Earbuds', icon: 'headphones', iconColor: 'text-pink-400', link: '#', dataKey: null },
+    // 4. Smart Watches
+    { id: 'smart-watches', name: 'Smart Watches', icon: 'watch', iconColor: 'text-purple-400', link: '#', dataKey: null },
+    // 5. Refrigerators
+    { id: 'refrigerators', name: 'Refrigerators', icon: 'kitchen', iconColor: 'text-cyan-400', link: '#', dataKey: null },
+    // 6. Washing Machines
+    { id: 'washing-machines', name: 'Washing Machines', icon: 'local_laundry_service', iconColor: 'text-indigo-400', link: '#', dataKey: null },
+    // 7. Televisions
+    { id: 'televisions', name: 'Televisions', icon: 'tv', iconColor: 'text-amber-400', link: '#', dataKey: null },
+    // 8. Air Conditioners
+    { id: 'air-conditioners', name: 'Air Conditioners', icon: 'ac_unit', iconColor: 'text-sky-400', link: '#', dataKey: null },
+    // 9. Microwave Ovens
+    { id: 'microwave-ovens', name: 'Microwave Ovens', icon: 'microwave', iconColor: 'text-orange-400', link: '#', dataKey: null },
+    // 10. Cameras
+    { id: 'cameras', name: 'Cameras', icon: 'photo_camera', iconColor: 'text-red-400', link: '#', dataKey: null },
+    // 11. Protein
+    { id: 'proteins', name: 'Protein', icon: 'fitness_center', iconColor: 'text-yellow-400', link: '#protein-container', dataKey: 'proteins' },
+    // 12. Trending Products
+    { id: 'trending-products', name: 'Trending Products', icon: 'trending_up', iconColor: 'text-teal-400', link: '#trending-products', dataKey: null }
   ]
 };
 
