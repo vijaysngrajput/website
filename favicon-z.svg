@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Futuristic single Z glyph favicon -->
+  <defs>
+    <!-- Multi‑tone neon gradient for the Z stroke -->
+    <linearGradient id="zGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366F1"/>
+      <stop offset="30%" stop-color="#8B5CF6"/>
+      <stop offset="65%" stop-color="#EC4899"/>
+      <stop offset="100%" stop-color="#38BDF8"/>
+    </linearGradient>
+    <!-- Ambient glow -->
+    <radialGradient id="bgGlow" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#64748b" stop-opacity="0.55"/>
+      <stop offset="55%" stop-color="#0f172a" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="zGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+      <feColorMatrix in="b" type="matrix" values="0 0 0 0 0.40 0 0 0 0 0.20 0 0 0 0 0.65 0 0 0 0.9 0" result="c"/>
+      <feBlend in="SourceGraphic" in2="c" mode="screen"/>
+    </filter>
+    <!-- Thin scanline pattern for subtle tech texture -->
+    <pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="4" height="1" fill="#ffffff08"/>
+    </pattern>
+    <clipPath id="rounded">
+      <rect x="2" y="2" width="60" height="60" rx="16"/>
+    </clipPath>
+  </defs>
+  <!-- Background panel -->
+  <g clip-path="url(#rounded)">
+    <rect x="2" y="2" width="60" height="60" rx="16" fill="#0f172a"/>
+    <rect x="2" y="2" width="60" height="60" rx="16" fill="url(#bgGlow)"/>
+    <rect x="2" y="2" width="60" height="60" rx="16" fill="url(#scan)"/>
+    <!-- Corner accent pulses -->
+    <circle cx="10" cy="10" r="4.2" fill="#6366f1" opacity="0.18"/>
+    <circle cx="54" cy="54" r="4.2" fill="#ec4899" opacity="0.18"/>
+  </g>
+  <!-- Stylized Z: constructed as a continuous polygon for crisp scaling -->
+  <path d="M15 18c0-1.1.9-2 2-2h30c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2H26.4L47 42.6c.4.4.6.9.6 1.4v2c0 1.1-.9 2-2 2H17c-1.1 0-2-.9-2-2v-2c0-1.1.9-2 2-2h20.6L15.6 21.4c-.4-.4-.6-.9-.6-1.4v-2z" fill="url(#zGrad)" filter="url(#zGlow)"/>
+  <!-- Inner stroke accent to sharpen edges -->
+  <path d="M15 18c0-1.1.9-2 2-2h30c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2H26.4L47 42.6c.4.4.6.9.6 1.4v2c0 1.1-.9 2-2 2H17c-1.1 0-2-.9-2-2v-2c0-1.1.9-2 2-2h20.6L15.6 21.4c-.4-.4-.6-.9-.6-1.4v-2z" fill="none" stroke="#ffffff" stroke-opacity="0.20" stroke-width="1"/>
+</svg>

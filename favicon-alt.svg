@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="gradRing" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0ea5e9"/>
+      <stop offset="35%" stop-color="#6366f1"/>
+      <stop offset="70%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+    <linearGradient id="gradTZ" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f472b6"/>
+      <stop offset="50%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+    <filter id="softGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.5" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.55 0 0 0 0 0.33 0 0 0 0 0.93 0 0 0 0.55 0" result="glow"/>
+      <feBlend in="SourceGraphic" in2="glow" mode="screen"/>
+    </filter>
+  </defs>
+  <!-- Dark base -->
+  <rect x="2" y="2" width="60" height="60" rx="18" fill="#0f172a"/>
+  <!-- Neon ring -->
+  <circle cx="32" cy="32" r="25" fill="none" stroke="url(#gradRing)" stroke-width="3" filter="url(#softGlow)"/>
+  <!-- Inner subtle ring -->
+  <circle cx="32" cy="32" r="18" fill="none" stroke="#ffffff22" stroke-width="2"/>
+  <!-- Stylized combined T/Z glyph -->
+  <path d="M18 21h28v5H35v19l7.5-2.2L44 48l-12 4-12-4 1.5-5.2L29 45V26H18z" fill="url(#gradTZ)"/>
+  <path d="M18 21h28v5H35v19l7.5-2.2L44 48l-12 4-12-4 1.5-5.2L29 45V26H18z" fill="none" stroke="#fff" stroke-opacity="0.25" stroke-width="1"/>
+  <!-- Top sheen -->
+  <path d="M7 22c4-9 14-14 25-14s21 5 25 14c-9-5-41-5-50 0z" fill="#ffffff08"/>
+</svg>
