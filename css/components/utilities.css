@@ -1,8 +1,8 @@
 /* Reusable utility classes extracted from inline styles (v1.0.6) */
 
-.site-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+.site-bg { background: transparent !important; }
 .glass-header { background: rgba(255,255,255,0.45); backdrop-filter: blur(20px); }
-.hero-panel { background: linear-gradient(135deg, rgba(252,252,252,0.95) 0%, rgba(241,241,241,0.92) 50%, rgba(243,238,246,0.95) 100%); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.6); box-shadow: 0 8px 32px rgba(0,0,0,0.15); margin-top:0; }
+.hero-panel { background: linear-gradient(135deg, rgba(255,255,255,0.72) 0%, rgba(245,245,245,0.66) 50%, rgba(250,248,252,0.70) 100%); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(255,255,255,0.5); box-shadow: 0 6px 28px rgba(0,0,0,0.12); margin-top:0; }
 .glass-tile { border:1px solid rgba(255,255,255,0.4); background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.08) 100%); backdrop-filter: blur(15px); }
 .section-heading-shell { background: linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.15) 100%); border-radius: 2rem; box-shadow: 0 20px 40px rgba(0,0,0,0.15); padding: 1rem 3rem; border: 1px solid rgba(255,255,255,0.4); transition: all .3s ease; }
 /* Color variants for headings could be specialized later */

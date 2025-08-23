@@ -24,8 +24,7 @@ function initApp() {
     // Initialize immediately
     app = new TenZVaultApp();
     
-    // Initialize interactive background
-    initInteractiveBackground();
+  // (Removed) interactive background disabled for static design
     
     // Initialize scroll-triggered animations
     initScrollAnimations();
@@ -120,58 +119,7 @@ function initScrollAnimations() {
 }
 
 /**
- * Initialize interactive background effects
- */
-function initInteractiveBackground() {
-  // Mouse move effect for background
-  let mouseX = 0;
-  let mouseY = 0;
-  
-  document.addEventListener('mousemove', (e) => {
-    mouseX = (e.clientX / window.innerWidth) * 100;
-    mouseY = (e.clientY / window.innerHeight) * 100;
-    
-    document.documentElement.style.setProperty('--mouse-x', mouseX + '%');
-    document.documentElement.style.setProperty('--mouse-y', mouseY + '%');
-    
-    // Show the mouse effect
-    document.body.style.setProperty('--mouse-effect-opacity', '1');
-  });
-  
-  // Hide mouse effect when mouse leaves
-  document.addEventListener('mouseleave', () => {
-    document.body.style.setProperty('--mouse-effect-opacity', '0');
-  });
-  
-  // Add parallax effect to floating shapes
-  const shapes = document.querySelectorAll('.shape');
-  
-  document.addEventListener('mousemove', (e) => {
-    const centerX = window.innerWidth / 2;
-    const centerY = window.innerHeight / 2;
-    const deltaX = (e.clientX - centerX) / centerX;
-    const deltaY = (e.clientY - centerY) / centerY;
-    
-    shapes.forEach((shape, index) => {
-      const multiplier = (index + 1) * 0.5;
-      const translateX = deltaX * multiplier;
-      const translateY = deltaY * multiplier;
-      
-      shape.style.transform = `translate(${translateX}px, ${translateY}px)`;
-    });
-  });
-  
-  // Scroll-based background effects
-  window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const rate = scrolled * -0.5;
-    
-    const animatedBg = document.querySelector('.animated-background');
-    if (animatedBg) {
-      animatedBg.style.transform = `translateY(${rate}px)`;
-    }
-  });
-}
+/* Interactive background removed */
 
 /**
  * Fallback initialization for older browsers or when modules fail
@@ -179,8 +127,7 @@ function initInteractiveBackground() {
 function initFallback() {
   console.warn('Using fallback initialization');
   
-  // Initialize interactive background even in fallback mode
-  initInteractiveBackground();
+  // Interactive background disabled
   
   // Basic mobile menu functionality
   const mobileMenuButton = document.getElementById('mobile-menu-button');

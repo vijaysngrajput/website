@@ -35,8 +35,8 @@ export class UIComponents {
          class="product-card-link"
          style="text-decoration:none;"
          data-product-id="${product.id}">
-        <div class="crystal-card flex-shrink-0 p-5 text-center flex flex-col justify-between transform hover:-translate-y-2 transition duration-300 cursor-pointer card-animate product-card"
-             style="width:370px; height:370px; margin:0 12px; background:linear-gradient(90deg, #f8fafc 0%, #d1c4e9 100%); backdrop-filter:blur(8px); box-shadow:0 4px 16px 0 rgba(59,130,246,0.18), 0 1px 6px 0 rgba(13,148,136,0.08); border:1.5px solid #000 !important; border-radius:1.5rem;">
+  <div class="crystal-card flex-shrink-0 p-5 text-center flex flex-col justify-between transform hover:-translate-y-1 transition duration-200 cursor-pointer card-animate product-card"
+       style="width:360px; height:360px; margin:0 12px; background:rgba(255,255,255,0.05); backdrop-filter:blur(4px) saturate(120%); box-shadow:0 4px 18px rgba(0,0,0,0.35); border:1px solid rgba(255,255,255,0.08) !important; border-radius:1.25rem;">
           
           <div class="product-image-container">
             <img alt="${Utils.escapeHtml(product.name)}" 
@@ -74,8 +74,8 @@ export class UIComponents {
     return (category) => `
       <${category.link.startsWith('#') ? 'div' : 'a'} 
         ${category.link.startsWith('#') ? '' : `href="${category.link}"`}
-        class="category-card flex items-center space-x-4 rounded-xl p-6 shadow-md transition duration-200 cursor-pointer hover:bg-green-100 hover:bg-opacity-60 card-hover card-animate"
-        style="text-decoration:none; border:1.5px solid #000; background: linear-gradient(90deg, #f8fafc 0%, #d1c4e9 100%); backdrop-filter: blur(8px);"
+  class="category-card flex items-center space-x-4 rounded-xl p-6 shadow-md transition duration-150 cursor-pointer card-hover card-animate"
+  style="text-decoration:none; border:1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.05); backdrop-filter: blur(4px) saturate(120%);"
         data-category="${category.id}">
         
         <span class="material-icons text-4xl ${category.iconColor}" aria-hidden="true">
@@ -542,15 +542,11 @@ export class UIComponents {
   addEntranceAnimations(container) {
     const cards = container.querySelectorAll('.enhanced-card');
     
-    cards.forEach((card, index) => {
-      card.style.opacity = '0';
-      card.style.transform = 'translateY(20px)';
-      
-      setTimeout(() => {
-        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        card.style.opacity = '1';
-        card.style.transform = 'translateY(0)';
-      }, index * 100);
+    // Immediate visibility (removed delayed fade to eliminate post-load white flash)
+    cards.forEach(card => {
+      card.style.opacity = '1';
+      card.style.transform = 'none';
+      card.style.transition = 'none';
     });
   }
 

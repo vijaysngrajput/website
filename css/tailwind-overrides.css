@@ -66,6 +66,11 @@
   z-index: 1000;
 }
 
+/* Force-hide on desktop even if JS accidentally leaves state */
+@media (min-width: 768px) {
+  .mobile-menu-dropdown { display: none !important; }
+}
+
 .mobile-menu-dropdown:not(.hidden) {
   display: block;
 }
